@@ -22,7 +22,7 @@ class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var slider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagenes = ["apple", "orange.jpg","watermelon.jpg"]
+      /*  imagenes = ["apple", "orange.jpg","watermelon.jpg"]*/
         // Do any additional setup after loading the view.
     }
     
