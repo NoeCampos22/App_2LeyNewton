@@ -9,29 +9,42 @@
 import UIKit
 
 class ViewControllerSimulacion: UIViewController {
-
-    @IBOutlet weak var lbVol: UILabel!
+    
+    
+    @IBOutlet weak var lbFuerzaNeta: UILabel!
+    
+    @IBOutlet weak var lbFriccion: UILabel!
+    
+    @IBOutlet weak var lbAceleracion: UILabel!
+    var imagenes: [String] = [String]()
+    
     @IBOutlet weak var imgFoto: UIImageView!
     @IBOutlet weak var slider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imagenes = ["apple", "orange.jpg","watermelon.jpg"]
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func sliderAction(_ sender: Any) {
+
+    @IBAction func sliderAction(_ sender: UISlider) {
         
-        lbVol.text = String(slider.value)
+        lbFuerzaNeta.text = String(sender.value)
+        lbFriccion.text = String(sender.value)
+        lbAceleracion.text = String(sender.value)
+
     }
     
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
