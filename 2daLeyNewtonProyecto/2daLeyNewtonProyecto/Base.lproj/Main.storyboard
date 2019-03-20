@@ -18,37 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Segunda Ley de Newton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76C-Cx-Oam">
-                                <rect key="frame" x="39" y="53" width="296" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Segunda Ley de Newton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76C-Cx-Oam">
+                                <rect key="frame" x="59" y="91" width="296" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip0-18-YTI">
-                                <rect key="frame" x="144" y="425" width="93" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip0-18-YTI">
+                                <rect key="frame" x="160.66666666666666" y="487" width="93" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Simulación"/>
                                 <connections>
                                     <segue destination="da8-9b-ruC" kind="presentation" identifier="simulacion" id="bRD-Kd-D09"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haN-Hw-4zc">
-                                <rect key="frame" x="144" y="498" width="87" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-0x-vey">
+                                <rect key="frame" x="78" y="174" width="258" height="232"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haN-Hw-4zc">
+                                <rect key="frame" x="163.66666666666666" y="578" width="87" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Preguntas"/>
                                 <connections>
                                     <segue destination="HYU-6L-Ffp" kind="presentation" identifier="preguntas" id="BOa-PN-gZc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-0x-vey">
-                                <rect key="frame" x="58" y="134" width="258" height="232"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="haN-Hw-4zc" firstAttribute="top" secondItem="Ip0-18-YTI" secondAttribute="bottom" constant="56" id="0bX-xB-Vx0"/>
+                            <constraint firstItem="vLu-0x-vey" firstAttribute="top" secondItem="76C-Cx-Oam" secondAttribute="bottom" constant="51" id="ExI-se-4dM"/>
+                            <constraint firstItem="76C-Cx-Oam" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="Tab-Vm-BYf"/>
+                            <constraint firstItem="vLu-0x-vey" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VTn-om-hrI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="haN-Hw-4zc" secondAttribute="bottom" constant="139" id="WUs-gT-bBk"/>
+                            <constraint firstItem="haN-Hw-4zc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XCm-AM-2TG"/>
+                            <constraint firstItem="Ip0-18-YTI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azL-CH-IXS"/>
+                            <constraint firstItem="Ip0-18-YTI" firstAttribute="top" secondItem="vLu-0x-vey" secondAttribute="bottom" constant="80" id="ii4-1T-thl"/>
+                            <constraint firstItem="76C-Cx-Oam" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rIB-9E-Uhu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
