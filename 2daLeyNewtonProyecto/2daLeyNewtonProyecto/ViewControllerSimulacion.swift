@@ -50,11 +50,11 @@ class ViewControllerSimulacion: UIViewController {
     }
     //Calculos pero todavía no jala bien
     @IBAction func btIniciarSimulacion(_ sender: UIButton) {
-        let friccion = Double(lbFriccion.text!)
-        let peso = Double(lbPeso.text!)
-        let newtonsAplicados = Double(lbNewtons.text!)
-        let fn = 9.81 * peso!
-        let fuerzaNeta = newtonsAplicados! - (fn * friccion!)
+        let friccion = Double(sliderFriccion.value)
+        let peso = Double(sliderPeso.value)
+        let newtonsAplicados = Double(sliderNewtons.value)
+        let fn = 9.81 * peso
+        let fuerzaNeta = newtonsAplicados - (fn * friccion)
         lbFuerzaNeta.text = String(fuerzaNeta)
     }
     /*  lbFuerzaNeta.text = ""
