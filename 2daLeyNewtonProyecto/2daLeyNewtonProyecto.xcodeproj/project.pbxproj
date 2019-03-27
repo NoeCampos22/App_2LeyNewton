@@ -14,6 +14,7 @@
 		FB6318DB2227033B006AE340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6318D92227033B006AE340 /* LaunchScreen.storyboard */; };
 		FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */; };
 		FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */; };
+		FB7755E5224C00D600385906 /* Problema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7755E4224C00D600385906 /* Problema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FB6318DC2227033B006AE340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSimulacion.swift; sourceTree = "<group>"; };
 		FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreguntas.swift; sourceTree = "<group>"; };
+		FB7755E4224C00D600385906 /* Problema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problema.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				FB6318D02227033B006AE340 /* AppDelegate.swift */,
 				FB6318D22227033B006AE340 /* ViewController.swift */,
 				FB6318D42227033B006AE340 /* Main.storyboard */,
+				FB7755E4224C00D600385906 /* Problema.swift */,
 				FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */,
 				FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */,
 				FB6318D72227033B006AE340 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			files = (
 				FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */,
 				FB6318D32227033B006AE340 /* ViewController.swift in Sources */,
+				FB7755E5224C00D600385906 /* Problema.swift in Sources */,
 				FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */,
 				FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */,
 			);
