@@ -9,11 +9,39 @@
 import UIKit
 
 class ViewControllerPreguntas: UIViewController {
-
+    
+    
+    @IBOutlet weak var lbPregunta: UILabel!
+    @IBOutlet weak var tfRespuesta: UITextField!
+    
+    var problema: Problema!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        problema = Problema(tipo: Int.random(in: 0 ... 2))
+        lbPregunta.text = problema.sTexto!
+        print(problema.dFNeta)
+        print(problema.dAceleracion)
+    }
+    
+    
+    @IBAction func comprobarRespuesta(_ sender: Any) {
+        if (Double(tfRespuesta.text!) == problema.dRespuesta){
+            print("Surve")
+        }
+    }
+    
+    
+ 
+    @IBAction func verFormula(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func siguienteProblema(_ sender: Any) {
     }
     
 
