@@ -12,20 +12,34 @@ class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var imgFoto: UIImageView!
     //Sliders outlets
     @IBOutlet weak var sliderNewtons: UISlider!
-    @IBOutlet weak var sliderPeso: UISlider!
-    @IBOutlet weak var sliderFriccion: UISlider!
     
+    @IBOutlet weak var sliderAngulo: UISlider!{
+        didSet{
+            sliderAngulo.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        }
+    }
+    
+    
+    @IBOutlet weak var sliderMasa: UISlider!
+    @IBOutlet weak var sliderFriccion: UISlider!
     @IBOutlet weak var lbAceleracion: UILabel!
     @IBOutlet weak var lbFuerzaNeta: UILabel!
     @IBOutlet weak var lbFuerzaFriccion: UILabel!
     //Slider Values
     @IBOutlet weak var lbNewtons: UILabel!
-    @IBOutlet weak var lbPeso: UILabel!
+    @IBOutlet weak var lbMasa: UILabel!
     @IBOutlet weak var lbFriccion: UILabel!
     
+    @IBOutlet weak var lbAngulo: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lbNewtons.text = "0"
+        lbMasa.text = "0"
+        lbFriccion.text = "0"
+        lbAngulo.text = "0"
+        lbFuerzaNeta.text = "0"
+        lbAceleracion.text = "0"
+        lbFuerzaFriccion.text = "0"
         // Do any additional setup after loading the view.
     }
     
@@ -41,21 +55,34 @@ class ViewControllerSimulacion: UIViewController {
   
     }
     //Tomamos valor para calculos y animación para los
-    @IBAction func sliderActionPeso(_ sender: UISlider) {
-           lbPeso.text = String(Int(sender.value))
+    
+    
+    
+    @IBAction func sliderActionMasa(_ sender: UISlider) {
+        lbMasa.text = String(Int(sender.value))
     }
     
+    @IBAction func sliderActionAngulo(_ sender: UISlider) {
+        lbAngulo.text = String(Int(sender.value))
+    }
     @IBAction func sliderActionFriccion(_ sender: UISlider) {
            lbFriccion.text = String(Double(sender.value))
     }
     //Calculos pero todavía no jala bien
     @IBAction func btIniciarSimulacion(_ sender: UIButton) {
         let friccion = Double(sliderFriccion.value)
-        let peso = Double(sliderPeso.value)
+        let masa = Double(sliderMasa.value)
         let newtonsAplicados = Double(sliderNewtons.value)
-        let fn = 9.81 * peso
-        let fuerzaNeta = newtonsAplicados - (fn * friccion)
+        let fX = cos(Double(sliderAngulo.value)) * newtonsAplicados
+        let fY = sin(Double(sliderAngulo.value)) * newtonsAplicados
+        let fn = (9.81 * masa) - fY
+        let fr = friccion * fn
+        let fuerzaNeta = fX - fr
+        let acc = (fX - fr) / masa
+        lbFuerzaFriccion.text = String(fr)
+        lbAceleracion.text = String(acc)
         lbFuerzaNeta.text = String(fuerzaNeta)
+        
     }
     /*  lbFuerzaNeta.text = ""
      lbAceleracion.text = ""
