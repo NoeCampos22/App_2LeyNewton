@@ -222,15 +222,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pmt-b9-WIu">
-                                <rect key="frame" x="37" y="501" width="301" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="sliderActionPeso:" destination="da8-9b-ruC" eventType="valueChanged" id="KDt-4C-vxb"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-0X-7UJ">
-                                <rect key="frame" x="124" y="472" width="38" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Masa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-0X-7UJ">
+                                <rect key="frame" x="123" y="472" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -255,7 +248,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-400" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="9Hs-un-EEt">
-                                <rect key="frame" x="37" y="426" width="301" height="30"/>
+                                <rect key="frame" x="37" y="426" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sliderNewton:" destination="da8-9b-ruC" eventType="valueChanged" id="Fe2-bD-zFj"/>
@@ -276,7 +269,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C2I-tc-PQm">
-                                <rect key="frame" x="37" y="567" width="301" height="30"/>
+                                <rect key="frame" x="37" y="567" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sliderActionFriccion:" destination="da8-9b-ruC" eventType="valueChanged" id="Sfs-cW-zT9"/>
@@ -315,6 +308,28 @@
                                     <segue destination="QJS-aZ-E9F" kind="unwind" unwindAction="unwindSimulacionWithUnwindSegue:" id="eYB-xH-Kec"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="MON-hp-ZKX">
+                                <rect key="frame" x="259" y="501" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderActionAngulo:" destination="da8-9b-ruC" eventType="valueChanged" id="8ah-Ho-c9t"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-V4-HhR">
+                                <rect key="frame" x="286" y="366" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="9u3-iX-aac">
+                                <rect key="frame" x="37" y="501" width="232" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderActionAngulo:" destination="da8-9b-ruC" eventType="valueChanged" id="ejW-hY-emb"/>
+                                    <action selector="sliderActionMasa:" destination="da8-9b-ruC" eventType="valueChanged" id="u3e-hI-8Jw"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Wdz-Gg-AaP"/>
@@ -322,14 +337,16 @@
                     <connections>
                         <outlet property="imgFoto" destination="him-mY-OWA" id="vBo-Ut-qS0"/>
                         <outlet property="lbAceleracion" destination="wmS-os-3hF" id="Lk9-aJ-Zr2"/>
+                        <outlet property="lbAngulo" destination="2bg-V4-HhR" id="6l9-mn-jQs"/>
                         <outlet property="lbFriccion" destination="EAB-0k-cO6" id="82i-3q-zrG"/>
                         <outlet property="lbFuerzaFriccion" destination="oJL-gr-WUi" id="Wzq-2M-W8B"/>
                         <outlet property="lbFuerzaNeta" destination="WZZ-OP-LcO" id="Fwa-oV-7A3"/>
+                        <outlet property="lbMasa" destination="MQd-Rw-eON" id="gWq-iJ-Jgl"/>
                         <outlet property="lbNewtons" destination="TNO-d1-qzT" id="mma-HW-ryQ"/>
-                        <outlet property="lbPeso" destination="MQd-Rw-eON" id="zri-G3-pnJ"/>
+                        <outlet property="sliderAngulo" destination="MON-hp-ZKX" id="Gp4-I6-Dzx"/>
                         <outlet property="sliderFriccion" destination="C2I-tc-PQm" id="vpZ-j2-lO5"/>
+                        <outlet property="sliderMasa" destination="9u3-iX-aac" id="Yd2-He-xLH"/>
                         <outlet property="sliderNewtons" destination="9Hs-un-EEt" id="oC9-U8-hQa"/>
-                        <outlet property="sliderPeso" destination="pmt-b9-WIu" id="2Jt-uW-dZm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttm-Mh-s7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
