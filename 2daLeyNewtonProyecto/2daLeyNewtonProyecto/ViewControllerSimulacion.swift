@@ -10,6 +10,8 @@ import UIKit
 
 class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var imgFoto: UIImageView!
+    
+    @IBOutlet weak var character: UIImageView!
     //Sliders outlets
     @IBOutlet weak var sliderNewtons: UISlider!
     
@@ -40,6 +42,16 @@ class ViewControllerSimulacion: UIViewController {
         lbFuerzaNeta.text = "0"
         lbAceleracion.text = "0"
         lbFuerzaFriccion.text = "0"
+        
+        var imagesNames = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
+        var images = [UIImage]()
+        for i in 0..<imagesNames.count{
+            images.append(UIImage(named: imagesNames[i])!)
+        }
+        character.animationImages = images
+        character.animationDuration = 0.5
+        character.startAnimating()
+        
         // Do any additional setup after loading the view.
     }
     

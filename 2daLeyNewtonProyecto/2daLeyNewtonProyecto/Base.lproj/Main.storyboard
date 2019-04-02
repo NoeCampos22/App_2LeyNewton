@@ -237,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="him-mY-OWA">
-                                <rect key="frame" x="124" y="191" width="143" height="139"/>
+                                <rect key="frame" x="167" y="191" width="143" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-Rw-eON">
@@ -330,11 +330,16 @@
                                     <action selector="sliderActionMasa:" destination="da8-9b-ruC" eventType="valueChanged" id="u3e-hI-8Jw"/>
                                 </connections>
                             </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Iv-TD-6az">
+                                <rect key="frame" x="68" y="202" width="96" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Wdz-Gg-AaP"/>
                     </view>
                     <connections>
+                        <outlet property="character" destination="9Iv-TD-6az" id="RG5-gX-BsR"/>
                         <outlet property="imgFoto" destination="him-mY-OWA" id="vBo-Ut-qS0"/>
                         <outlet property="lbAceleracion" destination="wmS-os-3hF" id="Lk9-aJ-Zr2"/>
                         <outlet property="lbAngulo" destination="2bg-V4-HhR" id="6l9-mn-jQs"/>
@@ -356,6 +361,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple" width="512" height="512"/>
+        <image name="apple" width="16" height="16"/>
     </resources>
 </document>
