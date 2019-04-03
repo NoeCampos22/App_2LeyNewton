@@ -33,6 +33,10 @@ class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var lbFriccion: UILabel!
     
     @IBOutlet weak var lbAngulo: UILabel!
+    
+    var imagesJump = ["Jump (1)","Jump (2)", "Jump (3)", "Jump (4)", "Jump (5)", "Jump (6)", "Jump (7)", "Jump (8)", "Jump (9)", "Jump (10)", "Jump (11)", "Jump (12)", "Jump (13)", "Jump (14)", "Jump (15)"]
+    var imagesWalk = ["Walk (1)","Walk (2)", "Walk (3)", "Walk (4)", "Walk (5)", "Walk (6)", "Walk (7)", "Walk (8)", "Walk (9)", "Walk (10)", "Walk (11)", "Walk (12)", "Walk (13)", "Walk (14)", "Walk (15)"]
+    var imagesRun = ["Run (1)","Run (2)", "Run (3)", "Run (4)", "Run (5)", "Run (6)", "Run (7)", "Run (8)", "Run (9)", "Run (10)", "Run (11)", "Run (12)", "Run (13)", "Run (14)", "Run (15)"]
     override func viewDidLoad() {
         super.viewDidLoad()
         lbNewtons.text = "0"
@@ -42,11 +46,11 @@ class ViewControllerSimulacion: UIViewController {
         lbFuerzaNeta.text = "0"
         lbAceleracion.text = "0"
         lbFuerzaFriccion.text = "0"
-        
-        var imagesNames = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
+        character.isHidden = true
+        var imagesIdle = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
         var images = [UIImage]()
-        for i in 0..<imagesNames.count{
-            images.append(UIImage(named: imagesNames[i])!)
+        for i in 0..<imagesIdle.count{
+            images.append(UIImage(named: imagesIdle[i])!)
         }
         character.animationImages = images
         character.animationDuration = 0.5
@@ -61,17 +65,74 @@ class ViewControllerSimulacion: UIViewController {
     //9.8*peso
     //Fn = 9.81 * peso
     //Fuerza neta = Fuerza aplicada - Fn*friccion
-    
+    func moveRight(image: UIImageView){
+        image.center.x += 300
+    }
+    func moveLeft(image: UIImageView){
+        image.center.x -= 300
+    }
+    //Mediante este slider dependiendo si los newtons son menores o mayores a 0:
+    //1.- El personaje aparecera ya sea en el lado derecho o izquierdo de la pantalla
+    //2.-Dependiendo la fuerza aplicada el personaje empezará a empujar el objeto de en medio y cambiarán los valores de los calculos
+
     @IBAction func sliderNewton(_ sender: UISlider) {
         lbNewtons.text = String(Int(sender.value))
-  
+        if sender.value > 0{
+            character.frame = CGRect(x: 12.0, y: 150.0, width: 100.0, height: 250.0)
+            character.transform = CGAffineTransform(scaleX: 1, y: 1)
+            character.isHidden = false
+            if sender.value < 250 && sender.value > 0 {
+                var images = [UIImage]()
+                for i in 0..<imagesWalk.count{
+                    images.append(UIImage(named: imagesWalk[i])!)
+                }
+                character.animationImages = images
+                character.animationDuration = 0.5
+                character.startAnimating()
+          
+            }
+            if sender.value < 500 && sender.value > 251 {
+                var images = [UIImage]()
+                for i in 0..<imagesRun.count{
+                    images.append(UIImage(named: imagesRun[i])!)
+                }
+                character.animationImages = images
+                character.animationDuration = 0.5
+                character.startAnimating()
+            }
+        
+        if sender.value < 0 {
+            character.frame = CGRect(x: 270.0, y: 150.0, width: 100.0, height: 250.0)
+            character.transform = CGAffineTransform(scaleX: -1, y: 1)
+            character.isHidden = false
+            if sender.value > -250 && sender.value < 0 {
+                var images = [UIImage]()
+                for i in 0..<imagesWalk.count{
+                    images.append(UIImage(named: imagesWalk[i])!)
+                }
+                character.animationImages = images
+                character.animationDuration = 0.5
+                character.startAnimating()
+            }
+            if sender.value > -500 && sender.value < -251 {
+                var images = [UIImage]()
+                for i in 0..<imagesRun.count{
+                    images.append(UIImage(named: imagesRun[i])!)
+                }
+                character.animationImages = images
+                character.animationDuration = 0.5
+                character.startAnimating()
+            }
+        }
     }
+        }
+
     //Tomamos valor para calculos y animación para los
-    
-    
-    
     @IBAction func sliderActionMasa(_ sender: UISlider) {
         lbMasa.text = String(Int(sender.value))
+        if sender.value > 50 && sender.value < 100{
+            imgFoto.image = UIImage(named: "orange")
+        }
     }
     
     @IBAction func sliderActionAngulo(_ sender: UISlider) {
