@@ -14,23 +14,27 @@ class ViewControllerPreguntas: UIViewController {
     @IBOutlet weak var lbPregunta: UILabel!
     @IBOutlet weak var tfRespuesta: UITextField!
     
+    var relativeFontConstant: CGFloat = 0.03
+    
     var problema: Problema!
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lbPregunta.font = lbPregunta.font.withSize(self.view.frame.height * relativeFontConstant)
+        
         problema = Problema(tipo: Int.random(in: 0 ... 2))
         lbPregunta.text = problema.sTexto!
-        print(problema.dFNeta)
-        print(problema.dAceleracion)
+        print(problema.dRespuesta)
     }
     
     
     @IBAction func comprobarRespuesta(_ sender: Any) {
         if (Double(tfRespuesta.text!) == problema.dRespuesta){
-            print("Surve")
+            lbPregunta.text = "Correcto!"
         }
     }
     
@@ -42,6 +46,7 @@ class ViewControllerPreguntas: UIViewController {
     
     
     @IBAction func siguienteProblema(_ sender: Any) {
+        viewDidLoad()
     }
     
 
