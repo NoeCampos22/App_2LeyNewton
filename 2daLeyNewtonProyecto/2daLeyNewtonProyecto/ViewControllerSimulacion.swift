@@ -15,6 +15,8 @@ class ViewControllerSimulacion: UIViewController {
     //Sliders outlets
     @IBOutlet weak var sliderNewtons: UISlider!
     
+    
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var sliderAngulo: UISlider!{
         didSet{
             sliderAngulo.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
@@ -39,6 +41,7 @@ class ViewControllerSimulacion: UIViewController {
     var imagesRun = ["Run (1)","Run (2)", "Run (3)", "Run (4)", "Run (5)", "Run (6)", "Run (7)", "Run (8)", "Run (9)", "Run (10)", "Run (11)", "Run (12)", "Run (13)", "Run (14)", "Run (15)"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        background.loadGif(name: "back")
         lbNewtons.text = "0"
         lbMasa.text = "0"
         lbFriccion.text = "0"
@@ -78,7 +81,7 @@ class ViewControllerSimulacion: UIViewController {
     @IBAction func sliderNewton(_ sender: UISlider) {
         lbNewtons.text = String(Int(sender.value))
         if sender.value > 0{
-            character.frame = CGRect(x: 12.0, y: 150.0, width: 100.0, height: 250.0)
+            character.frame = CGRect(x: 80.0, y: 150.0, width: 100.0, height: 250.0)
             character.transform = CGAffineTransform(scaleX: 1, y: 1)
             character.isHidden = false
             if sender.value < 250 && sender.value > 0 {
@@ -100,9 +103,10 @@ class ViewControllerSimulacion: UIViewController {
                 character.animationDuration = 0.5
                 character.startAnimating()
             }
-        
+        }
+
         if sender.value < 0 {
-            character.frame = CGRect(x: 270.0, y: 150.0, width: 100.0, height: 250.0)
+            character.frame = CGRect(x: 200.0, y: 150.0, width: 100.0, height: 250.0)
             character.transform = CGAffineTransform(scaleX: -1, y: 1)
             character.isHidden = false
             if sender.value > -250 && sender.value < 0 {
@@ -125,7 +129,7 @@ class ViewControllerSimulacion: UIViewController {
             }
         }
     }
-        }
+    
 
     //Tomamos valor para calculos y animación para los
     @IBAction func sliderActionMasa(_ sender: UISlider) {

@@ -334,11 +334,16 @@
                                 <rect key="frame" x="118" y="203" width="139" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gq1-1Z-jOf">
+                                <rect key="frame" x="0.0" y="185" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Wdz-Gg-AaP"/>
                     </view>
                     <connections>
+                        <outlet property="background" destination="gq1-1Z-jOf" id="cIB-Ta-Gc6"/>
                         <outlet property="character" destination="9Iv-TD-6az" id="RG5-gX-BsR"/>
                         <outlet property="imgFoto" destination="him-mY-OWA" id="vBo-Ut-qS0"/>
                         <outlet property="lbAceleracion" destination="wmS-os-3hF" id="Lk9-aJ-Zr2"/>
