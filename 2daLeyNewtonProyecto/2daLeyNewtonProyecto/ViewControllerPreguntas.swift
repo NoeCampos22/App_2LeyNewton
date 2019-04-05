@@ -12,9 +12,12 @@ class ViewControllerPreguntas: UIViewController {
     
     
     @IBOutlet weak var lbPregunta: UILabel!
+    
+    
+    
+    
     @IBOutlet weak var tfRespuesta: UITextField!
     @IBOutlet weak var imgImage: UIImageView!
-    @IBOutlet weak var btOption: UIButton!
     
     var relativeFontConstant: CGFloat = 0.04
     var errorCase: Bool!
@@ -36,6 +39,8 @@ class ViewControllerPreguntas: UIViewController {
         // Ajustar el tamaño del texto con respecto al tamaño de la altura del label
         lbPregunta.font = lbPregunta.font.withSize(self.view.frame.height * relativeFontConstant)
         
+
+        
         // Obtener un tipo de problema
         problema = Problema(tipo: Int.random(in: 0 ... 2))
         // Muestra el texto del problema
@@ -43,7 +48,7 @@ class ViewControllerPreguntas: UIViewController {
         print(problema.dRespuesta)
     }
     
-    
+    // Revisar que la respuesa escrita sea correcta
     @IBAction func comprobarRespuesta(_ sender: Any) {
 
         // Revisa que el usuario no este con el texto
@@ -68,7 +73,7 @@ class ViewControllerPreguntas: UIViewController {
                 imgImage.image = UIImage(named: "Incorrecta")
                 
                 // Cambiar texto de boton
-                btOption.titleLabel?.text = "Volver a Intentar"
+                //btOption.titleLabel?.text = "Volver a Intentar"
             }
             
             // Muestra la imagen
@@ -91,8 +96,14 @@ class ViewControllerPreguntas: UIViewController {
     
     
     
+    // Cambiar de problema
     @IBAction func siguienteProblema(_ sender: Any) {
         viewDidLoad()
+    }
+    
+    // Para quitar el teclado de la pantalla
+    @IBAction func quitarTeclado(){
+        view.endEditing(true);
     }
     
 

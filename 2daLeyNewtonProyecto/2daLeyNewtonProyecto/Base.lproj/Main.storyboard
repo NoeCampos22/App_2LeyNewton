@@ -72,121 +72,151 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4n-1R-kPG">
-                                <rect key="frame" x="16" y="91" width="343" height="240"/>
+                                <rect key="frame" x="16" y="92" width="343" height="283"/>
                                 <color key="backgroundColor" red="0.90179590180000002" green="0.78493441850000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa Respuesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-Ng-QLx">
-                                <rect key="frame" x="83" y="339" width="209" height="52"/>
+                                <rect key="frame" x="80" y="383" width="215" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="6ty-DC-e6p"/>
+                                    <constraint firstAttribute="height" constant="29" id="maM-qk-7co"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a4-l3-fHU">
-                                <rect key="frame" x="16" y="476" width="150" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Ewc-Zo-4ve"/>
-                                    <constraint firstAttribute="height" constant="50" id="aaP-XG-f5h"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="19"/>
-                                <state key="normal" title="Comprobar"/>
-                                <connections>
-                                    <action selector="comprobarRespuesta:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="oc0-OU-HWm"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preguntas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-EN-wGa">
-                                <rect key="frame" x="120" y="50" width="135" height="33"/>
+                                <rect key="frame" x="120" y="50" width="135" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="VLu-Hy-HEk"/>
+                                    <constraint firstAttribute="height" constant="35" id="HtY-4B-4LS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-Jh-rkf">
-                                <rect key="frame" x="91" y="399" width="193" height="30"/>
+                                <rect key="frame" x="90" y="417" width="188" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="TpB-Bb-o9z"/>
+                                    <constraint firstAttribute="height" constant="30" id="60d-mg-4gS"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbw-Zp-AKq">
-                                <rect key="frame" x="209" y="571" width="150" height="50"/>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="19"/>
-                                <state key="normal" title="Siguiente"/>
-                                <connections>
-                                    <action selector="siguienteProblema:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="ZQg-k2-kWa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDO-6Y-93T">
-                                <rect key="frame" x="209" y="476" width="150" height="50"/>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
-                                <state key="normal" title="Ver Formula"/>
-                                <connections>
-                                    <action selector="opcionEspecial:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="3WD-QB-qbq"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-CM-fcu">
-                                <rect key="frame" x="39" y="101" width="296" height="221"/>
+                                <rect key="frame" x="39" y="117" width="297" height="221"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nv-YY-Ia7">
-                                <rect key="frame" x="16" y="571" width="150" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC3-TN-szO">
+                                <rect key="frame" x="20" y="494" width="140" height="50"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="25"/>
+                                <state key="normal" title="Revisar" backgroundImage="orange">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40a-OB-8dW">
+                                <rect key="frame" x="215" y="494" width="140" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="vkA-CV-KGU"/>
+                                    <constraint firstAttribute="height" constant="50" id="dnp-78-ICV"/>
+                                    <constraint firstAttribute="width" constant="140" id="x2j-52-xqQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="19"/>
-                                <state key="normal" title="Regresar"/>
+                                <state key="normal" backgroundImage="orange">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Formula">
+                                            <attributes>
+                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="25" name="EuphemiaUCAS-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="On4-YB-Zj2">
+                                <rect key="frame" x="20" y="582" width="140" height="50"/>
+                                <state key="normal" backgroundImage="orange">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Regresar">
+                                            <attributes>
+                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="25" name="EuphemiaUCAS-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
-                                    <segue destination="TrE-K8-G2b" kind="unwind" unwindAction="unwindPreguntasWithUnwindSegue:" id="lWw-i5-j4e"/>
+                                    <segue destination="TrE-K8-G2b" kind="unwind" unwindAction="unwindPreguntasWithUnwindSegue:" id="jv7-TO-pRA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-uC-v6e">
+                                <rect key="frame" x="215" y="582" width="140" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Nqu-i3-l8G"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZIC-2b-iDH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="orange">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Siguiente">
+                                            <attributes>
+                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="25" name="EuphemiaUCAS-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="siguienteProblema:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="oBv-t3-2sb"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="WsK-CM-fcu" secondAttribute="trailing" constant="24" id="1bv-pF-qsp"/>
-                            <constraint firstItem="gAS-Jh-rkf" firstAttribute="top" secondItem="eHs-Ng-QLx" secondAttribute="bottom" constant="8" symbolic="YES" id="226-2o-uP7"/>
-                            <constraint firstItem="gAS-Jh-rkf" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="91" id="7Pw-Hr-BOr"/>
-                            <constraint firstItem="rbw-Zp-AKq" firstAttribute="top" secondItem="FDO-6Y-93T" secondAttribute="bottom" constant="45" id="7kX-mh-lV2"/>
-                            <constraint firstItem="VLr-G8-mQj" firstAttribute="bottom" secondItem="5nv-YY-Ia7" secondAttribute="bottom" constant="46" id="A9h-bU-4id"/>
-                            <constraint firstItem="6a4-l3-fHU" firstAttribute="top" secondItem="FDO-6Y-93T" secondAttribute="top" id="B3P-pY-8xg"/>
-                            <constraint firstItem="6a4-l3-fHU" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="16" id="CLK-0V-k0X"/>
-                            <constraint firstItem="6a4-l3-fHU" firstAttribute="centerX" secondItem="5nv-YY-Ia7" secondAttribute="centerX" id="EDY-0Y-ye8"/>
-                            <constraint firstItem="5nv-YY-Ia7" firstAttribute="centerY" secondItem="rbw-Zp-AKq" secondAttribute="centerY" id="Fuf-lM-lX9"/>
-                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="83" id="HXG-PU-TWe"/>
-                            <constraint firstItem="c4n-1R-kPG" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="8" symbolic="YES" id="IEl-S3-jiU"/>
-                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="120" id="JkG-Ym-B3e"/>
-                            <constraint firstItem="5nv-YY-Ia7" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="16" id="KJL-Jm-NaJ"/>
-                            <constraint firstItem="FDO-6Y-93T" firstAttribute="centerX" secondItem="rbw-Zp-AKq" secondAttribute="centerX" id="Oo3-GJ-xjJ"/>
-                            <constraint firstItem="c4n-1R-kPG" firstAttribute="centerX" secondItem="eHs-Ng-QLx" secondAttribute="centerX" id="PzX-yd-k5W"/>
-                            <constraint firstItem="c4n-1R-kPG" firstAttribute="leading" secondItem="ZyL-if-7o1" secondAttribute="leadingMargin" id="RDt-tc-yP3"/>
-                            <constraint firstItem="WsK-CM-fcu" firstAttribute="top" secondItem="ZyL-if-7o1" secondAttribute="topMargin" constant="81" id="UQs-RW-LwX"/>
-                            <constraint firstItem="5nv-YY-Ia7" firstAttribute="top" secondItem="6a4-l3-fHU" secondAttribute="bottom" constant="45" id="WH8-7q-gHs"/>
-                            <constraint firstItem="FDO-6Y-93T" firstAttribute="leading" secondItem="6a4-l3-fHU" secondAttribute="trailing" constant="43" id="WS0-Sm-gls"/>
-                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="FDO-6Y-93T" secondAttribute="trailing" constant="16" id="XSR-Hd-fKT"/>
-                            <constraint firstItem="c4n-1R-kPG" firstAttribute="trailing" secondItem="ZyL-if-7o1" secondAttribute="trailingMargin" id="Y4e-X8-22h"/>
-                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="centerX" secondItem="c4n-1R-kPG" secondAttribute="centerX" id="Zss-fj-4em"/>
-                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="top" secondItem="c4n-1R-kPG" secondAttribute="bottom" constant="8" symbolic="YES" id="ac1-pj-kAX"/>
-                            <constraint firstItem="6a4-l3-fHU" firstAttribute="top" secondItem="gAS-Jh-rkf" secondAttribute="bottom" constant="47" id="cJB-jK-900"/>
-                            <constraint firstItem="gAS-Jh-rkf" firstAttribute="centerX" secondItem="ZyL-if-7o1" secondAttribute="centerX" id="dZd-o8-1pj"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="WsK-CM-fcu" secondAttribute="bottom" constant="345" id="gYG-mQ-7gl"/>
-                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="centerX" secondItem="gAS-Jh-rkf" secondAttribute="centerX" id="kAq-sc-JgN"/>
-                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="top" secondItem="VLr-G8-mQj" secondAttribute="top" constant="30" id="mi9-uP-G9O"/>
-                            <constraint firstItem="VLr-G8-mQj" firstAttribute="bottom" secondItem="rbw-Zp-AKq" secondAttribute="bottom" constant="46" id="nln-kh-isY"/>
-                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="centerX" secondItem="ZyL-if-7o1" secondAttribute="centerX" id="o84-Gy-7EP"/>
-                            <constraint firstItem="WsK-CM-fcu" firstAttribute="leading" secondItem="ZyL-if-7o1" secondAttribute="leadingMargin" constant="23" id="tzA-jC-6LT"/>
-                            <constraint firstItem="rbw-Zp-AKq" firstAttribute="leading" secondItem="5nv-YY-Ia7" secondAttribute="trailing" constant="43" id="xHH-gx-y0k"/>
+                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="120" id="2bM-aS-dnR"/>
+                            <constraint firstItem="40a-OB-8dW" firstAttribute="height" secondItem="oC3-TN-szO" secondAttribute="height" id="2wh-jm-kAs"/>
+                            <constraint firstItem="On4-YB-Zj2" firstAttribute="height" secondItem="oC3-TN-szO" secondAttribute="height" id="4hP-WJ-mkL"/>
+                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="centerX" secondItem="WsK-CM-fcu" secondAttribute="centerX" id="8aI-Nv-mQF"/>
+                            <constraint firstItem="gAS-Jh-rkf" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="90" id="CqQ-8x-Kdj"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="40a-OB-8dW" secondAttribute="trailing" constant="20" id="IOt-s0-MGO"/>
+                            <constraint firstItem="oC3-TN-szO" firstAttribute="top" secondItem="gAS-Jh-rkf" secondAttribute="bottom" constant="47" id="IPS-eN-q41"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="lvM-uC-v6e" secondAttribute="trailing" constant="20" id="J3a-I0-zwE"/>
+                            <constraint firstItem="WsK-CM-fcu" firstAttribute="centerX" secondItem="eHs-Ng-QLx" secondAttribute="centerX" id="JVv-JC-IVJ"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="bottom" secondItem="On4-YB-Zj2" secondAttribute="bottom" constant="35" id="Lb9-Jy-yX2"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="WsK-CM-fcu" secondAttribute="trailing" constant="39" id="Tej-PA-oVJ"/>
+                            <constraint firstItem="On4-YB-Zj2" firstAttribute="top" secondItem="oC3-TN-szO" secondAttribute="bottom" constant="38" id="Wdy-Cc-gdW"/>
+                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="top" secondItem="c4n-1R-kPG" secondAttribute="bottom" constant="8" symbolic="YES" id="Wk7-f5-p9w"/>
+                            <constraint firstItem="c4n-1R-kPG" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="7" id="YQL-Tf-aFg"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="gAS-Jh-rkf" secondAttribute="trailing" constant="97" id="Zdz-9J-SUI"/>
+                            <constraint firstItem="On4-YB-Zj2" firstAttribute="width" secondItem="oC3-TN-szO" secondAttribute="width" id="aOp-TM-9cd"/>
+                            <constraint firstItem="c4n-1R-kPG" firstAttribute="centerX" secondItem="WsK-CM-fcu" secondAttribute="centerX" id="bKZ-C9-C5D"/>
+                            <constraint firstItem="WsK-CM-fcu" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="39" id="dW9-QB-6uH"/>
+                            <constraint firstItem="40a-OB-8dW" firstAttribute="width" secondItem="oC3-TN-szO" secondAttribute="width" id="ddf-Kv-7mT"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="eHs-Ng-QLx" secondAttribute="trailing" constant="80" id="fCb-Dv-F8X"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="bottom" secondItem="gAS-Jh-rkf" secondAttribute="bottom" constant="220" id="g4C-cZ-Xzh"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="bottom" secondItem="lvM-uC-v6e" secondAttribute="bottom" constant="35" id="iGz-60-0WA"/>
+                            <constraint firstItem="c4n-1R-kPG" firstAttribute="trailing" secondItem="ZyL-if-7o1" secondAttribute="trailingMargin" id="j3v-ca-EDW"/>
+                            <constraint firstItem="On4-YB-Zj2" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="20" id="kMs-4A-JpS"/>
+                            <constraint firstItem="gAS-Jh-rkf" firstAttribute="top" secondItem="eHs-Ng-QLx" secondAttribute="bottom" constant="5" id="mcS-YC-IaI"/>
+                            <constraint firstItem="c4n-1R-kPG" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="16" id="ru5-zs-Q4E"/>
+                            <constraint firstItem="WsK-CM-fcu" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="32" id="slC-Nz-nji"/>
+                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="80" id="uLj-vF-gL5"/>
+                            <constraint firstItem="lvM-uC-v6e" firstAttribute="top" secondItem="40a-OB-8dW" secondAttribute="bottom" constant="38" id="uRD-yN-PVi"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="c4n-1R-kPG" secondAttribute="trailing" constant="16" id="uSU-aq-mMq"/>
+                            <constraint firstItem="c4n-1R-kPG" firstAttribute="leading" secondItem="ZyL-if-7o1" secondAttribute="leadingMargin" id="uhM-lE-wdv"/>
+                            <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="Ydb-EN-wGa" secondAttribute="trailing" constant="120" id="x9O-wA-jso"/>
+                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="top" secondItem="WsK-CM-fcu" secondAttribute="bottom" constant="45" id="xcc-sH-4Je"/>
+                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="top" secondItem="VLr-G8-mQj" secondAttribute="top" constant="30" id="z6H-0g-FkN"/>
+                            <constraint firstItem="oC3-TN-szO" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="20" id="zLG-t5-zDq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VLr-G8-mQj"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="AWH-sd-r6l" appends="YES" id="Eo8-1J-B4Z"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="btOption" destination="FDO-6Y-93T" id="XoC-Pl-gOX"/>
                         <outlet property="imgImage" destination="WsK-CM-fcu" id="FbA-mc-eoc"/>
                         <outlet property="lbPregunta" destination="c4n-1R-kPG" id="ev2-nU-x31"/>
                         <outlet property="tfRespuesta" destination="gAS-Jh-rkf" id="Zd5-qv-6pR"/>
@@ -194,6 +224,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZr-61-ZKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TrE-K8-G2b" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="AWH-sd-r6l">
+                    <connections>
+                        <action selector="quitarTeclado" destination="HYU-6L-Ffp" id="OP8-Z9-fvp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="708" y="550.07496251874068"/>
         </scene>
@@ -365,5 +400,6 @@
     </scenes>
     <resources>
         <image name="apple" width="512" height="512"/>
+        <image name="orange" width="1200" height="1200"/>
     </resources>
 </document>
