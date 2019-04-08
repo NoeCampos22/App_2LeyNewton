@@ -15,6 +15,7 @@ class ViewControllerSimulacion: UIViewController {
     //Sliders outlets
     @IBOutlet weak var sliderNewtons: UISlider!
     
+    @IBOutlet weak var imgBack: UIImageView!
     
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var sliderAngulo: UISlider!{
@@ -81,7 +82,8 @@ class ViewControllerSimulacion: UIViewController {
     @IBAction func sliderNewton(_ sender: UISlider) {
         lbNewtons.text = String(Int(sender.value))
         if sender.value > 0{
-            character.frame = CGRect(x: 80.0, y: 150.0, width: 100.0, height: 250.0)
+         imgBack.transform = CGAffineTransform(scaleX: 1, y: 1)
+            character.frame = CGRect(x: 100.0, y: 150.0, width: 100.0, height: 250.0)
             character.transform = CGAffineTransform(scaleX: 1, y: 1)
             character.isHidden = false
             if sender.value < 250 && sender.value > 0 {
@@ -106,7 +108,8 @@ class ViewControllerSimulacion: UIViewController {
         }
 
         if sender.value < 0 {
-            character.frame = CGRect(x: 200.0, y: 150.0, width: 100.0, height: 250.0)
+               imgBack.transform = CGAffineTransform(scaleX: -1, y: 1)
+            character.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
             character.transform = CGAffineTransform(scaleX: -1, y: 1)
             character.isHidden = false
             if sender.value > -250 && sender.value < 0 {
@@ -134,8 +137,14 @@ class ViewControllerSimulacion: UIViewController {
     //Tomamos valor para calculos y animación para los
     @IBAction func sliderActionMasa(_ sender: UISlider) {
         lbMasa.text = String(Int(sender.value))
+        if sender.value > 0 && sender.value < 49{
+            imgFoto.image = UIImage(named: "apple")
+        }
         if sender.value > 50 && sender.value < 100{
             imgFoto.image = UIImage(named: "orange")
+        }
+        if sender.value > 101 && sender.value < 200{
+            imgFoto.image = UIImage(named: "watermelon")
         }
     }
     
