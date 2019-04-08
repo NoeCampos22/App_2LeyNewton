@@ -17,11 +17,10 @@ class Problema: NSObject {
     var dFNeta: Int!
     var dAceleracion: Double!
     var dRespuesta: Double!
+    var imgFormula: UIImage!
     
     init(tipo: Int) {
         super.init()
-        
-        self.definirTexto(tipo: tipo)
         
         dMasa = Int.random(in: 40 ..< 380)
         dEmpuje = Int.random(in: -400 ..< 400)
@@ -32,19 +31,27 @@ class Problema: NSObject {
         dAceleracion = Double(dFNeta) / Double(dMasa)
         dAceleracion = Double(round( 1000 * dAceleracion ) / 1000)
         
-        sustituirTags()
+        definirProblema(tipo: tipo)
         
-        dRespuesta = dAceleracion
+        sustituirTags()
     }
     
-    func definirTexto(tipo: Int){
+    func definirProblema(tipo: Int){
         switch tipo {
         case 1:
             sTexto = "Un objecto con una masa de <m>kg es empujado hacia la derecha con una fuerza de <e>N, mientras que la fuerza de friccion es de <f>N. Calcula la aceleración."
+            imgFormula = UIImage(named: "Formula_Aceleracion")
+            dRespuesta = dAceleracion
+            
         case 2:
             sTexto = "Calcula la fuerza neta que se le aplica a un objeto con una masa de <m>kg y con una aceleración de <a>m/s"
+            imgFormula = UIImage(named: "Formula_Fuerza")
+            dRespuesta = Double(dFNeta)
+            
         default:
             sTexto = "Calcula la masa de un objeto al que se le aplica una fuerza neta de <f> con una aceleración de <a>m/s"
+            imgFormula = UIImage(named: "Formula_Masa")
+            dRespuesta = Double(dMasa)
         }
     }
     

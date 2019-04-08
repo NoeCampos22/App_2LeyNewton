@@ -9,11 +9,11 @@
 import UIKit
 
 class ViewControllerPreguntas: UIViewController {
-    
-    
     @IBOutlet weak var lbPregunta: UILabel!
     
-    
+    @IBOutlet weak var btOption: UIButton!
+    @IBOutlet weak var btReintentar: UIButton!
+    @IBOutlet weak var btFormula: UIButton!
     
     
     @IBOutlet weak var tfRespuesta: UITextField!
@@ -21,6 +21,7 @@ class ViewControllerPreguntas: UIViewController {
     
     var relativeFontConstant: CGFloat = 0.04
     var errorCase: Bool!
+    var iTipo: Int!
     
     var problema: Problema!
     
@@ -36,17 +37,25 @@ class ViewControllerPreguntas: UIViewController {
         // Se pone que no hay error
         errorCase = false
         
+        // Esconder el boton de reintentar
+        btReintentar.isHidden = true
+        
+        // Mostrar boton
+        btFormula.isHidden = false
+        
         // Ajustar el tamaño del texto con respecto al tamaño de la altura del label
         lbPregunta.font = lbPregunta.font.withSize(self.view.frame.height * relativeFontConstant)
         
-
+        // Obtener el tipo de problema
+        iTipo = Int.random(in: 0 ... 2)
         
         // Obtener un tipo de problema
-        problema = Problema(tipo: Int.random(in: 0 ... 2))
+        problema = Problema(tipo: iTipo)
         // Muestra el texto del problema
         lbPregunta.text = problema.sTexto!
         print(problema.dRespuesta)
     }
+    
     
     // Revisar que la respuesa escrita sea correcta
     @IBAction func comprobarRespuesta(_ sender: Any) {
@@ -72,33 +81,39 @@ class ViewControllerPreguntas: UIViewController {
                 // Asigna la imagen de una flecha azul
                 imgImage.image = UIImage(named: "Incorrecta")
                 
-                // Cambiar texto de boton
-                //btOption.titleLabel?.text = "Volver a Intentar"
+                btReintentar.isHidden = false
+                
+                btFormula.isHidden = true
             }
             
             // Muestra la imagen
             imgImage.isHidden = false
         }
-        
-        
     }
     
     
- 
-    @IBAction func opcionEspecial(_ sender: Any) {
-        
-        if(errorCase == true){
-            imgImage.isHidden = true
-            lbPregunta.isHidden = false
-            errorCase = false
-        }
+    // Para volver a mostrar el problema y reintentar solucionarlo
+    @IBAction func reintentar(_ sender: Any) {
+            imgImage.isHidden = true    // Esconder imagen
+            lbPregunta.isHidden = false // Mostrar texto
+            btReintentar.isHidden = true// Esconder boton
+            btFormula.isHidden = false  // Mostrar boton
+            errorCase = false           // Quitar error
     }
     
     
     
     // Cambiar de problema
     @IBAction func siguienteProblema(_ sender: Any) {
-        viewDidLoad()
+        if(!errorCase){
+            viewDidLoad()
+        }
+    }
+    
+    @IBAction func mostrarFormulas(_ sender: Any) {
+        lbPregunta.isHidden = !lbPregunta.isHidden
+        imgImage.image = problema.imgFormula
+        imgImage.isHidden = !imgImage.isHidden
     }
     
     // Para quitar el teclado de la pantalla
