@@ -81,6 +81,7 @@ class ViewControllerPreguntas: UIViewController {
                 // Asigna la imagen de una flecha azul
                 imgImage.image = UIImage(named: "Incorrecta")
                 
+                //
                 btReintentar.isHidden = false
                 
                 btFormula.isHidden = true
@@ -105,11 +106,14 @@ class ViewControllerPreguntas: UIViewController {
     
     // Cambiar de problema
     @IBAction func siguienteProblema(_ sender: Any) {
+        // Mientras que no este en zona de error
         if(!errorCase){
+            // Mostrar otro problema
             viewDidLoad()
         }
     }
     
+    // Boton para mostrar la imagen de la formula correspondiente
     @IBAction func mostrarFormulas(_ sender: Any) {
         lbPregunta.isHidden = !lbPregunta.isHidden
         imgImage.image = problema.imgFormula
