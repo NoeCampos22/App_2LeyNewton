@@ -9,51 +9,44 @@
 import UIKit
 
 class ViewControllerPreguntas: UIViewController {
-    @IBOutlet weak var lbPregunta: UILabel!
     
+    // Outlets de labels necesarios
+    @IBOutlet weak var lbPregunta: UILabel!
+    @IBOutlet weak var lbTitulo: UILabel!
+    @IBOutlet weak var lbIngresa: UILabel!
+    
+    // Outlets de los botones
     @IBOutlet weak var btOption: UIButton!
     @IBOutlet weak var btReintentar: UIButton!
     @IBOutlet weak var btFormula: UIButton!
     
-    
+    // Outlet del textfield
     @IBOutlet weak var tfRespuesta: UITextField!
     @IBOutlet weak var imgImage: UIImageView!
     
-    var relativeFontConstant: CGFloat = 0.04
-    var errorCase: Bool!
-    var iTipo: Int!
+    // Variables para los tamaños de las font
+    var FontPregunta: CGFloat!
+    var FontLabel: CGFloat!
     
+    // Para ver si ya cometio un error
+    var errorCase: Bool!
+    
+    // Objeto tipo problema
     var problema: Problema!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Esconder la imagen de correcto/incorrecto
-        imgImage.isHidden = true
+        // Ajustar font de los labels
+        ajustarFontSize()
         
-        // Muestra la pregunta
-        lbPregunta.isHidden = false
+        // Mostrar/Ocultar componentes
+        setInicial()
         
-        // Se pone que no hay error
-        errorCase = false
+        // Seleccionar tipo de problema
+        selecProblema()
         
-        // Esconder el boton de reintentar
-        btReintentar.isHidden = true
-        
-        // Mostrar boton
-        btFormula.isHidden = false
-        
-        // Ajustar el tamaño del texto con respecto al tamaño de la altura del label
-        lbPregunta.font = lbPregunta.font.withSize(self.view.frame.height * relativeFontConstant)
-        
-        // Obtener el tipo de problema
-        iTipo = Int.random(in: 0 ... 2)
-        
-        // Obtener un tipo de problema
-        problema = Problema(tipo: iTipo)
-        // Muestra el texto del problema
-        lbPregunta.text = problema.sTexto!
-        print(problema.dRespuesta)
     }
     
     
@@ -81,9 +74,10 @@ class ViewControllerPreguntas: UIViewController {
                 // Asigna la imagen de una flecha azul
                 imgImage.image = UIImage(named: "Incorrecta")
                 
-                //
+                // Mostrar boton de reintentar
                 btReintentar.isHidden = false
                 
+                // Ocultar boton de Formula
                 btFormula.isHidden = true
             }
             
@@ -91,7 +85,6 @@ class ViewControllerPreguntas: UIViewController {
             imgImage.isHidden = false
         }
     }
-    
     
     // Para volver a mostrar el problema y reintentar solucionarlo
     @IBAction func reintentar(_ sender: Any) {
@@ -101,8 +94,6 @@ class ViewControllerPreguntas: UIViewController {
             btFormula.isHidden = false  // Mostrar boton
             errorCase = false           // Quitar error
     }
-    
-    
     
     // Cambiar de problema
     @IBAction func siguienteProblema(_ sender: Any) {
@@ -125,6 +116,63 @@ class ViewControllerPreguntas: UIViewController {
         view.endEditing(true);
     }
     
+    
+    // MARK: - Set Componentes
+    
+    // Funcion para mostrar lo necesario del problema
+    func setInicial(){
+        // Esconder la imagen de correcto/incorrecto
+        imgImage.isHidden = true
+        
+        // Muestra la pregunta
+        lbPregunta.isHidden = false
+        
+        // Esconder el boton de reintentar
+        btReintentar.isHidden = true
+        
+        // Mostrar boton
+        btFormula.isHidden = false
+        
+        // Se pone que no hay error
+        errorCase = false
+    }
+    
+    
+    // MARK: - Ajuste de Fonts
+    
+    // Función para ajustar el FontSize dependiendo del tamaño de la pantalla
+    func ajustarFontSize(){
+        
+        // Calcular el tamaño de font para el problema
+        FontPregunta = (self.view.frame.height * 0.04) / 896.0
+        
+        // Calcular el tamaño de font para los labels
+        FontLabel = (self.view.frame.width * 0.07) / 414.0
+        
+        // Ajustar el tamaño del texto con respecto al tamaño de la altura del label
+        lbPregunta.font = lbPregunta.font.withSize(self.view.frame.height * FontPregunta)
+        
+        // Ajustar font size del label
+        lbTitulo.font = lbTitulo.font.withSize(self.view.frame.width * FontLabel)
+        
+        // Ajustar font size del label
+        lbIngresa.font = lbIngresa.font.withSize(self.view.frame.width * FontLabel)
+    }
+    
+    
+    // MARK: - Problema
+    
+    // Para elegir un problema y mostrarlo
+    func selecProblema(){
+        
+        // Obtener un tipo de problema
+        problema = Problema(tipo: Int.random(in: 0 ... 2))
+        
+        // Muestra el texto del problema
+        lbPregunta.text = problema.sTexto!
+        
+        print(problema.dRespuesta)
+    }
 
     /*
     // MARK: - Navigation
