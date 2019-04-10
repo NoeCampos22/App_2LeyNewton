@@ -118,6 +118,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preguntas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-EN-wGa">
                                 <rect key="frame" x="120" y="50" width="135" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.20392156859999999" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="HtY-4B-4LS"/>
                                 </constraints>
@@ -164,7 +165,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="TrE-K8-G2b" kind="unwind" unwindAction="unwindPreguntasWithUnwindSegue:" id="jv7-TO-pRA"/>
+                                    <segue destination="TrE-K8-G2b" kind="unwind" unwindAction="unwindPreguntasWithUnwindSegue:" id="dGK-RS-vev"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-uC-v6e">
@@ -190,7 +191,9 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa Respuesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-Ng-QLx">
                                 <rect key="frame" x="64" y="402" width="246" height="45"/>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="21"/>
+                                <color key="backgroundColor" red="0.0" green="0.20392156859999999" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -246,7 +249,9 @@
                         <outlet property="btOption" destination="40a-OB-8dW" id="zDN-IE-qYi"/>
                         <outlet property="btReintentar" destination="Br0-cP-yf3" id="Igj-hp-JUn"/>
                         <outlet property="imgImage" destination="WsK-CM-fcu" id="FbA-mc-eoc"/>
+                        <outlet property="lbIngresa" destination="eHs-Ng-QLx" id="LdO-Ek-fh6"/>
                         <outlet property="lbPregunta" destination="c4n-1R-kPG" id="ev2-nU-x31"/>
+                        <outlet property="lbTitulo" destination="Ydb-EN-wGa" id="zLM-V3-KJK"/>
                         <outlet property="tfRespuesta" destination="gAS-Jh-rkf" id="Zd5-qv-6pR"/>
                     </connections>
                 </viewController>
