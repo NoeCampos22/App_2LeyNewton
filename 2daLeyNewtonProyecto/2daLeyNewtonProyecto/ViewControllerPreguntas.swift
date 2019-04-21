@@ -50,6 +50,8 @@ class ViewControllerPreguntas: UIViewController {
     }
     
     
+    
+    
     // Revisar que la respuesa escrita sea correcta
     @IBAction func comprobarRespuesta(_ sender: Any) {
 
