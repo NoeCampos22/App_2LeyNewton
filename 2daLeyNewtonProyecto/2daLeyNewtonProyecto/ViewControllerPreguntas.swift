@@ -28,9 +28,6 @@ class ViewControllerPreguntas: UIViewController {
     var FontPregunta: CGFloat!
     var FontLabel: CGFloat!
     
-    // Para ver si ya cometio un error
-    var errorCase: Bool!
-    
     // Objeto tipo problema
     var problema: Problema!
     
@@ -54,63 +51,76 @@ class ViewControllerPreguntas: UIViewController {
     
     // Revisar que la respuesa escrita sea correcta
     @IBAction func comprobarRespuesta(_ sender: Any) {
-
-        // Revisa que el usuario no este con el texto
-        // escondido
-        if (errorCase == false){
             
-            // Esconde el label
-            lbPregunta.isHidden = true
-            
-            // Si la respuesta es correcta...
-            if (Double(tfRespuesta.text!) == problema.dRespuesta){
-                
-                // Asigna la imagen de una flecha azul
-                imgImage.image = UIImage(named: "Correcto")
-            
-            // En caso de que sea incorrecta
-            }else{
-                // Se activa la bandera error
-                errorCase = true
-                
-                // Asigna la imagen de una flecha azul
-                imgImage.image = UIImage(named: "Incorrecta")
-                
-                // Mostrar boton de reintentar
-                btReintentar.isHidden = false
-                
-                // Ocultar boton de Formula
-                btFormula.isHidden = true
-            }
-            
-            // Muestra la imagen
-            imgImage.isHidden = false
+                // Si la respuesta es correcta...
+                if (Double(tfRespuesta.text!) == problema.dRespuesta){
+                    
+                    // Asigna la imagen de una flecha azul
+                    imgImage.image = UIImage(named: "Correcto")
+                    
+                    // Se oculta la pregunta
+                    self.lbPregunta.fadeOut(completion:{
+                        (finished: Bool) -> Void in
+                        // Se muestra la formula
+                        self.imgImage.fadeIn()
+                        // Esperar dos segundos
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                            // Ocultar la imagen
+                            self.imgImage.fadeOut()
+                            self.viewDidLoad()
+                        }
+                    })
+                // En caso de que sea incorrecta
+                }else{
+                    
+                    // Asigna la imagen de una flecha azul
+                    imgImage.image = UIImage(named: "Incorrecta")
+                    
+                    // Se oculta la pregunta
+                    self.lbPregunta.fadeOut(completion:{
+                        (finished: Bool) -> Void in
+                        // Se muestra la formula
+                        self.imgImage.fadeIn()
+                        
+                        // Esperar 2 segundos
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                            // Esconder la imagen
+                            self.imgImage.fadeOut()
+                            // Mostrar la pregunta
+                            self.lbPregunta.fadeIn()
+                        }
+                    })
         }
-    }
-    
-    // Para volver a mostrar el problema y reintentar solucionarlo
-    @IBAction func reintentar(_ sender: Any) {
-            imgImage.isHidden = true    // Esconder imagen
-            lbPregunta.isHidden = false // Mostrar texto
-            btReintentar.isHidden = true// Esconder boton
-            btFormula.isHidden = false  // Mostrar boton
-            errorCase = false           // Quitar error
     }
     
     // Cambiar de problema
     @IBAction func siguienteProblema(_ sender: Any) {
-        // Mientras que no este en zona de error
-        if(!errorCase){
             // Mostrar otro problema
             viewDidLoad()
-        }
     }
     
     // Boton para mostrar la imagen de la formula correspondiente
     @IBAction func mostrarFormulas(_ sender: Any) {
-        lbPregunta.isHidden = !lbPregunta.isHidden
-        imgImage.image = problema.imgFormula
-        imgImage.isHidden = !imgImage.isHidden
+        // Se guarda la imagen de la formula
+        imgImage.image = problema.imgFormula!
+        
+        // Si la pregunta se muestra
+        if(lbPregunta.alpha == 1.0){
+            // Se oculta y
+            self.lbPregunta.fadeOut(completion:{
+                (finished: Bool) -> Void in
+                // Se muestra la formula
+                self.imgImage.fadeIn()
+            })
+        // Si la formula es la que se muestra...
+        }else{
+            // Se oculta y
+            self.imgImage.fadeOut(completion:{
+                (finished: Bool) -> Void in
+                // Se muestra la pregunta
+                self.lbPregunta.fadeIn()
+            })
+        }
     }
     
     // Para quitar el teclado de la pantalla
@@ -124,19 +134,13 @@ class ViewControllerPreguntas: UIViewController {
     // Funcion para mostrar lo necesario del problema
     func setInicial(){
         // Esconder la imagen de correcto/incorrecto
-        imgImage.isHidden = true
+        imgImage.alpha = 0.0
         
-        // Muestra la pregunta
-        lbPregunta.isHidden = false
+        // Esconder la pregunta
+        lbPregunta.alpha = 0
         
-        // Esconder el boton de reintentar
-        btReintentar.isHidden = true
-        
-        // Mostrar boton
-        btFormula.isHidden = false
-        
-        // Se pone que no hay error
-        errorCase = false
+        // Para luego mostrarla
+        lbPregunta.fadeIn()
     }
     
     

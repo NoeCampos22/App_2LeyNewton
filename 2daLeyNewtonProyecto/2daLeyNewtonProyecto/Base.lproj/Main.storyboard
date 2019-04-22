@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,23 +71,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Br0-cP-yf3">
-                                <rect key="frame" x="215" y="494" width="140" height="50"/>
-                                <state key="normal" backgroundImage="orange">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Reintentar">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="25" name="EuphemiaUCAS-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="reintentar:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="hr3-Ib-kGU"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40a-OB-8dW">
                                 <rect key="frame" x="215" y="494" width="140" height="50"/>
                                 <constraints>
@@ -206,7 +189,6 @@
                             <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="c4n-1R-kPG" secondAttribute="trailing" constant="16" id="3Pa-b8-X3z"/>
                             <constraint firstItem="On4-YB-Zj2" firstAttribute="height" secondItem="oC3-TN-szO" secondAttribute="height" id="4hP-WJ-mkL"/>
                             <constraint firstItem="gAS-Jh-rkf" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="91" id="9Pd-Nt-JtO"/>
-                            <constraint firstItem="Br0-cP-yf3" firstAttribute="top" secondItem="40a-OB-8dW" secondAttribute="top" id="9eM-wP-71K"/>
                             <constraint firstItem="c4n-1R-kPG" firstAttribute="centerX" secondItem="ZyL-if-7o1" secondAttribute="centerX" id="Aqv-aP-Lnr"/>
                             <constraint firstItem="WsK-CM-fcu" firstAttribute="centerX" secondItem="ZyL-if-7o1" secondAttribute="centerX" id="B9L-qm-eZ1"/>
                             <constraint firstItem="WsK-CM-fcu" firstAttribute="centerY" secondItem="c4n-1R-kPG" secondAttribute="centerY" id="DOV-o2-vQx"/>
@@ -222,20 +204,15 @@
                             <constraint firstItem="On4-YB-Zj2" firstAttribute="top" secondItem="oC3-TN-szO" secondAttribute="bottom" constant="38" id="Wdy-Cc-gdW"/>
                             <constraint firstItem="On4-YB-Zj2" firstAttribute="width" secondItem="oC3-TN-szO" secondAttribute="width" id="aOp-TM-9cd"/>
                             <constraint firstItem="40a-OB-8dW" firstAttribute="width" secondItem="oC3-TN-szO" secondAttribute="width" id="ddf-Kv-7mT"/>
-                            <constraint firstItem="Br0-cP-yf3" firstAttribute="trailing" secondItem="40a-OB-8dW" secondAttribute="trailing" id="eV9-Lj-uln"/>
                             <constraint firstItem="eHs-Ng-QLx" firstAttribute="height" secondItem="Ydb-EN-wGa" secondAttribute="height" id="g0S-VU-22d"/>
                             <constraint firstItem="WsK-CM-fcu" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="39" id="giV-TT-eFs"/>
                             <constraint firstItem="VLr-G8-mQj" firstAttribute="bottom" secondItem="lvM-uC-v6e" secondAttribute="bottom" constant="35" id="iGz-60-0WA"/>
-                            <constraint firstItem="Br0-cP-yf3" firstAttribute="top" secondItem="gAS-Jh-rkf" secondAttribute="bottom" constant="4" id="jxl-FI-PdY"/>
                             <constraint firstItem="On4-YB-Zj2" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="20" id="kMs-4A-JpS"/>
-                            <constraint firstItem="Br0-cP-yf3" firstAttribute="firstBaseline" secondItem="40a-OB-8dW" secondAttribute="baseline" id="ojD-RF-pEz"/>
                             <constraint firstItem="gAS-Jh-rkf" firstAttribute="top" secondItem="eHs-Ng-QLx" secondAttribute="bottom" constant="8" id="pyH-DG-IYf"/>
                             <constraint firstItem="c4n-1R-kPG" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="16" id="trw-mJ-RrG"/>
                             <constraint firstItem="WsK-CM-fcu" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="43" id="uGS-8a-hS0"/>
                             <constraint firstItem="lvM-uC-v6e" firstAttribute="top" secondItem="40a-OB-8dW" secondAttribute="bottom" constant="38" id="uRD-yN-PVi"/>
-                            <constraint firstItem="Br0-cP-yf3" firstAttribute="baseline" secondItem="40a-OB-8dW" secondAttribute="firstBaseline" id="wVB-y2-O2J"/>
                             <constraint firstItem="VLr-G8-mQj" firstAttribute="trailing" secondItem="Ydb-EN-wGa" secondAttribute="trailing" constant="120" id="x9O-wA-jso"/>
-                            <constraint firstItem="Br0-cP-yf3" firstAttribute="leading" secondItem="40a-OB-8dW" secondAttribute="leading" id="xaC-hf-VS0"/>
                             <constraint firstItem="Ydb-EN-wGa" firstAttribute="top" secondItem="VLr-G8-mQj" secondAttribute="top" constant="30" id="z6H-0g-FkN"/>
                             <constraint firstItem="oC3-TN-szO" firstAttribute="leading" secondItem="VLr-G8-mQj" secondAttribute="leading" constant="20" id="zLG-t5-zDq"/>
                         </constraints>
@@ -247,7 +224,6 @@
                     <connections>
                         <outlet property="btFormula" destination="40a-OB-8dW" id="Y81-fR-3tv"/>
                         <outlet property="btOption" destination="40a-OB-8dW" id="zDN-IE-qYi"/>
-                        <outlet property="btReintentar" destination="Br0-cP-yf3" id="Igj-hp-JUn"/>
                         <outlet property="imgImage" destination="WsK-CM-fcu" id="FbA-mc-eoc"/>
                         <outlet property="lbIngresa" destination="eHs-Ng-QLx" id="LdO-Ek-fh6"/>
                         <outlet property="lbPregunta" destination="c4n-1R-kPG" id="ev2-nU-x31"/>
@@ -533,6 +509,6 @@
     </scenes>
     <resources>
         <image name="apple" width="512" height="512"/>
-        <image name="orange" width="1200" height="1200"/>
+        <image name="orange" width="1600" height="1600"/>
     </resources>
 </document>
