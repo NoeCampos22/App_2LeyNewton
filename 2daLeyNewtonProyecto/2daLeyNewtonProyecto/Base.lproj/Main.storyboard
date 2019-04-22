@@ -202,6 +202,7 @@
                             <constraint firstItem="gAS-Jh-rkf" firstAttribute="centerX" secondItem="ZyL-if-7o1" secondAttribute="centerX" id="V2f-dz-pDb"/>
                             <constraint firstItem="c4n-1R-kPG" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="15" id="ViZ-lB-xhl"/>
                             <constraint firstItem="On4-YB-Zj2" firstAttribute="top" secondItem="oC3-TN-szO" secondAttribute="bottom" constant="38" id="Wdy-Cc-gdW"/>
+                            <constraint firstItem="oC3-TN-szO" firstAttribute="top" secondItem="gAS-Jh-rkf" secondAttribute="bottom" constant="4" id="ZM5-r5-otc"/>
                             <constraint firstItem="On4-YB-Zj2" firstAttribute="width" secondItem="oC3-TN-szO" secondAttribute="width" id="aOp-TM-9cd"/>
                             <constraint firstItem="40a-OB-8dW" firstAttribute="width" secondItem="oC3-TN-szO" secondAttribute="width" id="ddf-Kv-7mT"/>
                             <constraint firstItem="eHs-Ng-QLx" firstAttribute="height" secondItem="Ydb-EN-wGa" secondAttribute="height" id="g0S-VU-22d"/>
@@ -328,7 +329,7 @@
                                 </constraints>
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <action selector="sliderNewton:" destination="da8-9b-ruC" eventType="valueChanged" id="Fe2-bD-zFj"/>
+                                    <action selector="empujarObjeto:" destination="da8-9b-ruC" eventType="valueChanged" id="ddF-TS-jaF"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newtons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-Bo-fdV">
@@ -343,15 +344,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C2I-tc-PQm">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="70" minValue="0.0" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="C2I-tc-PQm">
                                 <rect key="frame" x="37" y="567" width="239" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="q37-Rq-sz6"/>
                                 </constraints>
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="sliderActionFriccion:" destination="da8-9b-ruC" eventType="valueChanged" id="Sfs-cW-zT9"/>
-                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fricción" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ1-ia-ApO">
                                 <rect key="frame" x="113" y="538" width="65.5" height="21"/>
@@ -385,9 +383,6 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="MON-hp-ZKX">
                                 <rect key="frame" x="259" y="501" width="162" height="30"/>
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="sliderActionAngulo:" destination="da8-9b-ruC" eventType="valueChanged" id="8ah-Ho-c9t"/>
-                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-V4-HhR">
                                 <rect key="frame" x="286" y="367" width="108" height="21"/>
@@ -401,10 +396,6 @@
                                     <constraint firstAttribute="height" constant="29" id="Ffl-eP-gnf"/>
                                 </constraints>
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="sliderActionAngulo:" destination="da8-9b-ruC" eventType="valueChanged" id="ejW-hY-emb"/>
-                                    <action selector="sliderActionMasa:" destination="da8-9b-ruC" eventType="valueChanged" id="u3e-hI-8Jw"/>
-                                </connections>
                             </slider>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Iv-TD-6az">
                                 <rect key="frame" x="22" y="201" width="96" height="128"/>

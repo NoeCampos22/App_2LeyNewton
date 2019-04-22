@@ -17,7 +17,6 @@ class ViewControllerPreguntas: UIViewController {
     
     // Outlets de los botones
     @IBOutlet weak var btOption: UIButton!
-    @IBOutlet weak var btReintentar: UIButton!
     @IBOutlet weak var btFormula: UIButton!
     
     // Outlet del textfield
@@ -46,9 +45,7 @@ class ViewControllerPreguntas: UIViewController {
         
     }
     
-    
-    
-    
+
     // Revisar que la respuesa escrita sea correcta
     @IBAction func comprobarRespuesta(_ sender: Any) {
             
@@ -88,6 +85,8 @@ class ViewControllerPreguntas: UIViewController {
                             self.imgImage.fadeOut()
                             // Mostrar la pregunta
                             self.lbPregunta.fadeIn()
+                            // Borrar contenido del textfield
+                            self.tfRespuesta.text = ""
                         }
                     })
         }
