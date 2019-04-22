@@ -9,65 +9,44 @@
 import UIKit
 
 class ViewControllerSimulacion: UIViewController {
-    @IBOutlet weak var imgFoto: UIImageView!
     
-    @IBOutlet weak var character: UIImageView!
-    //Sliders outlets
+    // Sliders
     @IBOutlet weak var sliderNewtons: UISlider!
-    
-    @IBOutlet weak var imgBack: UIImageView!
-    
-    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var sliderAngulo: UISlider!{
         didSet{
-            sliderAngulo.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+            sliderAngulo.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi))
         }
     }
-    
-    
     @IBOutlet weak var sliderMasa: UISlider!
     @IBOutlet weak var sliderFriccion: UISlider!
+    
+    // Imagenes
+    @IBOutlet weak var imgFoto: UIImageView!
+    @IBOutlet weak var character: UIImageView!
+    @IBOutlet weak var imgBack: UIImageView!
+    @IBOutlet weak var background: UIImageView!
+    
+    // Labels
     @IBOutlet weak var lbAceleracion: UILabel!
     @IBOutlet weak var lbFuerzaNeta: UILabel!
     @IBOutlet weak var lbFuerzaFriccion: UILabel!
-    
-    //S
     @IBOutlet weak var lbNewtons: UILabel!
     @IBOutlet weak var lbMasa: UILabel!
     @IBOutlet weak var lbFriccion: UILabel!
-    
     @IBOutlet weak var lbAngulo: UILabel!
     
+    // Arreglo de asssets
     var imagesJump = ["Jump (1)","Jump (2)", "Jump (3)", "Jump (4)", "Jump (5)", "Jump (6)", "Jump (7)", "Jump (8)", "Jump (9)", "Jump (10)", "Jump (11)", "Jump (12)", "Jump (13)", "Jump (14)", "Jump (15)"]
-    
     var imagesWalk = ["Walk (1)","Walk (2)", "Walk (3)", "Walk (4)", "Walk (5)", "Walk (6)", "Walk (7)", "Walk (8)", "Walk (9)", "Walk (10)", "Walk (11)", "Walk (12)", "Walk (13)", "Walk (14)", "Walk (15)"]
-    
     var imagesRun = ["Run (1)","Run (2)", "Run (3)", "Run (4)", "Run (5)", "Run (6)", "Run (7)", "Run (8)", "Run (9)", "Run (10)", "Run (11)", "Run (12)", "Run (13)", "Run (14)", "Run (15)"]
+    var imagesIdle = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        background.loadGif(name: "back")
-        lbNewtons.text = "0"
-        lbMasa.text = "0"
-        lbFriccion.text = "0"
-        lbAngulo.text = "0"
-        lbFuerzaNeta.text = "0"
-        lbAceleracion.text = "0"
-        lbFuerzaFriccion.text = "0"
-        character.isHidden = true
-        
-        var imagesIdle = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
-        
-        var images = [UIImage]()
-        for i in 0..<imagesIdle.count{
-            images.append(UIImage(named: imagesIdle[i])!)
-        }
-        
-        character.animationImages = images
-        character.animationDuration = 0.5
-        character.startAnimating()
-        
+
+        // Iniciar todo al cargar la pantalla
+        setInicial()
     }
     
     //Se hace la acción de la simulación calculando la aceleración, fricción y fuerza neta
@@ -76,12 +55,6 @@ class ViewControllerSimulacion: UIViewController {
     //9.8*peso
     //Fn = 9.81 * peso
     //Fuerza neta = Fuerza aplicada - Fn*friccion
-    func moveRight(image: UIImageView){
-        image.center.x += 300
-    }
-    func moveLeft(image: UIImageView){
-        image.center.x -= 300
-    }
     
     //Dependiendo si los newtons son positivos, negativos o 0
     //1.- El personaje aparecera ya sea en el lado derecho o izquierdo de la pantalla
@@ -204,5 +177,28 @@ class ViewControllerSimulacion: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Set Inicial
+    // Para poner en 0 los labels e iniciar la animación
+    func setInicial(){
+        background.loadGif(name: "back")
+        lbNewtons.text = "0"
+        lbMasa.text = "0"
+        lbFriccion.text = "0"
+        lbAngulo.text = "0"
+        lbFuerzaNeta.text = "0"
+        lbAceleracion.text = "0"
+        lbFuerzaFriccion.text = "0"
+        character.isHidden = true
+        
+        var images = [UIImage]()
+        for i in 0..<imagesIdle.count{
+            images.append(UIImage(named: imagesIdle[i])!)
+        }
+        
+        character.animationImages = images
+        character.animationDuration = 0.5
+        character.startAnimating()
+    }
 
 }

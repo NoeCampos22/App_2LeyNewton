@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29CD63BB226D591D00C6B912 /* UIViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CD63BA226D591D00C6B912 /* UIViewAnimation.swift */; };
 		FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D02227033B006AE340 /* AppDelegate.swift */; };
 		FB6318D32227033B006AE340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D22227033B006AE340 /* ViewController.swift */; };
 		FB6318D62227033B006AE340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6318D42227033B006AE340 /* Main.storyboard */; };
@@ -17,11 +16,11 @@
 		FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */; };
 		FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */; };
 		FBA5E6962257C14C00FAB105 /* back.gif in Resources */ = {isa = PBXBuildFile; fileRef = FBA5E6952257C14B00FAB105 /* back.gif */; };
+		FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */; };
 		FBB07E23225E7FF2006E0436 /* Problema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB07E22225E7FF2006E0436 /* Problema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29CD63BA226D591D00C6B912 /* UIViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimation.swift; sourceTree = "<group>"; };
 		FB6318CD2227033B006AE340 /* 2daLeyNewtonProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2daLeyNewtonProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6318D02227033B006AE340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6318D22227033B006AE340 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreguntas.swift; sourceTree = "<group>"; };
 		FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		FBA5E6952257C14B00FAB105 /* back.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = back.gif; sourceTree = "<group>"; };
+		FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimation.swift; sourceTree = "<group>"; };
 		FBB07E22225E7FF2006E0436 /* Problema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problema.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,12 +66,12 @@
 		FB6318CF2227033B006AE340 /* 2daLeyNewtonProyecto */ = {
 			isa = PBXGroup;
 			children = (
-				29CD63BA226D591D00C6B912 /* UIViewAnimation.swift */,
 				FBA5E6952257C14B00FAB105 /* back.gif */,
 				FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */,
 				FB6318D02227033B006AE340 /* AppDelegate.swift */,
 				FB6318D22227033B006AE340 /* ViewController.swift */,
 				FB6318D42227033B006AE340 /* Main.storyboard */,
+				FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */,
 				FBB07E22225E7FF2006E0436 /* Problema.swift */,
 				FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */,
 				FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */,
@@ -160,7 +160,7 @@
 				FBB07E23225E7FF2006E0436 /* Problema.swift in Sources */,
 				FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */,
 				FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */,
-				29CD63BB226D591D00C6B912 /* UIViewAnimation.swift in Sources */,
+				FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
