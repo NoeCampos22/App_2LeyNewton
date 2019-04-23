@@ -48,54 +48,62 @@ class ViewControllerPreguntas: UIViewController {
 
     // Revisar que la respuesa escrita sea correcta
     @IBAction func comprobarRespuesta(_ sender: Any) {
-            
-                // Si la respuesta es correcta...
-                if (Double(tfRespuesta.text!) == problema.dRespuesta){
+        
+        // Si la respuesta es correcta...
+        if (Double(tfRespuesta.text!) == problema.dRespuesta){
+            // Asigna la imagen de una flecha azul
+            imgImage.image = UIImage(named: "Correcto")
                     
-                    // Asigna la imagen de una flecha azul
-                    imgImage.image = UIImage(named: "Correcto")
+            // Se oculta la pregunta
+            self.lbPregunta.fadeOut(completion:{
+                (finished: Bool) -> Void in
+                
+                // Se muestra la formula
+                self.imgImage.fadeIn()
+                // Esperar dos segundos
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                    // Ocultar la imagen
+                    self.imgImage.fadeOut()
                     
-                    // Se oculta la pregunta
-                    self.lbPregunta.fadeOut(completion:{
-                        (finished: Bool) -> Void in
-                        // Se muestra la formula
-                        self.imgImage.fadeIn()
-                        // Esperar dos segundos
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
-                            // Ocultar la imagen
-                            self.imgImage.fadeOut()
-                            self.viewDidLoad()
-                        }
-                    })
-                // En caso de que sea incorrecta
-                }else{
+                    // Mostrar/Ocultar componentes
+                    self.setInicial()
                     
-                    // Asigna la imagen de una flecha azul
-                    imgImage.image = UIImage(named: "Incorrecta")
+                    // Seleccionar tipo de problema
+                    self.selecProblema()
+                }
+            })
+        
+        // En caso de que sea incorrecta
+        }else{
+            // Asigna la imagen de una flecha azul
+            imgImage.image = UIImage(named: "Incorrecta")
                     
-                    // Se oculta la pregunta
-                    self.lbPregunta.fadeOut(completion:{
-                        (finished: Bool) -> Void in
-                        // Se muestra la formula
-                        self.imgImage.fadeIn()
+            // Se oculta la pregunta
+            self.lbPregunta.fadeOut(completion:{
+            (finished: Bool) -> Void in
+            // Se muestra la formula
+            self.imgImage.fadeIn()
                         
-                        // Esperar 2 segundos
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                            // Esconder la imagen
-                            self.imgImage.fadeOut()
-                            // Mostrar la pregunta
-                            self.lbPregunta.fadeIn()
-                            // Borrar contenido del textfield
-                            self.tfRespuesta.text = ""
-                        }
-                    })
+            // Esperar 2 segundos
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                // Esconder la imagen
+                self.imgImage.fadeOut()
+                // Mostrar la pregunta
+                self.lbPregunta.fadeIn()
+                // Borrar contenido del textfield
+                self.tfRespuesta.text = ""
+                }
+            })
         }
     }
     
     // Cambiar de problema
     @IBAction func siguienteProblema(_ sender: Any) {
-            // Mostrar otro problema
-            viewDidLoad()
+        // Mostrar/Ocultar componentes
+        setInicial()
+        
+        // Seleccionar tipo de problema
+        selecProblema()
     }
     
     // Boton para mostrar la imagen de la formula correspondiente
