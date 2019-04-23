@@ -37,10 +37,12 @@ class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var lbAngulo: UILabel!
     
     // Arreglo de asssets
-    var imagesJump = ["Jump (1)","Jump (2)", "Jump (3)", "Jump (4)", "Jump (5)", "Jump (6)", "Jump (7)", "Jump (8)", "Jump (9)", "Jump (10)", "Jump (11)", "Jump (12)", "Jump (13)", "Jump (14)", "Jump (15)"]
     var imagesWalk = ["Walk (1)","Walk (2)", "Walk (3)", "Walk (4)", "Walk (5)", "Walk (6)", "Walk (7)", "Walk (8)", "Walk (9)", "Walk (10)", "Walk (11)", "Walk (12)", "Walk (13)", "Walk (14)", "Walk (15)"]
     var imagesRun = ["Run (1)","Run (2)", "Run (3)", "Run (4)", "Run (5)", "Run (6)", "Run (7)", "Run (8)", "Run (9)", "Run (10)", "Run (11)", "Run (12)", "Run (13)", "Run (14)", "Run (15)"]
     var imagesIdle = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
+    
+    // Arreglo para sprites del personaje
+    var imgAnimation = [UIImage]()
     
     // Variables necesarias
     var iEmp: Int!
@@ -66,69 +68,57 @@ class ViewControllerSimulacion: UIViewController {
     //1.- El personaje aparecera ya sea en el lado derecho o izquierdo de la pantalla
     //2.-Dependiendo la fuerza aplicada el personaje empezará a empujar el objeto de en medio y cambiarán los valores de los calculos
     @IBAction func empujarObjeto(_ sender: UISlider) {
-
-        if sender.value > 0{
+        
+        // Revisa la direccion a la que se empuja el objeto
+        // De izquierda a derecha
+        if (sender.value > 0){
             imgBack.transform = CGAffineTransform(scaleX: 1, y: 1)
             character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
             character.transform = CGAffineTransform(scaleX: 1, y: 1)
-            //character.isHidden = false
-            
-            if sender.value < 250 && sender.value > 0 {
-                var images = [UIImage]()
-                
-                for i in 0..<imagesWalk.count{
-                    images.append(UIImage(named: imagesWalk[i])!)
-                }
-                
-                character.animationImages = images
-                character.animationDuration = 0.5
-                character.startAnimating()
-            }
-            
-            if sender.value < 500 && sender.value > 251 {
-                var images = [UIImage]()
-                
-                for i in 0..<imagesRun.count{
-                    images.append(UIImage(named: imagesRun[i])!)
-                }
-                
-                character.animationImages = images
-                character.animationDuration = 0.5
-                character.startAnimating()
-            }
-        }
-
-        if sender.value < 0 {
+        
+        // De derecha a izquierda
+        }else if (sender.value < 0) {
             imgBack.transform = CGAffineTransform(scaleX: -1, y: 1)
             character.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
-            
             character.transform = CGAffineTransform(scaleX: -1, y: 1)
-            character.isHidden = false
-            
-            if sender.value > -250 && sender.value < 0 {
-                var images = [UIImage]()
-                
-                for i in 0..<imagesWalk.count{
-                    images.append(UIImage(named: imagesWalk[i])!)
-                }
-                
-                character.animationImages = images
-                character.animationDuration = 0.5
-                character.startAnimating()
+        }
+        
+        // Borra el arreglo de sprites
+        imgAnimation.removeAll()
+        
+        // Si la masa es 0 o no empuja
+        if(iMasa == 0 || iEmp == 0){
+            // Asigna los sprites de estar quieto
+            for i in 0..<imagesRun.count{
+                imgAnimation.append(UIImage(named: imagesIdle[i])!)
             }
-            
-            if sender.value > -500 && sender.value < -251 {
-                var images = [UIImage]()
+        }else{
+            // Revisa si empuja caminando
+            if (abs(sender.value) < 250 && abs(sender.value) > 0) {
                 
-                for i in 0..<imagesRun.count{
-                    images.append(UIImage(named: imagesRun[i])!)
+                // Llena el arreglo con las imagenes de caminar
+                for i in 0..<imagesWalk.count{
+                    imgAnimation.append(UIImage(named: imagesWalk[i])!)
                 }
                 
-                character.animationImages = images
-                character.animationDuration = 0.5
-                character.startAnimating()
+                // O corriendo
+            }else if (abs(sender.value) < 500 && abs(sender.value) > 251) {
+                
+                // Llena el arreglo con sprites de correr
+                for i in 0..<imagesRun.count{
+                    imgAnimation.append(UIImage(named: imagesRun[i])!)
+                }
             }
         }
+        
+        
+        
+        
+        
+        // Asigan los sprites, duracion y comienzo
+        character.animationImages = imgAnimation
+        character.animationDuration = 0.5
+        character.startAnimating()
     }
     
 
@@ -150,10 +140,26 @@ class ViewControllerSimulacion: UIViewController {
     // Metodo general para actualizar datos de la simulación
     @IBAction func simulacionActiva(_ sender: Any){
         
-        // Se realizan los calculos con los nuevos datos
-        realizarCalculo()
-        // Se muestran los datos
-        actualizarLabels()
+        // Mientras que haya algo que empujar...
+        if(Int(slMasa.value) != 0){
+            // Se realizan los calculos con los nuevos datos
+            realizarCalculo()
+            // Se muestran los datos
+            actualizarLabels()
+            
+        // Si no hay algo que empujar
+        }else{
+            // Todo se pone en 0
+            iEmp = 0
+            iFric = 0
+            iMasa = 0
+            dAcel = 0.0
+            iFNeta = 0
+            
+            // Se actualizan los labels
+            actualizarLabels()
+        }
+
     }
    
     
@@ -170,12 +176,11 @@ class ViewControllerSimulacion: UIViewController {
         background.loadGif(name: "back")
         //character.isHidden = true
         
-        var images = [UIImage]()
         for i in 0..<imagesIdle.count{
-            images.append(UIImage(named: imagesIdle[i])!)
+            imgAnimation.append(UIImage(named: imagesIdle[i])!)
         }
         
-        character.animationImages = images
+        character.animationImages = imgAnimation
         character.animationDuration = 0.5
         character.startAnimating()
         
@@ -200,7 +205,7 @@ class ViewControllerSimulacion: UIViewController {
         
         // Se calcula la fuerza de fricción
         let tFric = Double(slCoefFric.value) * 9.81 * Double(iMasa)
-        print(tFric)
+        
         // Revisa si es mayor la fuerza de Empuje
         if (abs(iEmp) >= Int(tFric)){
             // Se guarda el valor de fricción
@@ -234,5 +239,16 @@ class ViewControllerSimulacion: UIViewController {
         lbAceleracion.text = String(format: "%.2f", dAcel)
     }
     
+    // MARK: - Animacion
+    
+    
+    /*
+     TO-DO List
+     - Cuando la masa sea 0 la animacion sea la inicial (Check)
+     - No anime cuando este la masa en 0
+     - No calcule cuando la masa sea 0 (Check)
+     - Posicion del monito
+     - No se interrumpa la animacion
+     */
     
 }
