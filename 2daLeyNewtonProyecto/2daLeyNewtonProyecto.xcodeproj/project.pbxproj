@@ -14,6 +14,10 @@
 		FB6318DB2227033B006AE340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6318D92227033B006AE340 /* LaunchScreen.storyboard */; };
 		FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */; };
 		FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */; };
+		FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */; };
+		FBA5E6962257C14C00FAB105 /* back.gif in Resources */ = {isa = PBXBuildFile; fileRef = FBA5E6952257C14B00FAB105 /* back.gif */; };
+		FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */; };
+		FBB07E23225E7FF2006E0436 /* Problema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB07E22225E7FF2006E0436 /* Problema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		FB6318DC2227033B006AE340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSimulacion.swift; sourceTree = "<group>"; };
 		FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreguntas.swift; sourceTree = "<group>"; };
+		FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		FBA5E6952257C14B00FAB105 /* back.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = back.gif; sourceTree = "<group>"; };
+		FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimation.swift; sourceTree = "<group>"; };
+		FBB07E22225E7FF2006E0436 /* Problema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problema.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +66,13 @@
 		FB6318CF2227033B006AE340 /* 2daLeyNewtonProyecto */ = {
 			isa = PBXGroup;
 			children = (
+				FBA5E6952257C14B00FAB105 /* back.gif */,
+				FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */,
 				FB6318D02227033B006AE340 /* AppDelegate.swift */,
 				FB6318D22227033B006AE340 /* ViewController.swift */,
 				FB6318D42227033B006AE340 /* Main.storyboard */,
+				FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */,
+				FBB07E22225E7FF2006E0436 /* Problema.swift */,
 				FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */,
 				FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */,
 				FB6318D72227033B006AE340 /* Assets.xcassets */,
@@ -129,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6318DB2227033B006AE340 /* LaunchScreen.storyboard in Resources */,
+				FBA5E6962257C14C00FAB105 /* back.gif in Resources */,
 				FB6318D82227033B006AE340 /* Assets.xcassets in Resources */,
 				FB6318D62227033B006AE340 /* Main.storyboard in Resources */,
 			);
@@ -144,7 +157,10 @@
 				FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */,
 				FB6318D32227033B006AE340 /* ViewController.swift in Sources */,
 				FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */,
+				FBB07E23225E7FF2006E0436 /* Problema.swift in Sources */,
+				FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */,
 				FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */,
+				FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +306,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = 2daLeyNewtonProyecto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +316,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itesm.-daLeyNewtonProyecto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,7 +326,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = 2daLeyNewtonProyecto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,6 +336,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itesm.-daLeyNewtonProyecto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
