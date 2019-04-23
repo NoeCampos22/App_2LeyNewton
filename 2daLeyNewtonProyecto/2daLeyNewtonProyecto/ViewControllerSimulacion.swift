@@ -10,15 +10,16 @@ import UIKit
 
 class ViewControllerSimulacion: UIViewController {
     
+    
     // Sliders
-    @IBOutlet weak var sliderNewtons: UISlider!
-    @IBOutlet weak var sliderAngulo: UISlider!{
+    @IBOutlet weak var slEmpuje: UISlider!
+    @IBOutlet weak var slAngulo: UISlider!{
         didSet{
-            sliderAngulo.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi))
+            slAngulo.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi))
         }
     }
-    @IBOutlet weak var sliderMasa: UISlider!
-    @IBOutlet weak var sliderFriccion: UISlider!
+    @IBOutlet weak var slMasa: UISlider!
+    @IBOutlet weak var slCoefFric: UISlider!
     
     // Imagenes
     @IBOutlet weak var imgFoto: UIImageView!
@@ -30,7 +31,7 @@ class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var lbAceleracion: UILabel!
     @IBOutlet weak var lbFuerzaNeta: UILabel!
     @IBOutlet weak var lbFuerzaFriccion: UILabel!
-    @IBOutlet weak var lbNewtons: UILabel!
+    @IBOutlet weak var lbEmpuje: UILabel!
     @IBOutlet weak var lbMasa: UILabel!
     @IBOutlet weak var lbFriccion: UILabel!
     @IBOutlet weak var lbAngulo: UILabel!
@@ -41,6 +42,18 @@ class ViewControllerSimulacion: UIViewController {
     var imagesRun = ["Run (1)","Run (2)", "Run (3)", "Run (4)", "Run (5)", "Run (6)", "Run (7)", "Run (8)", "Run (9)", "Run (10)", "Run (11)", "Run (12)", "Run (13)", "Run (14)", "Run (15)"]
     var imagesIdle = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
     
+    // Variables necesarias
+    var iEmp: Int!
+    var iFric: Int!
+    var iMasa: Int!
+    var iFNeta: Int!
+    var dAcel: Double!
+    var iCoefFric: Double!
+    
+    var iX: CGFloat!
+    var iY: CGFloat!
+    var iWidth: CGFloat!
+    var iHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,13 +62,6 @@ class ViewControllerSimulacion: UIViewController {
         setInicial()
     }
     
-    //Se hace la acción de la simulación calculando la aceleración, fricción y fuerza neta
-    //FUERZA NETA = MASA*ACELERACION
-    //Aceleracion = Fuerza neta/masa
-    //9.8*peso
-    //Fn = 9.81 * peso
-    //Fuerza neta = Fuerza aplicada - Fn*friccion
-    
     //Dependiendo si los newtons son positivos, negativos o 0
     //1.- El personaje aparecera ya sea en el lado derecho o izquierdo de la pantalla
     //2.-Dependiendo la fuerza aplicada el personaje empezará a empujar el objeto de en medio y cambiarán los valores de los calculos
@@ -63,9 +69,9 @@ class ViewControllerSimulacion: UIViewController {
 
         if sender.value > 0{
             imgBack.transform = CGAffineTransform(scaleX: 1, y: 1)
-            character.frame = CGRect(x: 100.0, y: 150.0, width: 100.0, height: 250.0)
+            character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
             character.transform = CGAffineTransform(scaleX: 1, y: 1)
-            character.isHidden = false
+            //character.isHidden = false
             
             if sender.value < 250 && sender.value > 0 {
                 var images = [UIImage]()
@@ -141,55 +147,28 @@ class ViewControllerSimulacion: UIViewController {
         }
     }
     
-    //Calculos pero todavía no jala bien
-    @IBAction func btIniciarSimulacion(_ sender: UIButton) {
+    // Metodo general para actualizar datos de la simulación
+    @IBAction func simulacionActiva(_ sender: Any){
         
-        let friccion = Double(sliderFriccion.value)
-        let masa = Double(sliderMasa.value)
-        let newtonsAplicados = Double(sliderNewtons.value)
-        let fX = cos(Double(sliderAngulo.value)) * newtonsAplicados
-        let fY = sin(Double(sliderAngulo.value)) * newtonsAplicados
-        let fn = (9.81 * masa) - fY
-        let fr = friccion * fn
-        let fuerzaNeta = fX - fr
-        let acc = (fX - fr) / masa
-        lbFuerzaFriccion.text = String(format: "%.2f", friccion)
-        lbAceleracion.text = String(format: "%.2f", acc)
-        lbFuerzaNeta.text = String(format: "%.2f", fuerzaNeta)
-        
+        // Se realizan los calculos con los nuevos datos
+        realizarCalculo()
+        // Se muestran los datos
+        actualizarLabels()
     }
-    
-    /*  lbFuerzaNeta.text = ""
-     lbAceleracion.text = ""
-     lbFuerzaFriccion.text = ""
-     lbNewtons.text = ""
-     lbPeso.text = ""
-     lbFriccion.text = ""
-     sliderPeso.value = 0.0
-     sliderFriccion.value = 0.0
-     sliderNewtons.value = 0.0*/
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
     
     // MARK: - Set Inicial
+    // Para calcular la posicion inicial del monito
+    func calcularPosicion(){
+        iX = imgFoto.frame.minX - iWidth - 5
+        iY = imgFoto.frame.minY
+    }
+    
     // Para poner en 0 los labels e iniciar la animación
     func setInicial(){
+
         background.loadGif(name: "back")
-        lbNewtons.text = "0"
-        lbMasa.text = "0"
-        lbFriccion.text = "0"
-        lbAngulo.text = "0"
-        lbFuerzaNeta.text = "0"
-        lbAceleracion.text = "0"
-        lbFuerzaFriccion.text = "0"
-        character.isHidden = true
+        //character.isHidden = true
         
         var images = [UIImage]()
         for i in 0..<imagesIdle.count{
@@ -199,6 +178,61 @@ class ViewControllerSimulacion: UIViewController {
         character.animationImages = images
         character.animationDuration = 0.5
         character.startAnimating()
+        
+        // Save the character size
+        iHeight = character.frame.height
+        iWidth = character.frame.width
+        
+        // Calcular la posicion
+        calcularPosicion()
+        
+        // Posicionar al personaje
+        character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
     }
-
+    
+    // MARK: - Calculos
+    
+    // Obtiene los valores de los slider y realiza el calculo
+    func realizarCalculo(){
+        // Obtiene los valroes de Empuje y la Masa
+        iEmp = Int(slEmpuje.value)
+        iMasa = Int(slMasa.value)
+        
+        // Se calcula la fuerza de fricción
+        let tFric = Double(slCoefFric.value) * 9.81 * Double(iMasa)
+        print(tFric)
+        // Revisa si es mayor la fuerza de Empuje
+        if (abs(iEmp) >= Int(tFric)){
+            // Se guarda el valor de fricción
+            iFric =  Int(tFric)
+            
+            // Se calcula la fuerza Normal
+            if(iEmp > 0){
+                iFNeta = iEmp - iFric
+            }else{
+                iFNeta = iEmp + iFric
+            }
+            
+            // En caso de no ser mayor la fuerza de empuje
+        }else{
+            // Se igualan las fuerzas de fricción y de empuje
+            iFric = Int(slEmpuje.value)
+            // Fuerza neta igual a 0
+            iFNeta = 0
+        }
+        
+        // Se calcula la Aceleración
+        dAcel = Double(iFNeta) / Double(iMasa)
+    }
+    
+    // Se actualizan los labels correspondientes
+    func actualizarLabels(){
+        lbEmpuje.text = String(iEmp)
+        lbMasa.text = String(iMasa)
+        lbFuerzaFriccion.text = String(iFric)
+        lbFuerzaNeta.text = String(iFNeta)
+        lbAceleracion.text = String(format: "%.2f", dAcel)
+    }
+    
+    
 }

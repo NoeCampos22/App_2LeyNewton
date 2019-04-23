@@ -276,7 +276,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmS-os-3hF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmS-os-3hF">
                                 <rect key="frame" x="217" y="104" width="94" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="NwT-pb-v0y"/>
@@ -307,7 +307,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZZ-OP-LcO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZZ-OP-LcO">
                                 <rect key="frame" x="209" y="156" width="81" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="gxR-DM-tzd"/>
@@ -316,7 +316,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-Rw-eON">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-Rw-eON">
                                 <rect key="frame" x="208" y="472" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -330,6 +330,7 @@
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="empujarObjeto:" destination="da8-9b-ruC" eventType="valueChanged" id="ddF-TS-jaF"/>
+                                    <action selector="simulacionActiva:" destination="da8-9b-ruC" eventType="valueChanged" id="gMg-Ho-y95"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newtons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-Bo-fdV">
@@ -338,18 +339,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNO-d1-qzT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNO-d1-qzT">
                                 <rect key="frame" x="208" y="394" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="70" minValue="0.0" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="C2I-tc-PQm">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1.1000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="C2I-tc-PQm">
                                 <rect key="frame" x="37" y="567" width="239" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="q37-Rq-sz6"/>
                                 </constraints>
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="simulacionActiva:" destination="da8-9b-ruC" eventType="valueChanged" id="jFJ-Fm-uMu"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fricción" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ1-ia-ApO">
                                 <rect key="frame" x="113" y="538" width="65.5" height="21"/>
@@ -357,7 +361,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAB-0k-cO6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAB-0k-cO6">
                                 <rect key="frame" x="208" y="538" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -367,16 +371,12 @@
                                 <rect key="frame" x="85" y="612" width="51" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Iniciar"/>
-                                <connections>
-                                    <action selector="btIniciarSimulacion:" destination="da8-9b-ruC" eventType="touchUpInside" id="JNF-41-Kjt"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-QN-Hrt">
                                 <rect key="frame" x="225" y="612" width="49" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
-                                    <action selector="btIniciarSimulacion:" destination="da8-9b-ruC" eventType="touchUpInside" id="Sny-lh-TLd"/>
                                     <segue destination="QJS-aZ-E9F" kind="unwind" unwindAction="unwindSimulacionWithUnwindSegue:" id="eYB-xH-Kec"/>
                                 </connections>
                             </button>
@@ -396,13 +396,19 @@
                                     <constraint firstAttribute="height" constant="29" id="Ffl-eP-gnf"/>
                                 </constraints>
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="simulacionActiva:" destination="da8-9b-ruC" eventType="valueChanged" id="er9-6R-eoC"/>
+                                    <action selector="sliderActionMasa:" destination="da8-9b-ruC" eventType="valueChanged" id="YcQ-fr-he1"/>
+                                </connections>
                             </slider>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Iv-TD-6az">
-                                <rect key="frame" x="22" y="201" width="96" height="128"/>
+                                <rect key="frame" x="22" y="201" width="90" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="him-mY-OWA">
                                 <rect key="frame" x="126" y="219" width="110" height="92"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="JLl-BJ-Gom"/>
                                 </constraints>
@@ -479,17 +485,17 @@
                         <outlet property="character" destination="9Iv-TD-6az" id="RG5-gX-BsR"/>
                         <outlet property="imgBack" destination="gq1-1Z-jOf" id="R48-ND-mcN"/>
                         <outlet property="imgFoto" destination="him-mY-OWA" id="vBo-Ut-qS0"/>
-                        <outlet property="lbAceleracion" destination="wmS-os-3hF" id="Lk9-aJ-Zr2"/>
-                        <outlet property="lbAngulo" destination="2bg-V4-HhR" id="6l9-mn-jQs"/>
-                        <outlet property="lbFriccion" destination="EAB-0k-cO6" id="82i-3q-zrG"/>
-                        <outlet property="lbFuerzaFriccion" destination="oJL-gr-WUi" id="Wzq-2M-W8B"/>
-                        <outlet property="lbFuerzaNeta" destination="WZZ-OP-LcO" id="Fwa-oV-7A3"/>
-                        <outlet property="lbMasa" destination="MQd-Rw-eON" id="gWq-iJ-Jgl"/>
-                        <outlet property="lbNewtons" destination="TNO-d1-qzT" id="mma-HW-ryQ"/>
-                        <outlet property="sliderAngulo" destination="MON-hp-ZKX" id="Gp4-I6-Dzx"/>
-                        <outlet property="sliderFriccion" destination="C2I-tc-PQm" id="vpZ-j2-lO5"/>
-                        <outlet property="sliderMasa" destination="9u3-iX-aac" id="Yd2-He-xLH"/>
-                        <outlet property="sliderNewtons" destination="9Hs-un-EEt" id="oC9-U8-hQa"/>
+                        <outlet property="lbAceleracion" destination="wmS-os-3hF" id="MKd-Jb-fXu"/>
+                        <outlet property="lbAngulo" destination="2bg-V4-HhR" id="VRs-Hh-By2"/>
+                        <outlet property="lbEmpuje" destination="TNO-d1-qzT" id="nqm-c6-rr7"/>
+                        <outlet property="lbFriccion" destination="EAB-0k-cO6" id="QdG-09-Jr8"/>
+                        <outlet property="lbFuerzaFriccion" destination="oJL-gr-WUi" id="RcT-NZ-TQo"/>
+                        <outlet property="lbFuerzaNeta" destination="WZZ-OP-LcO" id="56h-Ds-cDg"/>
+                        <outlet property="lbMasa" destination="MQd-Rw-eON" id="YlQ-FY-MdB"/>
+                        <outlet property="slAngulo" destination="MON-hp-ZKX" id="bce-YP-5Ry"/>
+                        <outlet property="slCoefFric" destination="C2I-tc-PQm" id="0TZ-2C-gak"/>
+                        <outlet property="slEmpuje" destination="9Hs-un-EEt" id="16W-kC-YmR"/>
+                        <outlet property="slMasa" destination="9u3-iX-aac" id="Yod-pV-v8X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttm-Mh-s7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
