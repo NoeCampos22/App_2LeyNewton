@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -302,7 +302,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6L0-0X-7UJ">
-                                <rect key="frame" x="123" y="472" width="45" height="21"/>
+                                <rect key="frame" x="123" y="472" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -316,7 +316,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-Rw-eON">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQd-Rw-eON">
                                 <rect key="frame" x="208" y="472" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -334,7 +334,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newtons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-Bo-fdV">
-                                <rect key="frame" x="109" y="395" width="73" height="21"/>
+                                <rect key="frame" x="109" y="395" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -356,14 +356,8 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fricción" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ1-ia-ApO">
-                                <rect key="frame" x="113" y="538" width="65.5" height="21"/>
+                                <rect key="frame" x="113" y="538" width="66" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAB-0k-cO6">
-                                <rect key="frame" x="208" y="538" width="11" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -380,7 +374,7 @@
                                     <segue destination="QJS-aZ-E9F" kind="unwind" unwindAction="unwindSimulacionWithUnwindSegue:" id="eYB-xH-Kec"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="MON-hp-ZKX">
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="MON-hp-ZKX">
                                 <rect key="frame" x="259" y="501" width="162" height="30"/>
                                 <color key="minimumTrackTintColor" red="0.94258779290000005" green="0.69882368539999995" blue="0.21129445450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </slider>
@@ -430,7 +424,6 @@
                             <constraint firstItem="gq1-1Z-jOf" firstAttribute="leading" secondItem="Sw9-bh-b4W" secondAttribute="leading" id="EjH-vP-eAA"/>
                             <constraint firstItem="eOi-id-cYc" firstAttribute="baseline" secondItem="WZZ-OP-LcO" secondAttribute="baseline" id="FhB-o8-52j"/>
                             <constraint firstItem="C2I-tc-PQm" firstAttribute="top" secondItem="FQ1-ia-ApO" secondAttribute="bottom" constant="8" symbolic="YES" id="Gbb-wW-Dar"/>
-                            <constraint firstItem="EAB-0k-cO6" firstAttribute="leading" secondItem="TNO-d1-qzT" secondAttribute="leading" id="Gsd-UB-VBv"/>
                             <constraint firstItem="oJL-gr-WUi" firstAttribute="trailing" secondItem="Qdp-lB-r9h" secondAttribute="trailing" id="Gzp-j9-bUe"/>
                             <constraint firstItem="MON-hp-ZKX" firstAttribute="leading" secondItem="Wdz-Gg-AaP" secondAttribute="leading" constant="261" id="H5G-pc-4xf"/>
                             <constraint firstItem="WZZ-OP-LcO" firstAttribute="top" secondItem="wmS-os-3hF" secondAttribute="bottom" constant="25" id="HHu-Rt-CH5"/>
@@ -440,23 +433,22 @@
                             <constraint firstItem="FQ1-ia-ApO" firstAttribute="centerX" secondItem="8zE-Bo-fdV" secondAttribute="centerX" id="J2Y-lb-QYt"/>
                             <constraint firstItem="C2I-tc-PQm" firstAttribute="leading" secondItem="9Hs-un-EEt" secondAttribute="leading" id="JFo-Z5-INX"/>
                             <constraint firstItem="9Hs-un-EEt" firstAttribute="top" secondItem="TNO-d1-qzT" secondAttribute="bottom" constant="11" id="KNA-aH-WFk"/>
+                            <constraint firstItem="FQ1-ia-ApO" firstAttribute="leading" secondItem="Wdz-Gg-AaP" secondAttribute="leading" constant="113" id="Mmz-yr-njh"/>
                             <constraint firstItem="Wdz-Gg-AaP" firstAttribute="trailing" secondItem="9Hs-un-EEt" secondAttribute="trailing" constant="101" id="NuE-hx-Tqm"/>
                             <constraint firstItem="9Hs-un-EEt" firstAttribute="top" secondItem="8zE-Bo-fdV" secondAttribute="bottom" constant="10" id="OhS-Fa-bf9"/>
                             <constraint firstItem="MON-hp-ZKX" firstAttribute="top" secondItem="9u3-iX-aac" secondAttribute="top" id="QIQ-AA-4Js"/>
                             <constraint firstItem="WZZ-OP-LcO" firstAttribute="centerX" secondItem="b9i-QN-Hrt" secondAttribute="centerX" id="UDm-1S-C26"/>
                             <constraint firstItem="8zE-Bo-fdV" firstAttribute="leading" secondItem="Wdz-Gg-AaP" secondAttribute="leading" constant="109" id="WCi-Py-xnp"/>
-                            <constraint firstItem="EAB-0k-cO6" firstAttribute="baseline" secondItem="FQ1-ia-ApO" secondAttribute="baseline" id="WTZ-pK-nWG"/>
-                            <constraint firstItem="EAB-0k-cO6" firstAttribute="top" secondItem="9u3-iX-aac" secondAttribute="bottom" constant="8" symbolic="YES" id="Whi-tN-2AX"/>
                             <constraint firstItem="9Vp-WS-rVq" firstAttribute="top" secondItem="him-mY-OWA" secondAttribute="bottom" constant="42" id="XQc-nC-V2V"/>
                             <constraint firstItem="6L0-0X-7UJ" firstAttribute="top" secondItem="9Hs-un-EEt" secondAttribute="bottom" constant="17" id="Y4f-aO-nb1"/>
                             <constraint firstItem="Wdz-Gg-AaP" firstAttribute="trailing" secondItem="9u3-iX-aac" secondAttribute="trailing" constant="109" id="YD0-Kr-gga"/>
                             <constraint firstItem="b9i-QN-Hrt" firstAttribute="trailing" secondItem="9Hs-un-EEt" secondAttribute="trailing" id="YSd-0R-Bef"/>
                             <constraint firstItem="him-mY-OWA" firstAttribute="centerY" secondItem="gq1-1Z-jOf" secondAttribute="centerY" id="YVD-G3-3dT"/>
                             <constraint firstItem="9Hs-un-EEt" firstAttribute="top" secondItem="oJL-gr-WUi" secondAttribute="bottom" constant="53" id="YpK-cm-nTh"/>
-                            <constraint firstItem="EAB-0k-cO6" firstAttribute="leading" secondItem="MQd-Rw-eON" secondAttribute="leading" id="ZVX-YS-rlZ"/>
                             <constraint firstItem="2bg-V4-HhR" firstAttribute="leading" secondItem="oJL-gr-WUi" secondAttribute="trailing" constant="31" id="Zhg-Yb-unm"/>
                             <constraint firstItem="2bg-V4-HhR" firstAttribute="centerX" secondItem="MON-hp-ZKX" secondAttribute="centerX" id="aOa-mf-4ao"/>
                             <constraint firstItem="b9i-QN-Hrt" firstAttribute="baseline" secondItem="hbW-DV-oDs" secondAttribute="baseline" id="b7n-cO-6KS"/>
+                            <constraint firstItem="FQ1-ia-ApO" firstAttribute="top" secondItem="9u3-iX-aac" secondAttribute="bottom" constant="8" symbolic="YES" id="b9s-rI-UVA"/>
                             <constraint firstItem="Sw9-bh-b4W" firstAttribute="top" secondItem="Wdz-Gg-AaP" secondAttribute="top" constant="23" id="f2d-jJ-fdz"/>
                             <constraint firstItem="Sw9-bh-b4W" firstAttribute="centerY" secondItem="Qdp-lB-r9h" secondAttribute="centerY" id="gN4-l6-PAm"/>
                             <constraint firstItem="9Vp-WS-rVq" firstAttribute="trailing" secondItem="TNO-d1-qzT" secondAttribute="trailing" id="gdn-Wi-oNK"/>
@@ -488,7 +480,6 @@
                         <outlet property="lbAceleracion" destination="wmS-os-3hF" id="MKd-Jb-fXu"/>
                         <outlet property="lbAngulo" destination="2bg-V4-HhR" id="VRs-Hh-By2"/>
                         <outlet property="lbEmpuje" destination="TNO-d1-qzT" id="nqm-c6-rr7"/>
-                        <outlet property="lbFriccion" destination="EAB-0k-cO6" id="QdG-09-Jr8"/>
                         <outlet property="lbFuerzaFriccion" destination="oJL-gr-WUi" id="RcT-NZ-TQo"/>
                         <outlet property="lbFuerzaNeta" destination="WZZ-OP-LcO" id="56h-Ds-cDg"/>
                         <outlet property="lbMasa" destination="MQd-Rw-eON" id="YlQ-FY-MdB"/>
@@ -506,6 +497,6 @@
     </scenes>
     <resources>
         <image name="apple" width="512" height="512"/>
-        <image name="orange" width="1600" height="1600"/>
+        <image name="orange" width="1200" height="1200"/>
     </resources>
 </document>
