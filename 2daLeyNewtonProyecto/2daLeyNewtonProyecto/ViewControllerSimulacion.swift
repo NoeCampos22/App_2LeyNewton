@@ -37,12 +37,15 @@ class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var lbAngulo: UILabel!
     
     // Arreglo de asssets
-    var imagesWalk = ["Walk (1)","Walk (2)", "Walk (3)", "Walk (4)", "Walk (5)", "Walk (6)", "Walk (7)", "Walk (8)", "Walk (9)", "Walk (10)", "Walk (11)", "Walk (12)", "Walk (13)", "Walk (14)", "Walk (15)"]
-    var imagesRun = ["Run (1)","Run (2)", "Run (3)", "Run (4)", "Run (5)", "Run (6)", "Run (7)", "Run (8)", "Run (9)", "Run (10)", "Run (11)", "Run (12)", "Run (13)", "Run (14)", "Run (15)"]
-    var imagesIdle = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
+    var spritesWalk: [UIImage] = [UIImage(named: "Walk (1)")!, UIImage(named: "Walk (2)")!, UIImage(named: "Walk (3)")!, UIImage(named: "Walk (4)")!, UIImage(named: "Walk (5)")!, UIImage(named: "Walk (6)")!, UIImage(named: "Walk (7)")!, UIImage(named: "Walk (8)")!, UIImage(named: "Walk (9)")!, UIImage(named: "Walk (10)")!, UIImage(named: "Walk (11)")!, UIImage(named: "Walk (12)")!, UIImage(named: "Walk (13)")!, UIImage(named: "Walk (14)")!, UIImage(named: "Walk (15)")!]
     
-    // Arreglo para sprites del personaje
-    var imgAnimation = [UIImage]()
+    var spritesRun: [UIImage] = [UIImage(named: "Run (1)")!, UIImage(named: "Run (2)")!, UIImage(named: "Run (3)")!, UIImage(named: "Run (4)")!, UIImage(named: "Run (5)")!, UIImage(named: "Run (6)")!, UIImage(named: "Run (7)")!, UIImage(named: "Run (8)")!, UIImage(named: "Run (9)")!, UIImage(named: "Run (10)")!, UIImage(named: "Run (11)")!, UIImage(named: "Run (12)")!, UIImage(named: "Run (13)")!, UIImage(named: "Run (14)")!, UIImage(named: "Run (15)")!]
+    
+    var spritesIdle: [UIImage] = [UIImage(named: "Idle1")!, UIImage(named: "Idle2")!, UIImage(named: "Idle3")!, UIImage(named: "Idle4")!, UIImage(named: "Idle5")!, UIImage(named: "Idle6")!, UIImage(named: "Idle7")!, UIImage(named: "Idle8")!, UIImage(named: "Idle9")!, UIImage(named: "Idle10")!, UIImage(named: "Idle11")!, UIImage(named: "Idle12")!, UIImage(named: "Idle13")!, UIImage(named: "Idle14")!, UIImage(named: "Idle15")!]
+    
+    //var imagesWalk = ["Walk (1)","Walk (2)", "Walk (3)", "Walk (4)", "Walk (5)", "Walk (6)", "Walk (7)", "Walk (8)", "Walk (9)", "Walk (10)", "Walk (11)", "Walk (12)", "Walk (13)", "Walk (14)", "Walk (15)"]
+    //var imagesRun = ["Run (1)","Run (2)", "Run (3)", "Run (4)", "Run (5)", "Run (6)", "Run (7)", "Run (8)", "Run (9)", "Run (10)", "Run (11)", "Run (12)", "Run (13)", "Run (14)", "Run (15)"]
+    //var imagesIdle = ["Idle1","Idle2", "Idle3", "Idle4", "Idle5", "Idle6", "Idle7", "Idle8", "Idle9", "Idle10", "Idle11", "Idle12", "Idle13", "Idle14", "Idle15"]
     
     // Variables necesarias
     var iEmp: Int!
@@ -52,10 +55,14 @@ class ViewControllerSimulacion: UIViewController {
     var dAcel: Double!
     var iCoefFric: Double!
     
+    // Variables para la posicion del personaje
     var iX: CGFloat!
     var iY: CGFloat!
     var iWidth: CGFloat!
     var iHeight: CGFloat!
+    
+    // Variable de animacion del personaje
+    var iTipo: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,47 +90,14 @@ class ViewControllerSimulacion: UIViewController {
             character.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         
-        // Borra el arreglo de sprites
-        imgAnimation.removeAll()
-        
-        // Si la masa es 0 o no empuja
-        if(iMasa == 0 || iEmp == 0){
-            // Asigna los sprites de estar quieto
-            for i in 0..<imagesRun.count{
-                imgAnimation.append(UIImage(named: imagesIdle[i])!)
-            }
-        }else{
-            // Revisa si empuja caminando
-            if (abs(sender.value) < 250 && abs(sender.value) > 0) {
-                
-                // Llena el arreglo con las imagenes de caminar
-                for i in 0..<imagesWalk.count{
-                    imgAnimation.append(UIImage(named: imagesWalk[i])!)
-                }
-                
-                // O corriendo
-            }else if (abs(sender.value) < 500 && abs(sender.value) > 251) {
-                
-                // Llena el arreglo con sprites de correr
-                for i in 0..<imagesRun.count{
-                    imgAnimation.append(UIImage(named: imagesRun[i])!)
-                }
-            }
-        }
-        
-        
-        
-        
-        
-        // Asigan los sprites, duracion y comienzo
-        character.animationImages = imgAnimation
-        character.animationDuration = 0.5
-        character.startAnimating()
+        animacionPersonaje()
     }
     
 
     //Tomamos valor para calculos y animación para los
     @IBAction func sliderActionMasa(_ sender: UISlider) {
+        
+        animacionPersonaje()
         
         lbMasa.text = String(Int(sender.value))
         if sender.value > 0 && sender.value < 49{
@@ -149,12 +123,8 @@ class ViewControllerSimulacion: UIViewController {
             
         // Si no hay algo que empujar
         }else{
-            // Todo se pone en 0
-            iEmp = 0
-            iFric = 0
-            iMasa = 0
-            dAcel = 0.0
-            iFNeta = 0
+            // Todo se pone en 0s
+            setCeros()
             
             // Se actualizan los labels
             actualizarLabels()
@@ -172,17 +142,24 @@ class ViewControllerSimulacion: UIViewController {
     
     // Para poner en 0 los labels e iniciar la animación
     func setInicial(){
-
+        
+        // Imagen del fondo
         background.loadGif(name: "back")
-        //character.isHidden = true
         
-        for i in 0..<imagesIdle.count{
-            imgAnimation.append(UIImage(named: imagesIdle[i])!)
-        }
+        // Se inicializan los valores en 0
+        setCeros()
+        // Se imprimen los 0s
+        actualizarLabels()
         
-        character.animationImages = imgAnimation
+        // Se asigna la animacion inicial
+        character.animationImages = spritesIdle
+        // Se guarda la bandera de la animacion
+        iTipo = 0
+        // Se inidica la velovidad de la animacion
         character.animationDuration = 0.5
+        // Inicia la animacion
         character.startAnimating()
+        
         
         // Save the character size
         iHeight = character.frame.height
@@ -193,6 +170,15 @@ class ViewControllerSimulacion: UIViewController {
         
         // Posicionar al personaje
         character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
+    }
+    
+    // Para que los valores iniciales sean 0
+    func setCeros(){
+        iEmp = 0
+        iFric = 0
+        iMasa = 0
+        dAcel = 0.0
+        iFNeta = 0
     }
     
     // MARK: - Calculos
@@ -240,15 +226,34 @@ class ViewControllerSimulacion: UIViewController {
     }
     
     // MARK: - Animacion
-    
+    func animacionPersonaje(){
+        
+        // Si no hay aceleracion
+        if(dAcel == 0.0 && iTipo != 0){
+            // Se asignan los sprites de estar detenido
+            character.animationImages = spritesIdle
+            iTipo = 0
+            character.startAnimating()
+            
+            // Para animar que camina
+        }else if (dAcel > 0.0 && dAcel <= 7.0 && iTipo != 1) {
+            // Se guardan asignan los nuevos sprites
+            character.animationImages = spritesWalk
+            iTipo = 1
+            character.startAnimating()
+            
+            // O que esta corriendo
+        }else if (dAcel > 7.0 && iTipo != 2) {
+            // Se asignan los sprites de correr
+            character.animationImages = spritesRun
+            iTipo = 2
+            character.startAnimating()
+        }
+    }
     
     /*
      TO-DO List
-     - Cuando la masa sea 0 la animacion sea la inicial (Check)
-     - No anime cuando este la masa en 0
-     - No calcule cuando la masa sea 0 (Check)
      - Posicion del monito
-     - No se interrumpa la animacion
      */
     
 }
