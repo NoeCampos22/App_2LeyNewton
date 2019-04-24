@@ -89,15 +89,10 @@ class ViewControllerSimulacion: UIViewController {
             character.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
             character.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
-        
-        animacionPersonaje()
     }
     
-
     //Tomamos valor para calculos y animación para los
     @IBAction func sliderActionMasa(_ sender: UISlider) {
-        
-        animacionPersonaje()
         
         lbMasa.text = String(Int(sender.value))
         if sender.value > 0 && sender.value < 49{
@@ -129,6 +124,10 @@ class ViewControllerSimulacion: UIViewController {
             // Se actualizan los labels
             actualizarLabels()
         }
+        
+        
+        // Actualizar la animacion del personaje
+        animacionPersonaje()
 
     }
    
