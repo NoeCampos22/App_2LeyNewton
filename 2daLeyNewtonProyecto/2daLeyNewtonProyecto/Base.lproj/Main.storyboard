@@ -78,42 +78,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4n-1R-kPG">
-                                                <rect key="frame" x="15" y="74.5" width="345" height="24"/>
+                                                <rect key="frame" x="15" y="72" width="345" height="299"/>
                                                 <color key="backgroundColor" red="0.90179590180000002" green="0.78493441850000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preguntas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-EN-wGa">
-                                                <rect key="frame" x="120" y="20" width="135" height="34.5"/>
-                                                <color key="backgroundColor" red="0.0" green="0.20392156859999999" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-Jh-rkf">
-                                                <rect key="frame" x="68" y="425" width="246" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                            </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-CM-fcu">
-                                                <rect key="frame" x="43" y="108" width="297" height="221"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WsK-CM-fcu">
+                                                <rect key="frame" x="40" y="102" width="295" height="249"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingresa Respuesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-Ng-QLx">
-                                                <rect key="frame" x="68" y="372" width="246" height="45"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.0" green="0.20392156859999999" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40a-OB-8dW">
-                                                <rect key="frame" x="219" y="483" width="140" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40a-OB-8dW">
+                                                <rect key="frame" x="215" y="485" width="140" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="yHL-GF-MbA"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="orange">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Formula">
@@ -129,9 +107,11 @@
                                                     <action selector="mostrarFormulas:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="pGC-Pt-hhv"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC3-TN-szO">
-                                                <rect key="frame" x="24" y="483" width="140" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC3-TN-szO">
+                                                <rect key="frame" x="25" y="485" width="140" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="hNC-jk-W4g"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="25"/>
                                                 <state key="normal" title="Revisar" backgroundImage="orange">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,9 +120,11 @@
                                                     <action selector="comprobarRespuesta:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="2R2-xH-2so"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="On4-YB-Zj2">
-                                                <rect key="frame" x="24" y="571" width="140" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="On4-YB-Zj2">
+                                                <rect key="frame" x="25" y="570" width="140" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="h60-nX-fMV"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="orange">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Regresar">
@@ -158,9 +140,11 @@
                                                     <segue destination="TrE-K8-G2b" kind="unwind" unwindAction="unwindPreguntasWithUnwindSegue:" id="dGK-RS-vev"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-uC-v6e">
-                                                <rect key="frame" x="219" y="571" width="140" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-uC-v6e">
+                                                <rect key="frame" x="215" y="570" width="140" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="yVk-Cj-fDU"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="orange">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Siguiente">
@@ -176,16 +160,69 @@
                                                     <action selector="siguienteProblema:" destination="HYU-6L-Ffp" eventType="touchUpInside" id="oBv-t3-2sb"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa Respuesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-Ng-QLx">
+                                                <rect key="frame" x="65" y="386" width="245" height="39"/>
+                                                <color key="backgroundColor" red="0.0" green="0.20392156859999999" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="39" id="5iO-ot-ZBl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="diI-7E-XUC">
+                                                <rect key="frame" x="65" y="435" width="245" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="XL4-SI-2GL"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preguntas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-EN-wGa">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                                                <color key="backgroundColor" red="0.0" green="0.20392156859999999" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Ydb-EN-wGa" secondAttribute="height" multiplier="125:19" id="8RG-LI-S8P"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Ydb-EN-wGa" secondAttribute="trailing" constant="120" id="0Ne-a1-mF3"/>
-                                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="120" id="2gn-Ia-rtM"/>
-                                            <constraint firstItem="c4n-1R-kPG" firstAttribute="centerX" secondItem="3Xi-yZ-3hj" secondAttribute="centerX" id="5Ws-dq-tql"/>
-                                            <constraint firstItem="c4n-1R-kPG" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="15" id="Gd6-vs-ea4"/>
-                                            <constraint firstItem="c4n-1R-kPG" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="20" id="cVN-JE-Yp9"/>
-                                            <constraint firstAttribute="trailing" secondItem="c4n-1R-kPG" secondAttribute="trailing" constant="15" id="db6-8E-Ias"/>
-                                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="top" secondItem="3Xi-yZ-3hj" secondAttribute="top" constant="20" id="xZN-cl-dtN"/>
+                                            <constraint firstAttribute="trailing" secondItem="lvM-uC-v6e" secondAttribute="trailing" constant="20" id="27o-TS-2yQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="On4-YB-Zj2" secondAttribute="bottom" constant="47" id="4fs-DZ-tUK"/>
+                                            <constraint firstAttribute="trailing" secondItem="40a-OB-8dW" secondAttribute="trailing" constant="20" id="667-Ni-Sga"/>
+                                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" id="7Rz-2z-nwk"/>
+                                            <constraint firstItem="lvM-uC-v6e" firstAttribute="top" secondItem="40a-OB-8dW" secondAttribute="bottom" constant="35" id="7Wg-4o-HIp"/>
+                                            <constraint firstAttribute="trailing" secondItem="eHs-Ng-QLx" secondAttribute="trailing" constant="65" id="8m8-Wq-22N"/>
+                                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="top" secondItem="c4n-1R-kPG" secondAttribute="bottom" constant="15" id="979-2A-QAZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ydb-EN-wGa" secondAttribute="trailing" id="BYp-dN-GJA"/>
+                                            <constraint firstAttribute="trailing" secondItem="diI-7E-XUC" secondAttribute="trailing" constant="65" id="CHf-Ki-dmD"/>
+                                            <constraint firstItem="lvM-uC-v6e" firstAttribute="width" secondItem="oC3-TN-szO" secondAttribute="width" id="DfP-wP-WaA"/>
+                                            <constraint firstItem="40a-OB-8dW" firstAttribute="leading" secondItem="oC3-TN-szO" secondAttribute="trailing" constant="50" id="GWr-le-ghq"/>
+                                            <constraint firstItem="oC3-TN-szO" firstAttribute="width" secondItem="40a-OB-8dW" secondAttribute="width" id="Jhl-T8-8vB"/>
+                                            <constraint firstItem="On4-YB-Zj2" firstAttribute="top" secondItem="oC3-TN-szO" secondAttribute="bottom" constant="35" id="NiS-1F-dEl"/>
+                                            <constraint firstItem="Ydb-EN-wGa" firstAttribute="top" secondItem="3Xi-yZ-3hj" secondAttribute="top" id="OI9-Nc-1nr"/>
+                                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="top" secondItem="WsK-CM-fcu" secondAttribute="bottom" constant="35" id="Olv-zB-gHG"/>
+                                            <constraint firstItem="eHs-Ng-QLx" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="65" id="PaM-5s-Tt8"/>
+                                            <constraint firstItem="On4-YB-Zj2" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="25" id="QDO-QX-f46"/>
+                                            <constraint firstItem="c4n-1R-kPG" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="15" id="QMh-bH-u3S"/>
+                                            <constraint firstItem="lvM-uC-v6e" firstAttribute="leading" secondItem="On4-YB-Zj2" secondAttribute="trailing" constant="50" id="QSf-Ml-CMO"/>
+                                            <constraint firstAttribute="trailing" secondItem="WsK-CM-fcu" secondAttribute="trailing" constant="40" id="UFf-3k-eGK"/>
+                                            <constraint firstItem="c4n-1R-kPG" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="15" id="ddI-6y-BhB"/>
+                                            <constraint firstAttribute="bottom" secondItem="lvM-uC-v6e" secondAttribute="bottom" constant="47" id="emk-Mf-qih"/>
+                                            <constraint firstAttribute="trailing" secondItem="c4n-1R-kPG" secondAttribute="trailing" constant="15" id="jgd-zS-biC"/>
+                                            <constraint firstItem="On4-YB-Zj2" firstAttribute="width" secondItem="lvM-uC-v6e" secondAttribute="width" id="lft-Dj-BX3"/>
+                                            <constraint firstItem="oC3-TN-szO" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="25" id="mha-Ui-RFA"/>
+                                            <constraint firstItem="diI-7E-XUC" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="65" id="nLP-06-RQk"/>
+                                            <constraint firstItem="diI-7E-XUC" firstAttribute="top" secondItem="eHs-Ng-QLx" secondAttribute="bottom" constant="10" id="oVj-9S-WQ7"/>
+                                            <constraint firstItem="WsK-CM-fcu" firstAttribute="top" secondItem="Ydb-EN-wGa" secondAttribute="bottom" constant="45" id="pIX-Nz-aSw"/>
+                                            <constraint firstItem="WsK-CM-fcu" firstAttribute="leading" secondItem="3Xi-yZ-3hj" secondAttribute="leading" constant="40" id="paX-O4-P2e"/>
+                                            <constraint firstItem="40a-OB-8dW" firstAttribute="top" secondItem="diI-7E-XUC" secondAttribute="bottom" constant="20" id="yuv-bM-V48"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -219,7 +256,7 @@
                         <outlet property="lbIngresa" destination="eHs-Ng-QLx" id="LdO-Ek-fh6"/>
                         <outlet property="lbPregunta" destination="c4n-1R-kPG" id="ev2-nU-x31"/>
                         <outlet property="lbTitulo" destination="Ydb-EN-wGa" id="zLM-V3-KJK"/>
-                        <outlet property="tfRespuesta" destination="gAS-Jh-rkf" id="Zd5-qv-6pR"/>
+                        <outlet property="tfRespuesta" destination="diI-7E-XUC" id="tHU-uP-j4D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZr-61-ZKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
