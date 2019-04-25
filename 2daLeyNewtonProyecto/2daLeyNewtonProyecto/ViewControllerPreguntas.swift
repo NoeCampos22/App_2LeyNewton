@@ -151,6 +151,20 @@ class ViewControllerPreguntas: UIViewController {
     }
     
     
+    // MARK: - Problema
+    
+    // Para elegir un problema y mostrarlo
+    func selecProblema(){
+        
+        // Obtener un tipo de problema
+        problema = Problema(tipo: Int.random(in: 0 ... 2))
+        
+        // Muestra el texto del problema
+        lbPregunta.text = problema.sTexto!
+        
+        print(problema.dRespuesta)
+    }
+    
     // MARK: - Ajuste de Fonts
     
     // Función para ajustar el FontSize dependiendo del tamaño de la pantalla
@@ -171,30 +185,5 @@ class ViewControllerPreguntas: UIViewController {
         // Ajustar font size del label
         lbIngresa.font = lbIngresa.font.withSize(self.view.frame.width * FontLabel)
     }
-    
-    
-    // MARK: - Problema
-    
-    // Para elegir un problema y mostrarlo
-    func selecProblema(){
-        
-        // Obtener un tipo de problema
-        problema = Problema(tipo: Int.random(in: 0 ... 2))
-        
-        // Muestra el texto del problema
-        lbPregunta.text = problema.sTexto!
-        
-        print(problema.dRespuesta)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
