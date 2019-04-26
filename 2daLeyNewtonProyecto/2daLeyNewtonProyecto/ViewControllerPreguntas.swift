@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewControllerPreguntas: UIViewController {
+class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     
     // Outlets de labels necesarios
     @IBOutlet weak var lbPregunta: UILabel!
@@ -22,6 +22,11 @@ class ViewControllerPreguntas: UIViewController {
     // Outlet del textfield
     @IBOutlet weak var tfRespuesta: UITextField!
     @IBOutlet weak var imgImage: UIImageView!
+    
+    // Scrollview
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    //var activeField : UITextField!
     
     // Variables para los tamaños de las font
     var FontPregunta: CGFloat!
@@ -43,8 +48,11 @@ class ViewControllerPreguntas: UIViewController {
         // Seleccionar tipo de problema
         selecProblema()
         
+        // Agregar las notificaciones del teclado
+        notificacionesTeclado()
     }
     
+    // MARK: - IBActions
 
     // Revisar que la respuesa escrita sea correcta
     @IBAction func comprobarRespuesta(_ sender: Any) {
@@ -61,7 +69,7 @@ class ViewControllerPreguntas: UIViewController {
                 // Se muestra la formula
                 self.imgImage.fadeIn()
                 // Esperar dos segundos
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                     // Ocultar la imagen
                     self.imgImage.fadeOut()
                     
@@ -85,7 +93,7 @@ class ViewControllerPreguntas: UIViewController {
             self.imgImage.fadeIn()
                         
             // Esperar 2 segundos
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 // Esconder la imagen
                 self.imgImage.fadeOut()
                 // Mostrar la pregunta
@@ -150,6 +158,37 @@ class ViewControllerPreguntas: UIViewController {
         lbPregunta.fadeIn()
     }
     
+    // Paraa registrar las notificaciones y acciones
+    func notificacionesTeclado() {
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown(aNotification:)),
+                                               name:UIResponder.keyboardWillShowNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillBeHidden(aNotification:)),
+                                               name:UIResponder.keyboardWillHideNotification, object:nil)
+    }
+    
+    // Para subir el view cuando aparezca el teclado
+    @IBAction func keyboardWasShown(aNotification : NSNotification) {
+        
+        let kbSize = (aNotification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size
+        
+        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
+        
+        // Si el teclado oculta el textfieldo, sube el view
+        var aRect: CGRect = scrollView.frame
+        aRect.size.height -= kbSize.height
+        if !aRect.contains(tfRespuesta.frame.origin) {
+            scrollView.scrollRectToVisible(tfRespuesta.frame, animated: true)
+        }
+    }
+    
+    // Para bajar la view a la normalidad
+    @IBAction func keyboardWillBeHidden(aNotification : NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
     
     // MARK: - Problema
     
