@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */; };
 		FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D02227033B006AE340 /* AppDelegate.swift */; };
 		FB6318D32227033B006AE340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D22227033B006AE340 /* ViewController.swift */; };
 		FB6318D62227033B006AE340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6318D42227033B006AE340 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalCustomKeyboard.swift; sourceTree = "<group>"; };
 		FB6318CD2227033B006AE340 /* 2daLeyNewtonProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2daLeyNewtonProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6318D02227033B006AE340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6318D22227033B006AE340 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				FB6318D02227033B006AE340 /* AppDelegate.swift */,
 				FB6318D22227033B006AE340 /* ViewController.swift */,
 				FB6318D42227033B006AE340 /* Main.storyboard */,
+				FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */,
 				FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */,
 				FBB07E22225E7FF2006E0436 /* Problema.swift */,
 				FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */,
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */,
+				FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */,
 				FB6318D32227033B006AE340 /* ViewController.swift in Sources */,
 				FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */,
 				FBB07E23225E7FF2006E0436 /* Problema.swift in Sources */,
