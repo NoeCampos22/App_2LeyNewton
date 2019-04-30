@@ -10,6 +10,7 @@ import UIKit
 
 class ViewControllerSimulacion: UIViewController {
     
+    @IBOutlet weak var stpEmpuje: UIStepper!
     
     // Sliders
     @IBOutlet weak var slEmpuje: UISlider!
@@ -24,8 +25,8 @@ class ViewControllerSimulacion: UIViewController {
     // Imagenes
     @IBOutlet weak var imgFoto: UIImageView!
     @IBOutlet weak var character: UIImageView!
-    @IBOutlet weak var imgBack: UIImageView!
-    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var imgBack1: UIImageView!
+    @IBOutlet weak var imgBack2: UIImageView!
     
     // Labels
     @IBOutlet weak var lbAceleracion: UILabel!
@@ -64,7 +65,7 @@ class ViewControllerSimulacion: UIViewController {
         super.viewDidLoad()
 
         // Iniciar todo al cargar la pantalla
-        setInicial()
+        //setInicial()
     }
     
     //Dependiendo si los newtons son positivos, negativos o 0
@@ -75,13 +76,13 @@ class ViewControllerSimulacion: UIViewController {
         // Revisa la direccion a la que se empuja el objeto
         // De izquierda a derecha
         if (sender.value > 0){
-            imgBack.transform = CGAffineTransform(scaleX: 1, y: 1)
+            imgBack1.transform = CGAffineTransform(scaleX: 1, y: 1)
             character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
             character.transform = CGAffineTransform(scaleX: 1, y: 1)
         
         // De derecha a izquierda
         }else if (sender.value < 0) {
-            imgBack.transform = CGAffineTransform(scaleX: -1, y: 1)
+            imgBack1.transform = CGAffineTransform(scaleX: -1, y: 1)
             character.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
             character.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
@@ -139,7 +140,7 @@ class ViewControllerSimulacion: UIViewController {
     func setInicial(){
         
         // Imagen del fondo
-        background.loadGif(name: "back")
+        //background.loadGif(name: "back")
         
         // Se inicializan los valores en 0
         setCeros()
