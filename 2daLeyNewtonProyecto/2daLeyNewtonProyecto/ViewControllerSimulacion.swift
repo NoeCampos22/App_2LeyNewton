@@ -66,9 +66,6 @@ class ViewControllerSimulacion: UIViewController {
         lbNewtons.text = String(Int(sender.value))
   
     }
-    //Tomamos valor para calculos y animación para los
-    
-    
     
     @IBAction func sliderActionMasa(_ sender: UISlider) {
         lbMasa.text = String(Int(sender.value))
