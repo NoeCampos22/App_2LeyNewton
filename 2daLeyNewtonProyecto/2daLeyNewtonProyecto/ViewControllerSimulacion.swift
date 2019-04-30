@@ -36,6 +36,10 @@ class ViewControllerSimulacion: UIViewController {
     @IBOutlet weak var lbFriccion: UILabel!
     @IBOutlet weak var lbAngulo: UILabel!
     
+    // Timer
+    var timer = Timer.scheduledTimer(timeInterval: 1000, target: self, selector: #selector(moverFondo), userInfo: nil, repeats: true)
+    var iDir: CGFloat!
+    
     // Arreglo de asssets
     var spritesWalk: [UIImage] = [UIImage(named: "Walk (1)")!, UIImage(named: "Walk (2)")!, UIImage(named: "Walk (3)")!, UIImage(named: "Walk (4)")!, UIImage(named: "Walk (5)")!, UIImage(named: "Walk (6)")!, UIImage(named: "Walk (7)")!, UIImage(named: "Walk (8)")!, UIImage(named: "Walk (9)")!, UIImage(named: "Walk (10)")!, UIImage(named: "Walk (11)")!, UIImage(named: "Walk (12)")!, UIImage(named: "Walk (13)")!, UIImage(named: "Walk (14)")!, UIImage(named: "Walk (15)")!]
     
@@ -78,12 +82,14 @@ class ViewControllerSimulacion: UIViewController {
             imgBack.transform = CGAffineTransform(scaleX: 1, y: 1)
             character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
             character.transform = CGAffineTransform(scaleX: 1, y: 1)
+            iDir = -1
         
         // De derecha a izquierda
         }else if (sender.value < 0) {
             imgBack.transform = CGAffineTransform(scaleX: -1, y: 1)
             character.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
             character.transform = CGAffineTransform(scaleX: -1, y: 1)
+            iDir = 1
         }
     }
     
@@ -139,7 +145,7 @@ class ViewControllerSimulacion: UIViewController {
     func setInicial(){
         
         // Imagen del fondo
-        background.loadGif(name: "back")
+        //background.loadGif(name: "back")
         
         // Se inicializan los valores en 0
         setCeros()
@@ -220,6 +226,22 @@ class ViewControllerSimulacion: UIViewController {
         lbAceleracion.text = String(format: "%.2f", dAcel)
     }
     
+    @objc func moverFondo(){
+        
+        background.frame.origin.x += iDir
+        
+        //print(background.frame.origin.x)
+        
+        if background.frame.maxX == 0{
+            background.frame = CGRect(x: 375.0, y: 150.0, width: 375.0, height: 165.0)
+        }
+    }
+    
+    func crearTimer(interval: Double!){
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(moverFondo), userInfo: nil, repeats: true)
+    }
+    
+    
     // MARK: - Animacion
     func animacionPersonaje(){
         
@@ -227,24 +249,41 @@ class ViewControllerSimulacion: UIViewController {
         if(dAcel == 0.0 && iTipo != 0){
             // Se asignan los sprites de estar detenido
             character.animationImages = spritesIdle
-            iTipo = 0
+
             character.startAnimating()
+            timer.invalidate()
+            
+            iTipo = 0
             
             // Para animar que camina
         }else if (dAcel > 0.0 && dAcel <= 7.0 && iTipo != 1) {
             // Se guardan asignan los nuevos sprites
             character.animationImages = spritesWalk
-            iTipo = 1
             character.startAnimating()
+            
+            timer.invalidate()
+            crearTimer(interval: 0.05)
+            
+            iTipo = 1
             
             // O que esta corriendo
         }else if (dAcel > 7.0 && iTipo != 2) {
             // Se asignan los sprites de correr
             character.animationImages = spritesRun
-            iTipo = 2
+
             character.startAnimating()
+            
+            print("Correr")
+            
+            timer.invalidate()
+            crearTimer(interval: 0.005)
+            
+            iTipo = 2
         }
     }
+    
+
+
     
     /*
      TO-DO List
