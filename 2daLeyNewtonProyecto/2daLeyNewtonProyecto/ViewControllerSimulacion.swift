@@ -171,6 +171,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         actualizarValores()
         
     }
+<<<<<<< HEAD
+=======
     
     // MARK: - Set Inicial
     // Para calcular la posicion inicial del monito
@@ -197,6 +199,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         // Inicia la animacion
         imgMonito.startAnimating()
     }
+>>>>>>> master
     
     // Para que los valores iniciales sean 0
     func setCeros(){
