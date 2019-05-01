@@ -7,7 +7,10 @@
 //
 import UIKit
 
-class ViewControllerSimulacion: UIViewController {
+class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
+
+    // Scrollview
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // Steppers
     @IBOutlet weak var stpEmpuje: UIStepper!
@@ -61,6 +64,9 @@ class ViewControllerSimulacion: UIViewController {
         
         // Iniciar todo al cargar la pantalla
         setInicial()
+
+        // Agregar las notificaciones del teclado
+        notificacionesTeclado()
     }
     
     //Dependiendo si los newtons son positivos, negativos o 0
@@ -86,18 +92,16 @@ class ViewControllerSimulacion: UIViewController {
     //Se toma el valor actual del stepper y se pone la imagen correspondiente
     @IBAction func actualizarObjeto(_ sender: UIStepper) {
         
-        if Int(sender.value) > 0 &&
-            Int(sender.value) < 49{
+        // Revisa el valor de la masa y asigna la imagen correspondiente
+        if Int(sender.value) > 0 && Int(sender.value) < 49{
             
             imgObjeto.image = UIImage(named: "apple")
-        }
-        if Int(sender.value) > 50
-            && Int(sender.value) < 100{
+        
+        }else if Int(sender.value) > 50 && Int(sender.value) < 100{
             
             imgObjeto.image = UIImage(named: "orange")
-        }
-        if Int(sender.value) > 101
-            && Int(sender.value) < 200{
+        
+        }else if Int(sender.value) > 101 && Int(sender.value) < 200{
             
             imgObjeto.image = UIImage(named: "watermelon")
         }
@@ -126,14 +130,32 @@ class ViewControllerSimulacion: UIViewController {
         animacionPersonaje()
     }
     
-    
-    @IBAction func escribirValores(_ sender: Any) {
-        iEmp = Int(tfEmpuje.text!)
+    // Revisa si se edito el texto
+    @IBAction func escribirValores(_ sender: UITextField) {
         
+        // Revisa si se hay valor en el de Empuje
         if let iEmp = Int(tfEmpuje.text!){
+            // Se lo asigna al Stepper
             stpEmpuje.value = Double(iEmp)
+
+        // Si no
         }else{
+            // Pone en 0 el empuje
             iEmp = 0
+            // Lo asigna al stepper
+            stpEmpuje.value = Double(iEmp)
+        }
+
+        // Revisa si hay valor en la Masa
+        if let iMasa = Int(tfMasa.text!){
+            // Se lo asigna al Stepper
+            stpEmpuje.value = Double(iMasa)
+
+        // En caso contrario
+        }else{
+            // Lo asigna en 0
+            iMasa = 0
+            stpEmpuje.value = Double(iMasa)
         }
     }
     
@@ -254,5 +276,42 @@ class ViewControllerSimulacion: UIViewController {
      - Posicion del monito
      */
     
-}
+    // MARK: - Teclado
 
+        // Para subir el view cuando aparezca el teclado
+    @IBAction func keyboardWasShown(aNotification : NSNotification) {
+        
+        let kbSize = (aNotification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size
+        
+        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
+        
+        // Si el teclado oculta el textfieldo, sube el view
+        var aRect: CGRect = scrollView.frame
+        aRect.size.height -= kbSize.height
+        if !aRect.contains(tfRespuesta.frame.origin) {
+            scrollView.scrollRectToVisible(tfRespuesta.frame, animated: true)
+        }
+    }
+    
+    // Para bajar la view a la normalidad
+    @IBAction func keyboardWillBeHidden(aNotification : NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    // Paraa registrar las notificaciones y acciones
+    func notificacionesTeclado() {
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown(aNotification:)),
+                                               name:UIResponder.keyboardWillShowNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillBeHidden(aNotification:)),
+                                               name:UIResponder.keyboardWillHideNotification, object:nil)
+    }
+
+    // Para quitar el teclado de la pantalla
+    @IBAction func quitarTeclado(){
+        view.endEditing(true);
+    }
+}
