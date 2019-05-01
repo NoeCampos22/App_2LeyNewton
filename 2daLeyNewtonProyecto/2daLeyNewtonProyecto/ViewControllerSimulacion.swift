@@ -24,9 +24,10 @@ class ViewControllerSimulacion: UIViewController {
     
     // Imagenes
     @IBOutlet weak var imgFoto: UIImageView!
-    @IBOutlet weak var character: UIImageView!
+    @IBOutlet weak var imgCharacter: UIImageView!
     @IBOutlet weak var imgBack1: UIImageView!
     @IBOutlet weak var imgBack2: UIImageView!
+    @IBOutlet weak var imgBack3: UIImageView!
     
     // Labels
     @IBOutlet weak var lbAceleracion: UILabel!
@@ -77,14 +78,14 @@ class ViewControllerSimulacion: UIViewController {
         // De izquierda a derecha
         if (sender.value > 0){
             imgBack1.transform = CGAffineTransform(scaleX: 1, y: 1)
-            character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
-            character.transform = CGAffineTransform(scaleX: 1, y: 1)
+            imgCharacter.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
+            imgCharacter.transform = CGAffineTransform(scaleX: 1, y: 1)
         
         // De derecha a izquierda
         }else if (sender.value < 0) {
             imgBack1.transform = CGAffineTransform(scaleX: -1, y: 1)
-            character.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
-            character.transform = CGAffineTransform(scaleX: -1, y: 1)
+            imgCharacter.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
+            imgCharacter.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
     
@@ -148,24 +149,24 @@ class ViewControllerSimulacion: UIViewController {
         actualizarLabels()
         
         // Se asigna la animacion inicial
-        character.animationImages = spritesIdle
+        imgCharacter.animationImages = spritesIdle
         // Se guarda la bandera de la animacion
         iTipo = 0
         // Se inidica la velovidad de la animacion
-        character.animationDuration = 0.5
+        imgCharacter.animationDuration = 0.5
         // Inicia la animacion
-        character.startAnimating()
+        imgCharacter.startAnimating()
         
         
-        // Save the character size
-        iHeight = character.frame.height
-        iWidth = character.frame.width
+        // Save the imgCharacter size
+        iHeight = imgCharacter.frame.height
+        iWidth = imgCharacter.frame.width
         
         // Calcular la posicion
         calcularPosicion()
         
         // Posicionar al personaje
-        character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
+        imgCharacter.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
     }
     
     // Para que los valores iniciales sean 0
@@ -227,23 +228,23 @@ class ViewControllerSimulacion: UIViewController {
         // Si no hay aceleracion
         if(dAcel == 0.0 && iTipo != 0){
             // Se asignan los sprites de estar detenido
-            character.animationImages = spritesIdle
+            imgCharacter.animationImages = spritesIdle
             iTipo = 0
-            character.startAnimating()
+            imgCharacter.startAnimating()
             
             // Para animar que camina
         }else if (dAcel > 0.0 && dAcel <= 7.0 && iTipo != 1) {
             // Se guardan asignan los nuevos sprites
-            character.animationImages = spritesWalk
+            imgCharacter.animationImages = spritesWalk
             iTipo = 1
-            character.startAnimating()
+            imgCharacter.startAnimating()
             
             // O que esta corriendo
         }else if (dAcel > 7.0 && iTipo != 2) {
             // Se asignan los sprites de correr
-            character.animationImages = spritesRun
+            imgCharacter.animationImages = spritesRun
             iTipo = 2
-            character.startAnimating()
+            imgCharacter.startAnimating()
         }
     }
     
