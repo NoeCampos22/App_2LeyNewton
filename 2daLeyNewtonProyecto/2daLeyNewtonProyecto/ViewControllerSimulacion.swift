@@ -149,14 +149,27 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         // Revisa si hay valor en la Masa
         if let iMasa = Int(tfMasa.text!){
             // Se lo asigna al Stepper
-            stpEmpuje.value = Double(iMasa)
+            stpMasa.value = Double(iMasa)
 
         // En caso contrario
         }else{
             // Lo asigna en 0
             iMasa = 0
-            stpEmpuje.value = Double(iMasa)
+            stpMasa.value = Double(iMasa)
         }
+        
+        // Revisa direccion
+        empujarObjeto(stpEmpuje)
+        
+        // Revisar masa del objeto
+        actualizarObjeto(stpMasa)
+        
+        // Calcular con los nuevos valores
+        realizarCalculo()
+        
+        // Actualizar labels
+        actualizarValores()
+        
     }
     
     // MARK: - Set Inicial
@@ -240,9 +253,9 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         tfMasa.text = String(iMasa)
         
         // Se actualizan los labels
-        lbFuerzaFriccion.text = String(iFric)
-        lbFuerzaNeta.text = String(iFNeta)
-        lbAceleracion.text = String(format: "%.2f", dAcel)
+        lbFuerzaFriccion.text = "F. Friccion: " + String(iFric) + "N"
+        lbFuerzaNeta.text = "F. Neta: " + String(iFNeta) + "N"
+        lbAceleracion.text = "Aceleracion: " +  String(format: "%.2f", dAcel) + "m/s"
     }
     
     // MARK: - Animacion
@@ -290,8 +303,12 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         // Si el teclado oculta el textfieldo, sube el view
         var aRect: CGRect = scrollView.frame
         aRect.size.height -= kbSize.height
-        if !aRect.contains(tfRespuesta.frame.origin) {
-            scrollView.scrollRectToVisible(tfRespuesta.frame, animated: true)
+        
+        if !aRect.contains(tfEmpuje.frame.origin) {
+            scrollView.scrollRectToVisible(tfEmpuje.frame, animated: true)
+        
+        }else if !aRect.contains(tfMasa.frame.origin) {
+            scrollView.scrollRectToVisible(tfMasa.frame, animated: true)
         }
     }
     
