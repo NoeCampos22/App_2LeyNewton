@@ -5,36 +5,35 @@
 //  Created by Alumno on 2/27/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
-
 import UIKit
 
-class ViewControllerSimulacion: UIViewController {
+class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
+
+    // Scrollview
+    @IBOutlet weak var scrollView: UIScrollView!
     
+    // Steppers
+    @IBOutlet weak var stpEmpuje: UIStepper!
+    @IBOutlet weak var stpMasa: UIStepper!
     
-    // Sliders
-    @IBOutlet weak var slEmpuje: UISlider!
-    @IBOutlet weak var slAngulo: UISlider!{
-        didSet{
-            slAngulo.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi))
-        }
-    }
-    @IBOutlet weak var slMasa: UISlider!
+    // Slider
     @IBOutlet weak var slCoefFric: UISlider!
     
     // Imagenes
-    @IBOutlet weak var imgFoto: UIImageView!
-    @IBOutlet weak var character: UIImageView!
-    @IBOutlet weak var imgBack: UIImageView!
-    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var imgObjeto: UIImageView!
+    @IBOutlet weak var imgMonito: UIImageView!
+    @IBOutlet weak var imgBack1: UIImageView!
+    @IBOutlet weak var imgBack2: UIImageView!
+    @IBOutlet weak var imgBack3: UIImageView!
     
     // Labels
     @IBOutlet weak var lbAceleracion: UILabel!
     @IBOutlet weak var lbFuerzaNeta: UILabel!
     @IBOutlet weak var lbFuerzaFriccion: UILabel!
-    @IBOutlet weak var lbEmpuje: UILabel!
-    @IBOutlet weak var lbMasa: UILabel!
-    @IBOutlet weak var lbFriccion: UILabel!
-    @IBOutlet weak var lbAngulo: UILabel!
+    
+    // Textfields
+    @IBOutlet weak var tfEmpuje: UITextField!
+    @IBOutlet weak var tfMasa: UITextField!
     
     // Arreglo de asssets
     var spritesWalk: [UIImage] = [UIImage(named: "Walk (1)")!, UIImage(named: "Walk (2)")!, UIImage(named: "Walk (3)")!, UIImage(named: "Walk (4)")!, UIImage(named: "Walk (5)")!, UIImage(named: "Walk (6)")!, UIImage(named: "Walk (7)")!, UIImage(named: "Walk (8)")!, UIImage(named: "Walk (9)")!, UIImage(named: "Walk (10)")!, UIImage(named: "Walk (11)")!, UIImage(named: "Walk (12)")!, UIImage(named: "Walk (13)")!, UIImage(named: "Walk (14)")!, UIImage(named: "Walk (15)")!]
@@ -62,43 +61,49 @@ class ViewControllerSimulacion: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Iniciar todo al cargar la pantalla
         setInicial()
+
+        // Agregar las notificaciones del teclado
+        notificacionesTeclado()
     }
     
     //Dependiendo si los newtons son positivos, negativos o 0
     //1.- El personaje aparecera ya sea en el lado derecho o izquierdo de la pantalla
     //2.-Dependiendo la fuerza aplicada el personaje empezará a empujar el objeto de en medio y cambiarán los valores de los calculos
-    @IBAction func empujarObjeto(_ sender: UISlider) {
+    @IBAction func empujarObjeto(_ sender: UIStepper) {
         
         // Revisa la direccion a la que se empuja el objeto
         // De izquierda a derecha
-        if (sender.value > 0){
-            imgBack.transform = CGAffineTransform(scaleX: 1, y: 1)
-            character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
-            character.transform = CGAffineTransform(scaleX: 1, y: 1)
-        
-        // De derecha a izquierda
+        if (sender.value >= 0){
+            imgBack1.transform = CGAffineTransform(scaleX: 1, y: 1)
+            imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
+            imgMonito.transform = CGAffineTransform(scaleX: 1, y: 1)
+            
+            // De derecha a izquierda
         }else if (sender.value < 0) {
-            imgBack.transform = CGAffineTransform(scaleX: -1, y: 1)
-            character.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
-            character.transform = CGAffineTransform(scaleX: -1, y: 1)
+            imgBack1.transform = CGAffineTransform(scaleX: -1, y: 1)
+            imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
+            imgMonito.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
     
-    //Tomamos valor para calculos y animación para los
-    @IBAction func sliderActionMasa(_ sender: UISlider) {
+    //Se toma el valor actual del stepper y se pone la imagen correspondiente
+    @IBAction func actualizarObjeto(_ sender: UIStepper) {
         
-        lbMasa.text = String(Int(sender.value))
-        if sender.value > 0 && sender.value < 49{
-            imgFoto.image = UIImage(named: "apple")
-        }
-        if sender.value > 50 && sender.value < 100{
-            imgFoto.image = UIImage(named: "orange")
-        }
-        if sender.value > 101 && sender.value < 200{
-            imgFoto.image = UIImage(named: "watermelon")
+        // Revisa el valor de la masa y asigna la imagen correspondiente
+        if Int(sender.value) > 0 && Int(sender.value) < 49{
+            
+            imgObjeto.image = UIImage(named: "apple")
+        
+        }else if Int(sender.value) > 50 && Int(sender.value) < 100{
+            
+            imgObjeto.image = UIImage(named: "orange")
+        
+        }else if Int(sender.value) > 101 && Int(sender.value) < 200{
+            
+            imgObjeto.image = UIImage(named: "watermelon")
         }
     }
     
@@ -106,65 +111,91 @@ class ViewControllerSimulacion: UIViewController {
     @IBAction func simulacionActiva(_ sender: Any){
         
         // Mientras que haya algo que empujar...
-        if(Int(slMasa.value) != 0){
+        if (Int(stpMasa.value) != 0){
             // Se realizan los calculos con los nuevos datos
             realizarCalculo()
             // Se muestran los datos
-            actualizarLabels()
+            actualizarValores()
             
-        // Si no hay algo que empujar
+            // Si no hay algo que empujar
         }else{
             // Todo se pone en 0s
             setCeros()
             
             // Se actualizan los labels
-            actualizarLabels()
+            actualizarValores()
         }
-        
         
         // Actualizar la animacion del personaje
         animacionPersonaje()
-
     }
-   
+    
+    // Revisa si se edito el texto
+    @IBAction func escribirValores(_ sender: UITextField) {
+        
+        // Revisa si se hay valor en el de Empuje
+        if let iEmp = Int(tfEmpuje.text!){
+            // Se lo asigna al Stepper
+            stpEmpuje.value = Double(iEmp)
+
+        // Si no
+        }else{
+            // Pone en 0 el empuje
+            iEmp = 0
+            // Lo asigna al stepper
+            stpEmpuje.value = Double(iEmp)
+        }
+
+        // Revisa si hay valor en la Masa
+        if let iMasa = Int(tfMasa.text!){
+            // Se lo asigna al Stepper
+            stpMasa.value = Double(iMasa)
+
+        // En caso contrario
+        }else{
+            // Lo asigna en 0
+            iMasa = 0
+            stpMasa.value = Double(iMasa)
+        }
+        
+        // Revisa direccion
+        empujarObjeto(stpEmpuje)
+        
+        // Revisar masa del objeto
+        actualizarObjeto(stpMasa)
+        
+        // Calcular con los nuevos valores
+        realizarCalculo()
+        
+        // Actualizar labels
+        actualizarValores()
+        
+    }
     
     // MARK: - Set Inicial
     // Para calcular la posicion inicial del monito
     func calcularPosicion(){
-        iX = imgFoto.frame.minX - iWidth - 5
-        iY = imgFoto.frame.minY
     }
     
     // Para poner en 0 los labels e iniciar la animación
     func setInicial(){
         
         // Imagen del fondo
-        background.loadGif(name: "back")
+        //background.loadGif(name: "back")
         
         // Se inicializan los valores en 0
         setCeros()
         // Se imprimen los 0s
-        actualizarLabels()
+        actualizarValores()
         
         // Se asigna la animacion inicial
-        character.animationImages = spritesIdle
+        imgMonito.animationImages = spritesIdle
         // Se guarda la bandera de la animacion
         iTipo = 0
         // Se inidica la velovidad de la animacion
-        character.animationDuration = 0.5
+        imgMonito.animationDuration = 0.5
         // Inicia la animacion
-        character.startAnimating()
-        
-        
-        // Save the character size
-        iHeight = character.frame.height
-        iWidth = character.frame.width
-        
-        // Calcular la posicion
-        calcularPosicion()
-        
-        // Posicionar al personaje
-        character.frame = CGRect(x: iX, y: iY, width: iWidth, height: iHeight)
+        imgMonito.startAnimating()
     }
     
     // Para que los valores iniciales sean 0
@@ -174,6 +205,7 @@ class ViewControllerSimulacion: UIViewController {
         iMasa = 0
         dAcel = 0.0
         iFNeta = 0
+        iCoefFric = 0
     }
     
     // MARK: - Calculos
@@ -181,11 +213,14 @@ class ViewControllerSimulacion: UIViewController {
     // Obtiene los valores de los slider y realiza el calculo
     func realizarCalculo(){
         // Obtiene los valroes de Empuje y la Masa
-        iEmp = Int(slEmpuje.value)
-        iMasa = Int(slMasa.value)
+        iEmp = Int(stpEmpuje.value)
+        iMasa = Int(stpMasa.value)
+        iCoefFric = Double(slCoefFric.value)
         
         // Se calcula la fuerza de fricción
-        let tFric = Double(slCoefFric.value) * 9.81 * Double(iMasa)
+        let tFric = iCoefFric * 9.81 * Double(iMasa)
+        
+        print(tFric)
         
         // Revisa si es mayor la fuerza de Empuje
         if (abs(iEmp) >= Int(tFric)){
@@ -202,7 +237,7 @@ class ViewControllerSimulacion: UIViewController {
             // En caso de no ser mayor la fuerza de empuje
         }else{
             // Se igualan las fuerzas de fricción y de empuje
-            iFric = Int(slEmpuje.value)
+            iFric = Int(stpEmpuje.value)
             // Fuerza neta igual a 0
             iFNeta = 0
         }
@@ -212,12 +247,15 @@ class ViewControllerSimulacion: UIViewController {
     }
     
     // Se actualizan los labels correspondientes
-    func actualizarLabels(){
-        lbEmpuje.text = String(iEmp)
-        lbMasa.text = String(iMasa)
-        lbFuerzaFriccion.text = String(iFric)
-        lbFuerzaNeta.text = String(iFNeta)
-        lbAceleracion.text = String(format: "%.2f", dAcel)
+    func actualizarValores(){
+        // Se actualiza los textfields
+        tfEmpuje.text = String(iEmp)
+        tfMasa.text = String(iMasa)
+        
+        // Se actualizan los labels
+        lbFuerzaFriccion.text = "F. Friccion: " + String(iFric) + "N"
+        lbFuerzaNeta.text = "F. Neta: " + String(iFNeta) + "N"
+        lbAceleracion.text = "Aceleracion: " +  String(format: "%.2f", dAcel) + "m/s"
     }
     
     // MARK: - Animacion
@@ -226,23 +264,23 @@ class ViewControllerSimulacion: UIViewController {
         // Si no hay aceleracion
         if(dAcel == 0.0 && iTipo != 0){
             // Se asignan los sprites de estar detenido
-            character.animationImages = spritesIdle
+            imgMonito.animationImages = spritesIdle
             iTipo = 0
-            character.startAnimating()
+            imgMonito.startAnimating()
             
             // Para animar que camina
         }else if (dAcel > 0.0 && dAcel <= 7.0 && iTipo != 1) {
             // Se guardan asignan los nuevos sprites
-            character.animationImages = spritesWalk
+            imgMonito.animationImages = spritesWalk
             iTipo = 1
-            character.startAnimating()
+            imgMonito.startAnimating()
             
             // O que esta corriendo
         }else if (dAcel > 7.0 && iTipo != 2) {
             // Se asignan los sprites de correr
-            character.animationImages = spritesRun
+            imgMonito.animationImages = spritesRun
             iTipo = 2
-            character.startAnimating()
+            imgMonito.startAnimating()
         }
     }
     
@@ -251,4 +289,46 @@ class ViewControllerSimulacion: UIViewController {
      - Posicion del monito
      */
     
+    // MARK: - Teclado
+
+        // Para subir el view cuando aparezca el teclado
+    @IBAction func keyboardWasShown(aNotification : NSNotification) {
+        
+        let kbSize = (aNotification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size
+        
+        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
+        
+        // Si el teclado oculta el textfieldo, sube el view
+        var aRect: CGRect = scrollView.frame
+        aRect.size.height -= kbSize.height
+        
+        if !aRect.contains(tfEmpuje.frame.origin) {
+            scrollView.scrollRectToVisible(tfEmpuje.frame, animated: true)
+        
+        }else if !aRect.contains(tfMasa.frame.origin) {
+            scrollView.scrollRectToVisible(tfMasa.frame, animated: true)
+        }
+    }
+    
+    // Para bajar la view a la normalidad
+    @IBAction func keyboardWillBeHidden(aNotification : NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    // Paraa registrar las notificaciones y acciones
+    func notificacionesTeclado() {
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWasShown(aNotification:)),
+                                               name:UIResponder.keyboardWillShowNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillBeHidden(aNotification:)),
+                                               name:UIResponder.keyboardWillHideNotification, object:nil)
+    }
+
+    // Para quitar el teclado de la pantalla
+    @IBAction func quitarTeclado(){
+        view.endEditing(true);
+    }
 }
