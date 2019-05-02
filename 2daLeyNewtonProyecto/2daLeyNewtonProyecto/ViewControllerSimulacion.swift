@@ -60,7 +60,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     var iY: CGFloat!
     var iWidth: CGFloat!
     var iHeight: CGFloat!
-    var iDif: CGFloat!
+    var iDifMax: CGFloat!
+    var iDifMin: CGFloat!
     
     // Variable de animacion del personaje
     var iTipo: Int!
@@ -86,16 +87,19 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         // Revisa la direccion a la que se empuja el objeto
         // De izquierda a derecha
         if (sender.value >= 0){
-            imgBack1.transform = CGAffineTransform(scaleX: 1, y: 1)
-            //imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
-            imgMonito.frame.origin.x = iX - iDif
+            //imgBack1.transform = CGAffineTransform(scaleX: 1, y: 1)
+            //imgMonito.frame.origin.x = iX - iDif
+            
+            imgMonito.frame.origin.x = imgObjeto.frame.minX - iDifMin
             imgMonito.transform = CGAffineTransform(scaleX: 1, y: 1)
             
             // De derecha a izquierda
         }else if (sender.value < 0) {
-            imgBack1.transform = CGAffineTransform(scaleX: -1, y: 1)
-            //imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
-            imgMonito.frame.origin.x = iX + iDif
+            //imgBack1.transform = CGAffineTransform(scaleX: -1, y: 1)
+            //imgMonito.frame.origin.x = iX + iDif
+            
+            imgMonito.frame.origin.x = imgObjeto.frame.minX + iDifMax
+            
             imgMonito.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
@@ -132,6 +136,9 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         }else{
             // Todo se pone en 0s
             setCeros()
+            
+            // Asigna el valor del empuje
+            iEmp = Int(stpEmpuje.value)
             
             // Se actualizan los labels
             actualizarValores()
@@ -193,7 +200,9 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         
         // Imagen del fondo
         //background.loadGif(name: "back")
-        iDif = imgObjeto.frame.maxX - imgMonito.frame.maxX
+        iDifMax = imgObjeto.frame.maxX - imgMonito.frame.maxX
+
+        iDifMin = imgObjeto.frame.minX - imgMonito.frame.minX
         
         iX = imgMonito.frame.origin.x
         
@@ -268,30 +277,30 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         tfMasa.text = String(iMasa)
         
         // Se actualizan los labels
-        lbFuerzaFriccion.text = "F. Friccion: " + String(iFric) + "N"
-        lbFuerzaNeta.text = "F. Neta: " + String(iFNeta) + "N"
-        lbAceleracion.text = "Aceleracion: " +  String(format: "%.2f", dAcel) + "m/s"
+        lbFuerzaFriccion.text = "Fuerza de Fricción: " + String(iFric) + "N"
+        lbFuerzaNeta.text = "Fuerza Neta: " + String(iFNeta) + "N"
+        lbAceleracion.text = "Aceleración: " +  String(format: "%.2f", dAcel) + "m/s"
     }
     
     // MARK: - Animacion
     func animacionPersonaje(){
         
         // Si no hay aceleracion
-        if(dAcel == 0.0 && iTipo != 0){
+        if(abs(dAcel) == 0.0 && iTipo != 0){
             // Se asignan los sprites de estar detenido
             imgMonito.animationImages = spritesIdle
             iTipo = 0
             imgMonito.startAnimating()
             
             // Para animar que camina
-        }else if (dAcel > 0.0 && dAcel <= 7.0 && iTipo != 1) {
+        }else if (abs(dAcel) > 0.0 && abs(dAcel) <= 7.0 && iTipo != 1) {
             // Se guardan asignan los nuevos sprites
             imgMonito.animationImages = spritesWalk
             iTipo = 1
             imgMonito.startAnimating()
             
             // O que esta corriendo
-        }else if (dAcel > 7.0 && iTipo != 2) {
+        }else if (abs(dAcel) > 7.0 && iTipo != 2) {
             // Se asignan los sprites de correr
             imgMonito.animationImages = spritesRun
             iTipo = 2
