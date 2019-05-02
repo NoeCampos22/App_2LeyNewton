@@ -2,15 +2,17 @@
 //  ViewControllerSimulacion.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by Alumno on 2/27/19.
+//  Created by Noe Campos y Mariana Villegas on 2/27/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 import UIKit
 
 class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
 
-    // Scrollview
+    // Background Outlets
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vwMiniView: UIView!
+    @IBOutlet weak var lbBackGround: UILabel!
     
     // Steppers
     @IBOutlet weak var stpEmpuje: UIStepper!
@@ -18,6 +20,9 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     
     // Slider
     @IBOutlet weak var slCoefFric: UISlider!
+    
+    // Boton
+    @IBOutlet weak var btRegresar: UIButton!
     
     // Imagenes
     @IBOutlet weak var imgObjeto: UIImageView!
@@ -62,6 +67,9 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Poner propiedades de los componentes
+        setPropiedades()
+
         // Iniciar todo al cargar la pantalla
         setInicial()
 
@@ -283,11 +291,57 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             imgMonito.startAnimating()
         }
     }
-    
-    /*
-     TO-DO List
-     - Posicion del monito
-     */
+
+    // MARK: - Diseño
+    func setPropiedades(){
+        
+        // Poner el fondo gradiente
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        vwMiniView.backgroundColor = UIColor.clear
+        lbBackGround.backgroundColor = UIColor.clear
+
+        // Redondear los labels
+        lbAceleracion.esquinasRedondas(radio: 3.0)
+        lbFuerzaNeta.esquinasRedondas(radio: 3.0)
+        lbFuerzaFriccion.esquinasRedondas(radio: 3.0)
+
+        // Poner fondo en los labels
+        lbAceleracion.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
+        lbFuerzaNeta.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
+        lbFuerzaFriccion.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
+
+        // Redondear esquinas de textfields
+        tfEmpuje.esquinasRedondas(radio: 15.0)
+        tfMasa.esquinasRedondas(radio: 15.0)
+        
+        // Border de los textfields
+        tfEmpuje.layer.borderWidth = 1.0
+        tfMasa.layer.borderWidth = 1.0
+        
+        // Color del borde
+        tfEmpuje.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+        tfMasa.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+
+        // Color y opacidad del textfield
+        tfEmpuje.backgroundColor = Colores.WhiteBackground
+        tfMasa.backgroundColor = Colores.WhiteBackground
+        
+        // Color, forma y opacidad del boton
+        btRegresar.backgroundColor = Colores.ObscureBlue
+        btRegresar.esquinasRedondas(radio: 5.0)
+        
+        // Set the background of the steppers
+        stpEmpuje.backgroundColor = Colores.ObscureBlue
+        stpMasa.backgroundColor = Colores.ObscureBlue
+        
+        // Set los colores del slider
+        slCoefFric.minimumTrackTintColor = Colores.ObscureBlueAlpha
+        slCoefFric.maximumTrackTintColor = Colores.ObscureBlue
+        slCoefFric.thumbTintColor = Colores.ObscureBlueAlpha
+        
+        // Set fondo de imagen
+        imgBack1.backgroundColor = UIColor.clear
+    }
     
     // MARK: - Teclado
 
