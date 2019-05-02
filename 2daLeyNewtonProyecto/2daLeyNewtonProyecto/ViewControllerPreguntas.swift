@@ -21,7 +21,7 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var lbIngresa: UILabel!
     
     // Outlets de los botones
-    @IBOutlet weak var btOption: UIButton!
+    @IBOutlet weak var btRevisar: UIButton!
     @IBOutlet weak var btFormula: UIButton!
     @IBOutlet weak var btSiguiente: UIButton!
     @IBOutlet weak var btRegresar: UIButton!
@@ -55,14 +55,14 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         tfRespuesta.layer.borderWidth = 1.0
         tfRespuesta.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
         tfRespuesta.backgroundColor = Colores.WhiteBackground
-        //btOption.backgroundColor = Colores.ObscureBlue
-        //btFormula.backgroundColor = Colores.ObscureBlue
-        //btSiguiente.backgroundColor = Colores.ObscureBlue
-        //btRegresar.backgroundColor = Colores.ObscureBlue
-        btRegresar.esquinasRedondas(radio: 0.20)
-        btOption.esquinasRedondas(radio: 0.20)
-        btRegresar.esquinasRedondas(radio: 0.20)
-        btSiguiente.esquinasRedondas(radio: 0.20)
+        btRevisar.backgroundColor = Colores.ObscureBlue
+        btFormula.backgroundColor = Colores.ObscureBlue
+        btSiguiente.backgroundColor = Colores.ObscureBlue
+        btRegresar.backgroundColor = Colores.ObscureBlue
+        btRevisar.esquinasRedondas(radio: 20)
+        btFormula.esquinasRedondas(radio: 20)
+        btRegresar.esquinasRedondas(radio: 20)
+        btSiguiente.esquinasRedondas(radio: 20)
         
         
         

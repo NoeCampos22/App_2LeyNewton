@@ -253,8 +253,8 @@
                     </view>
                     <connections>
                         <outlet property="btFormula" destination="40a-OB-8dW" id="Y81-fR-3tv"/>
-                        <outlet property="btOption" destination="40a-OB-8dW" id="zDN-IE-qYi"/>
                         <outlet property="btRegresar" destination="On4-YB-Zj2" id="9Fk-AO-2As"/>
+                        <outlet property="btRevisar" destination="oC3-TN-szO" id="yDT-SK-fho"/>
                         <outlet property="btSiguiente" destination="lvM-uC-v6e" id="2QF-Gh-xOt"/>
                         <outlet property="imgImage" destination="WsK-CM-fcu" id="FbA-mc-eoc"/>
                         <outlet property="lbBackGround" destination="rMH-ID-Kjo" id="uu0-k7-gfo"/>

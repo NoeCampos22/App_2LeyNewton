@@ -21,5 +21,5 @@ struct Colores {
     
     static let WhiteBackground = UIColor(white: 100, alpha: 0.40)
     
-    static let ObscureBlue = UIColor(red: 11.0/255.0, green: 6.0/255.0, blue: 75.0/255.0, alpha: 35.0)
+    static let ObscureBlue = UIColor(red: 11.0/255.0, green: 6.0/255.0, blue: 75.0/255.0, alpha: 0.25)
 }
