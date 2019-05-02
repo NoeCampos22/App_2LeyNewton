@@ -10,6 +10,11 @@ import UIKit
 
 class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     
+    // Background Outlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vwMiniView: UIView!
+    @IBOutlet weak var lbBackGround: UILabel!
+    
     // Outlets de labels necesarios
     @IBOutlet weak var lbPregunta: UILabel!
     @IBOutlet weak var lbTitulo: UILabel!
@@ -18,13 +23,13 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     // Outlets de los botones
     @IBOutlet weak var btOption: UIButton!
     @IBOutlet weak var btFormula: UIButton!
+    @IBOutlet weak var btSiguiente: UIButton!
+    @IBOutlet weak var btRegresar: UIButton!
     
     // Outlet del textfield
     @IBOutlet weak var tfRespuesta: UITextField!
     @IBOutlet weak var imgImage: UIImageView!
-    
-    // Scrollview
-    @IBOutlet weak var scrollView: UIScrollView!
+
     
     //var activeField : UITextField!
     
@@ -38,6 +43,28 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the background  color
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        vwMiniView.backgroundColor = UIColor.clear
+        lbBackGround.backgroundColor = UIColor.clear
+        lbPregunta.esquinasRedondas(radio: 57.0)
+        lbPregunta.backgroundColor = Colores.MiniRed
+        imgImage.esquinasRedondas(radio: 57.0)
+        tfRespuesta.esquinasRedondas(radio: 15.0)
+        tfRespuesta.layer.borderWidth = 1.0
+        tfRespuesta.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+        tfRespuesta.backgroundColor = Colores.WhiteBackground
+        //btOption.backgroundColor = Colores.ObscureBlue
+        //btFormula.backgroundColor = Colores.ObscureBlue
+        //btSiguiente.backgroundColor = Colores.ObscureBlue
+        //btRegresar.backgroundColor = Colores.ObscureBlue
+        btRegresar.esquinasRedondas(radio: 0.20)
+        btOption.esquinasRedondas(radio: 0.20)
+        btRegresar.esquinasRedondas(radio: 0.20)
+        btSiguiente.esquinasRedondas(radio: 0.20)
+        
+        
         
         // Ajustar font de los labels
         ajustarFontSize()

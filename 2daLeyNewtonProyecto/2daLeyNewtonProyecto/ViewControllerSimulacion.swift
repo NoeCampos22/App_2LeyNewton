@@ -9,8 +9,10 @@ import UIKit
 
 class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
 
-    // Scrollview
+    // Background Outlets
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vwMiniView: UIView!
+    @IBOutlet weak var lbBackGround: UILabel!
     
     // Steppers
     @IBOutlet weak var stpEmpuje: UIStepper!
@@ -61,6 +63,12 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the background  color
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        vwMiniView.backgroundColor = UIColor.clear
+        lbBackGround.backgroundColor = UIColor.clear
+        
         
         // Iniciar todo al cargar la pantalla
         setInicial()
