@@ -21,6 +21,9 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // Slider
     @IBOutlet weak var slCoefFric: UISlider!
     
+    // Boton
+    @IBOutlet weak var btRegresar: UIButton!
+    
     // Imagenes
     @IBOutlet weak var imgObjeto: UIImageView!
     @IBOutlet weak var imgMonito: UIImageView!
@@ -298,14 +301,14 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         lbBackGround.backgroundColor = UIColor.clear
 
         // Redondear los labels
-        lbAceleracion.esquinasRedondas(radio: 57.0)
-        lbFuerzaNeta.esquinasRedondas(radio: 57.0)
-        lbFuerzaFriccion.esquinasRedondas(radio: 57.0)
+        lbAceleracion.esquinasRedondas(radio: 3.0)
+        lbFuerzaNeta.esquinasRedondas(radio: 3.0)
+        lbFuerzaFriccion.esquinasRedondas(radio: 3.0)
 
         // Poner fondo en los labels
-        lbAceleracion.backgroundColor = Colores.MiniRed
-        lbFuerzaNeta.backgroundColor = Colores.MiniRed
-        lbFuerzaFriccion.backgroundColor = Colores.MiniRed
+        lbAceleracion.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
+        lbFuerzaNeta.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
+        lbFuerzaFriccion.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
 
         // Redondear esquinas de textfields
         tfEmpuje.esquinasRedondas(radio: 15.0)
@@ -320,8 +323,24 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         tfMasa.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
 
         // Color y opacidad del textfield
-        tfEmpuje.background = Colores.WhiteBackground
-        tfMasa.background = Colores.WhiteBackground
+        tfEmpuje.backgroundColor = Colores.WhiteBackground
+        tfMasa.backgroundColor = Colores.WhiteBackground
+        
+        // Color, forma y opacidad del boton
+        btRegresar.backgroundColor = Colores.ObscureBlue
+        btRegresar.esquinasRedondas(radio: 5.0)
+        
+        // Set the background of the steppers
+        stpEmpuje.backgroundColor = Colores.ObscureBlue
+        stpMasa.backgroundColor = Colores.ObscureBlue
+        
+        // Set los colores del slider
+        slCoefFric.minimumTrackTintColor = Colores.ObscureBlueAlpha
+        slCoefFric.maximumTrackTintColor = Colores.ObscureBlue
+        slCoefFric.thumbTintColor = Colores.ObscureBlueAlpha
+        
+        // Set fondo de imagen
+        imgBack1.backgroundColor = UIColor.clear
     }
     
     // MARK: - Teclado

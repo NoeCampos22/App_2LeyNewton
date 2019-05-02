@@ -102,10 +102,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xi-yZ-3hj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4n-1R-kPG">
+                                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un objecto con una masa de &lt;m&gt;kg es empujado con una fuerza de &lt;e&gt;N y la fuerza de friccion es de &lt;f&gt;N. Calcula la aceleración." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4n-1R-kPG">
                                                 <rect key="frame" x="15" y="80" width="340" height="254"/>
                                                 <color key="backgroundColor" red="0.90179590180000002" green="0.78493441850000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -158,7 +158,6 @@
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa Respuesta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-Ng-QLx">
                                                 <rect key="frame" x="50" y="354" width="275" height="46"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="7gb-wT-VWZ"/>
@@ -307,21 +306,21 @@
                                                 <rect key="frame" x="0.0" y="70" width="520" height="275"/>
                                                 <color key="backgroundColor" red="0.99916523690000003" green="0.60808390379999999" blue="0.15564969179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friccion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUj-5O-oBu">
-                                                <rect key="frame" x="20" y="80" width="335" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friccion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUj-5O-oBu">
+                                                <rect key="frame" x="20" y="80" width="335" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="aB8-rP-h3J"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGw-rq-KDU">
-                                                <rect key="frame" x="20" y="120" width="335" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGw-rq-KDU">
+                                                <rect key="frame" x="20" y="120" width="335" height="38"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="jde-aZ-EI7"/>
+                                                    <constraint firstAttribute="height" constant="38" id="jde-aZ-EI7"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -331,7 +330,6 @@
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="BiL-vs-Jw7">
                                                 <rect key="frame" x="120" y="195" width="135" height="135"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BiL-vs-Jw7" secondAttribute="height" multiplier="1:1" id="9zE-rH-9Zd"/>
                                                 </constraints>
@@ -345,9 +343,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-QN-Hrt">
-                                                <rect key="frame" x="35" y="593" width="90" height="39"/>
-                                                <color key="backgroundColor" red="1" green="0.66460981760000004" blue="0.21427563290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-QN-Hrt">
+                                                <rect key="frame" x="35" y="592" width="90" height="39"/>
+                                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="hWc-nO-Kn5"/>
                                                     <constraint firstAttribute="width" constant="90" id="rR4-q5-klP"/>
@@ -443,13 +441,13 @@
                                                     <action selector="simulacionActiva:" destination="da8-9b-ruC" eventType="valueChanged" id="Vw4-fy-DO2"/>
                                                 </connections>
                                             </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aceleracion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-1u-ZtO">
-                                                <rect key="frame" x="20" y="160" width="335" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aceleracion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-1u-ZtO">
+                                                <rect key="frame" x="20" y="160" width="335" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="UfO-b4-myh"/>
-                                                    <constraint firstAttribute="height" constant="25" id="gFZ-3d-tci"/>
+                                                    <constraint firstAttribute="height" constant="38" id="gFZ-3d-tci"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -485,7 +483,7 @@
                                             <constraint firstItem="BiL-vs-Jw7" firstAttribute="trailing" secondItem="0fS-Sb-Tci" secondAttribute="trailing" constant="39" id="R8z-DX-mmm"/>
                                             <constraint firstItem="dxl-sz-QEc" firstAttribute="leading" secondItem="gq1-1Z-jOf" secondAttribute="trailing" id="T6n-cg-oEJ"/>
                                             <constraint firstAttribute="trailing" secondItem="2Vu-z4-pfd" secondAttribute="trailing" constant="125" id="W1n-pe-SHY"/>
-                                            <constraint firstItem="MGw-rq-KDU" firstAttribute="top" secondItem="vUj-5O-oBu" secondAttribute="bottom" constant="15" id="XZ9-66-vZe"/>
+                                            <constraint firstItem="MGw-rq-KDU" firstAttribute="top" secondItem="vUj-5O-oBu" secondAttribute="bottom" constant="2" id="XZ9-66-vZe"/>
                                             <constraint firstItem="Zwe-cx-Nyx" firstAttribute="leading" secondItem="7Nf-31-U7X" secondAttribute="trailing" constant="20" id="YTJ-i0-PA4"/>
                                             <constraint firstAttribute="trailing" secondItem="uOs-vx-zbD" secondAttribute="trailing" constant="125" id="YZQ-M6-EwQ"/>
                                             <constraint firstItem="QIR-1u-ZtO" firstAttribute="height" secondItem="MGw-rq-KDU" secondAttribute="height" id="YzJ-68-KMv"/>
@@ -497,7 +495,7 @@
                                             <constraint firstItem="MGw-rq-KDU" firstAttribute="height" secondItem="vUj-5O-oBu" secondAttribute="height" id="gRE-DD-xJn"/>
                                             <constraint firstAttribute="trailing" secondItem="BiL-vs-Jw7" secondAttribute="trailing" constant="120" id="glM-cE-9e9"/>
                                             <constraint firstItem="MGw-rq-KDU" firstAttribute="leading" secondItem="hVj-3V-FDw" secondAttribute="leading" constant="20" id="hEj-00-Mez"/>
-                                            <constraint firstItem="QIR-1u-ZtO" firstAttribute="top" secondItem="MGw-rq-KDU" secondAttribute="bottom" constant="15" id="hps-qT-DlL"/>
+                                            <constraint firstItem="QIR-1u-ZtO" firstAttribute="top" secondItem="MGw-rq-KDU" secondAttribute="bottom" constant="2" id="hps-qT-DlL"/>
                                             <constraint firstAttribute="bottom" secondItem="b9i-QN-Hrt" secondAttribute="bottom" constant="15" id="huW-iI-42i"/>
                                             <constraint firstItem="7Nf-31-U7X" firstAttribute="top" secondItem="2Vu-z4-pfd" secondAttribute="bottom" constant="7" id="kZ5-Wu-nfx"/>
                                             <constraint firstItem="uOs-vx-zbD" firstAttribute="leading" secondItem="hVj-3V-FDw" secondAttribute="leading" constant="40" id="lgz-gk-cOE"/>
@@ -548,6 +546,7 @@
                         <viewLayoutGuide key="safeArea" id="S8r-fP-G0N"/>
                     </view>
                     <connections>
+                        <outlet property="btRegresar" destination="b9i-QN-Hrt" id="eTt-mU-3Ik"/>
                         <outlet property="imgBack1" destination="gq1-1Z-jOf" id="zh2-2j-orZ"/>
                         <outlet property="imgBack2" destination="dxl-sz-QEc" id="MSs-qN-pWy"/>
                         <outlet property="imgBack3" destination="Qjp-98-HsS" id="qO2-Mg-SU4"/>
