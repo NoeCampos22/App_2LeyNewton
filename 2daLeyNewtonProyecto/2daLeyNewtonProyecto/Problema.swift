@@ -22,10 +22,13 @@ class Problema: NSObject {
     init(tipo: Int) {
         super.init()
         
+        // Obtener los valores
         setValores()
-     
+
+        // Dependiendo el tipo de problema, se pone el texto
         definirProblema(tipo: tipo)
         
+        // Se sustituyen los tags
         sustituirTags()
     }
     
