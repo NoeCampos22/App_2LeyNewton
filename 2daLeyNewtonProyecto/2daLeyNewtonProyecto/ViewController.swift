@@ -2,24 +2,35 @@
 //  ViewController.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by Alumno on 2/27/19.
+//  Created by Noe Capos on 2/27/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var btInfo: UIButton!
+    @IBOutlet weak var btSimulador: UIButton!
+    @IBOutlet weak var btPreguntas: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-@IBAction func unwindSimulacion (unwindSegue: UIStoryboardSegue) {
-    
-    }
-    @IBAction func unwindPreguntas (unwindSegue: UIStoryboardSegue) {
         
+        
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos: Colores.Purple)
+        
+        btInfo.esquinasRedondas(radio: 15.0)
+        btSimulador.esquinasRedondas(radio: 15.0)
+        btPreguntas.esquinasRedondas(radio: 15.0)
+        
+    }
+    
+    @IBAction func unwindSimulacion (unwindSegue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func unwindPreguntas (unwindSegue: UIStoryboardSegue) {
     }
 }
 
