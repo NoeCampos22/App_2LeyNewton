@@ -68,7 +68,7 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         // Si la respuesta es correcta...
         if (Double(tfRespuesta.text!) == problema.dRespuesta){
             // Asigna la imagen de una flecha azul
-            imgImage.image = UIImage(named: "Correcto")
+            imgImage.image = UIImage(named: "Correct")
                     
             // Se oculta la pregunta
             self.lbPregunta.fadeOut(completion:{
@@ -92,7 +92,7 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         // En caso de que sea incorrecta
         }else{
             // Asigna la imagen de una flecha azul
-            imgImage.image = UIImage(named: "Incorrecta")
+            imgImage.image = UIImage(named: "Wrong")
                     
             // Se oculta la pregunta
             self.lbPregunta.fadeOut(completion:{
