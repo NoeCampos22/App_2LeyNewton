@@ -60,6 +60,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     var iY: CGFloat!
     var iWidth: CGFloat!
     var iHeight: CGFloat!
+    var iDif: CGFloat!
     
     // Variable de animacion del personaje
     var iTipo: Int!
@@ -86,13 +87,15 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         // De izquierda a derecha
         if (sender.value >= 0){
             imgBack1.transform = CGAffineTransform(scaleX: 1, y: 1)
-            imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
+            //imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
+            imgMonito.frame.origin.x = iX - iDif
             imgMonito.transform = CGAffineTransform(scaleX: 1, y: 1)
             
             // De derecha a izquierda
         }else if (sender.value < 0) {
             imgBack1.transform = CGAffineTransform(scaleX: -1, y: 1)
-            imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
+            //imgMonito.frame = CGRect(x: 170.0, y: 150.0, width: 100.0, height: 250.0)
+            imgMonito.frame.origin.x = iX + iDif
             imgMonito.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
@@ -190,6 +193,10 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         
         // Imagen del fondo
         //background.loadGif(name: "back")
+        iDif = imgObjeto.frame.maxX - imgMonito.frame.maxX
+        
+        iX = imgMonito.frame.origin.x
+        
         
         // Se inicializan los valores en 0
         setCeros()
