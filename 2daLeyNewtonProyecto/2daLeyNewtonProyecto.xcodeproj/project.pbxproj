@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B169B16227A6D08007805D6 /* Constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B15227A6D08007805D6 /* Constantes.swift */; };
 		FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */; };
 		FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D02227033B006AE340 /* AppDelegate.swift */; };
 		FB6318D32227033B006AE340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D22227033B006AE340 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B169B15227A6D08007805D6 /* Constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes.swift; sourceTree = "<group>"; };
 		FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalCustomKeyboard.swift; sourceTree = "<group>"; };
 		FB6318CD2227033B006AE340 /* 2daLeyNewtonProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2daLeyNewtonProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6318D02227033B006AE340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */,
 				FB6318D02227033B006AE340 /* AppDelegate.swift */,
 				FB6318D22227033B006AE340 /* ViewController.swift */,
+				0B169B15227A6D08007805D6 /* Constantes.swift */,
 				FB6318D42227033B006AE340 /* Main.storyboard */,
 				FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */,
 				FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */,
@@ -162,6 +165,7 @@
 				FB6318D32227033B006AE340 /* ViewController.swift in Sources */,
 				FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */,
 				FBB07E23225E7FF2006E0436 /* Problema.swift in Sources */,
+				0B169B16227A6D08007805D6 /* Constantes.swift in Sources */,
 				FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */,
 				FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */,
 				FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */,

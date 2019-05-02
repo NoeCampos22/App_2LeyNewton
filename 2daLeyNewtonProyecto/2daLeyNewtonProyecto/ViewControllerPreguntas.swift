@@ -10,34 +10,42 @@ import UIKit
 
 class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     
+    // Background Outlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vwMiniView: UIView!
+    @IBOutlet weak var lbBackGround: UILabel!
+    
     // Outlets de labels necesarios
     @IBOutlet weak var lbPregunta: UILabel!
     @IBOutlet weak var lbTitulo: UILabel!
     @IBOutlet weak var lbIngresa: UILabel!
     
     // Outlets de los botones
-    @IBOutlet weak var btOption: UIButton!
+    @IBOutlet weak var btRevisar: UIButton!
     @IBOutlet weak var btFormula: UIButton!
+    @IBOutlet weak var btSiguiente: UIButton!
+    @IBOutlet weak var btRegresar: UIButton!
     
     // Outlet del textfield
     @IBOutlet weak var tfRespuesta: UITextField!
     @IBOutlet weak var imgImage: UIImageView!
-    
-    // Scrollview
-    @IBOutlet weak var scrollView: UIScrollView!
+
     
     //var activeField : UITextField!
     
     // Variables para los tamaños de las font
     var FontPregunta: CGFloat!
     var FontLabel: CGFloat!
+    var FontTitulo: CGFloat!
     
     // Objeto tipo problema
     var problema: Problema!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Poner propiedades de diseño
+        setPropiedades()
         
         // Ajustar font de los labels
         ajustarFontSize()
@@ -204,25 +212,70 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         print(problema.dRespuesta)
     }
     
-    // MARK: - Ajuste de Fonts
+    // MARK: - Diseño
+    
+    // Para el diseño de la pantalla
+    func setPropiedades(){
+        
+        // Poner el gradiente de fondo
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        vwMiniView.backgroundColor = UIColor.clear
+        lbBackGround.backgroundColor = UIColor.clear
+        
+        // Redondear, dar color y opacidad al label
+        lbPregunta.esquinasRedondas(radio: 57.0)
+        lbPregunta.backgroundColor = Colores.MiniRed
+        
+        // Redondear imagen
+        imgImage.esquinasRedondas(radio: 57.0)
+        
+        // Redondear, dar color y opacidad al textfield
+        tfRespuesta.esquinasRedondas(radio: 15.0)
+        tfRespuesta.layer.borderWidth = 1.0
+        tfRespuesta.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+        tfRespuesta.backgroundColor = Colores.WhiteBackground
+        
+        // Dar color y opacidad a los botones
+        btRevisar.backgroundColor = Colores.ObscureBlue
+        btFormula.backgroundColor = Colores.ObscureBlue
+        btSiguiente.backgroundColor = Colores.ObscureBlue
+        btRegresar.backgroundColor = Colores.ObscureBlue
+        
+        // Redondear los botones
+        btRevisar.esquinasRedondas(radio: 20)
+        btFormula.esquinasRedondas(radio: 20)
+        btRegresar.esquinasRedondas(radio: 20)
+        btSiguiente.esquinasRedondas(radio: 20)
+    }
     
     // Función para ajustar el FontSize dependiendo del tamaño de la pantalla
     func ajustarFontSize(){
         
         // Calcular el tamaño de font para el problema
-        FontPregunta = (self.view.frame.height * 0.04) / 896.0
+        //
+        //Para iphone 8 debe ser 0.04
+        FontPregunta = (self.view.frame.height * 0.03) / 667.0
+        
+        // Calcular para el titulo
+        //
+        //Para iphone 8 debe ser 0.12
+        FontTitulo = (self.view.frame.width * 0.10) / 375.0
         
         // Calcular el tamaño de font para los labels
-        FontLabel = (self.view.frame.width * 0.07) / 414.0
+        FontLabel = (self.view.frame.width * 0.07) / 375.0
+        
         
         // Ajustar el tamaño del texto con respecto al tamaño de la altura del label
         lbPregunta.font = lbPregunta.font.withSize(self.view.frame.height * FontPregunta)
         
         // Ajustar font size del label
-        lbTitulo.font = lbTitulo.font.withSize(self.view.frame.width * FontLabel)
+        lbTitulo.font = lbTitulo.font.withSize(self.view.frame.width * FontTitulo)
         
         // Ajustar font size del label
         lbIngresa.font = lbIngresa.font.withSize(self.view.frame.width * FontLabel)
+        
+        print(view.frame.height)
+        //171.0
     }
 
 }

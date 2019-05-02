@@ -2,7 +2,7 @@
 //  UIViewAnimation.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by user152643 on 4/21/19.
+//  Created by Noe Campos on 4/21/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 
@@ -24,4 +24,25 @@ extension UIView {
             self.alpha = 0.0
         }, completion: completion)
     }
+    
+    // Para crear el efecto de fondo gradiente
+    func setFondoGradiente(colorUno: UIColor!, colorDos: UIColor!){
+        
+        let capaGradiante = CAGradientLayer()
+        
+        capaGradiante.frame = bounds
+        capaGradiante.colors = [colorUno.cgColor, colorDos.cgColor]
+        capaGradiante.locations = [0.0, 1.0]
+        capaGradiante.startPoint = CGPoint(x: 0.0, y: 1.0)
+        capaGradiante.endPoint = CGPoint(x: 0.0, y: 0.0)
+        
+        layer.insertSublayer(capaGradiante, at: 0)
+    }
+    
+    // Para dar las esquinas redondeadas en un view
+    func esquinasRedondas(radio: CGFloat!){
+        layer.cornerRadius = radio;
+        layer.masksToBounds = true;
+    }
+
 }
