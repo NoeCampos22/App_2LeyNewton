@@ -79,7 +79,7 @@
                                     <constraint firstAttribute="height" constant="32" id="3Gu-5Z-8vr"/>
                                     <constraint firstAttribute="width" constant="83" id="NUU-gf-LtW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -116,6 +116,8 @@
                         <outlet property="btInfo" destination="aEB-kJ-Fiz" id="2hm-dJ-rxO"/>
                         <outlet property="btPreguntas" destination="haN-Hw-4zc" id="57j-AE-ujT"/>
                         <outlet property="btSimulador" destination="Ip0-18-YTI" id="wLa-Ng-dex"/>
+                        <outlet property="lbMusica" destination="qDu-jx-ODn" id="NJ1-nx-BpF"/>
+                        <outlet property="swMusica" destination="Xwe-ks-flg" id="KKv-oF-dgC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -543,7 +545,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-QN-Hrt">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-QN-Hrt">
                                                 <rect key="frame" x="35" y="592" width="90" height="39"/>
                                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -696,7 +698,7 @@
                                             <constraint firstAttribute="trailing" secondItem="BiL-vs-Jw7" secondAttribute="trailing" constant="120" id="glM-cE-9e9"/>
                                             <constraint firstItem="MGw-rq-KDU" firstAttribute="leading" secondItem="hVj-3V-FDw" secondAttribute="leading" constant="20" id="hEj-00-Mez"/>
                                             <constraint firstItem="QIR-1u-ZtO" firstAttribute="top" secondItem="MGw-rq-KDU" secondAttribute="bottom" constant="2" id="hps-qT-DlL"/>
-                                            <constraint firstAttribute="bottom" secondItem="b9i-QN-Hrt" secondAttribute="bottom" constant="15" id="huW-iI-42i"/>
+                                            <constraint firstAttribute="bottom" secondItem="b9i-QN-Hrt" secondAttribute="bottom" constant="16" id="huW-iI-42i"/>
                                             <constraint firstItem="7Nf-31-U7X" firstAttribute="top" secondItem="2Vu-z4-pfd" secondAttribute="bottom" constant="7" id="kZ5-Wu-nfx"/>
                                             <constraint firstItem="uOs-vx-zbD" firstAttribute="leading" secondItem="hVj-3V-FDw" secondAttribute="leading" constant="40" id="lgz-gk-cOE"/>
                                             <constraint firstItem="uOs-vx-zbD" firstAttribute="top" secondItem="Zwe-cx-Nyx" secondAttribute="bottom" constant="11" id="mty-aW-ioI"/>

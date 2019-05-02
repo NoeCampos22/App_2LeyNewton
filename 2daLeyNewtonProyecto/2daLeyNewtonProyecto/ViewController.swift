@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btInfo: UIButton!
     @IBOutlet weak var btSimulador: UIButton!
     @IBOutlet weak var btPreguntas: UIButton!
+    @IBOutlet weak var lbMusica: UILabel!
+    @IBOutlet weak var swMusica: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
         btSimulador.backgroundColor = Colores.ObscureBlue
         btPreguntas.backgroundColor = Colores.ObscureBlue
         
+        swMusica.tintColor = Colores.ObscureBlue
+        swMusica.onTintColor = Colores.ObscureBlueAlpha
     }
     
     @IBAction func unwindSimulacion (unwindSegue: UIStoryboardSegue) {
