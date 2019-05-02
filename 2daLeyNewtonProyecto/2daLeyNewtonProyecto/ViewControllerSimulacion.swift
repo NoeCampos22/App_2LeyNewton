@@ -64,36 +64,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Poner el fondo gradiente
-        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
-        vwMiniView.backgroundColor = UIColor.clear
-        lbBackGround.backgroundColor = UIColor.clear
-
-        // Redondear los labels
-        lbAceleracion.esquinasRedondas(radio: 57.0)
-        lbFuerzaNeta.esquinasRedondas(radio: 57.0)
-        lbFuerzaFriccion.esquinasRedondas(radio: 57.0)
-
-        // Poner fondo en los labels
-        lbAceleracion.backgroundColor = Colores.MiniRed
-        lbFuerzaNeta.backgroundColor = Colores.MiniRed
-        lbFuerzaFriccion.backgroundColor = Colores.MiniRed
-
-        // Redondear esquinas de textfields
-        tfEmpuje.esquinasRedondas(radio: 15.0)
-        tfMasa.esquinasRedondas(radio: 15.0)
-        
-        // Border de los textfields
-        tfEmpuje.layer.borderWidth = 1.0
-        tfMasa.layer.borderWidth = 1.0
-        
-        // Color del borde
-        tfEmpuje.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
-        tfMasa.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
-
-        // Color y opacidad del textfield
-        tfEmpuje.background = Colores.WhiteBackground
-        tfMasa.background = Colores.WhiteBackground
+        // Poner propiedades de los componentes
+        setPropiedades()
 
         // Iniciar todo al cargar la pantalla
         setInicial()
@@ -316,11 +288,41 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             imgMonito.startAnimating()
         }
     }
-    
-    /*
-     TO-DO List
-     - Posicion del monito
-     */
+
+    // MARK: - Diseño
+    func setPropiedades(){
+        
+        // Poner el fondo gradiente
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        vwMiniView.backgroundColor = UIColor.clear
+        lbBackGround.backgroundColor = UIColor.clear
+
+        // Redondear los labels
+        lbAceleracion.esquinasRedondas(radio: 57.0)
+        lbFuerzaNeta.esquinasRedondas(radio: 57.0)
+        lbFuerzaFriccion.esquinasRedondas(radio: 57.0)
+
+        // Poner fondo en los labels
+        lbAceleracion.backgroundColor = Colores.MiniRed
+        lbFuerzaNeta.backgroundColor = Colores.MiniRed
+        lbFuerzaFriccion.backgroundColor = Colores.MiniRed
+
+        // Redondear esquinas de textfields
+        tfEmpuje.esquinasRedondas(radio: 15.0)
+        tfMasa.esquinasRedondas(radio: 15.0)
+        
+        // Border de los textfields
+        tfEmpuje.layer.borderWidth = 1.0
+        tfMasa.layer.borderWidth = 1.0
+        
+        // Color del borde
+        tfEmpuje.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+        tfMasa.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+
+        // Color y opacidad del textfield
+        tfEmpuje.background = Colores.WhiteBackground
+        tfMasa.background = Colores.WhiteBackground
+    }
     
     // MARK: - Teclado
 
