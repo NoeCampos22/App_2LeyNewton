@@ -41,30 +41,13 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     var problema: Problema!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set the background  color
-        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
-        vwMiniView.backgroundColor = UIColor.clear
-        lbBackGround.backgroundColor = UIColor.clear
-        lbPregunta.esquinasRedondas(radio: 57.0)
-        lbPregunta.backgroundColor = Colores.MiniRed
-        imgImage.esquinasRedondas(radio: 57.0)
-        tfRespuesta.esquinasRedondas(radio: 15.0)
-        tfRespuesta.layer.borderWidth = 1.0
-        tfRespuesta.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
-        tfRespuesta.backgroundColor = Colores.WhiteBackground
-        btRevisar.backgroundColor = Colores.ObscureBlue
-        btFormula.backgroundColor = Colores.ObscureBlue
-        btSiguiente.backgroundColor = Colores.ObscureBlue
-        btRegresar.backgroundColor = Colores.ObscureBlue
-        btRevisar.esquinasRedondas(radio: 20)
-        btFormula.esquinasRedondas(radio: 20)
-        btRegresar.esquinasRedondas(radio: 20)
-        btSiguiente.esquinasRedondas(radio: 20)
-        
-        
+        // Poner propiedades de diseño
+        setPropiedades()
         
         // Ajustar font de los labels
         ajustarFontSize()
@@ -231,14 +214,48 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         print(problema.dRespuesta)
     }
     
-    // MARK: - Ajuste de Fonts
+    // MARK: - Diseño
+    
+    // Para el diseño de la pantalla
+    func setPropiedades(){
+        
+        // Poner el gradiente de fondo
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        vwMiniView.backgroundColor = UIColor.clear
+        lbBackGround.backgroundColor = UIColor.clear
+        
+        // Redondear, dar color y opacidad al label
+        lbPregunta.esquinasRedondas(radio: 57.0)
+        lbPregunta.backgroundColor = Colores.MiniRed
+        
+        // Redondear imagen
+        imgImage.esquinasRedondas(radio: 57.0)
+        
+        // Redondear, dar color y opacidad al textfield
+        tfRespuesta.esquinasRedondas(radio: 15.0)
+        tfRespuesta.layer.borderWidth = 1.0
+        tfRespuesta.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+        tfRespuesta.backgroundColor = Colores.WhiteBackground
+        
+        // Dar color y opacidad a los botones
+        btRevisar.backgroundColor = Colores.ObscureBlue
+        btFormula.backgroundColor = Colores.ObscureBlue
+        btSiguiente.backgroundColor = Colores.ObscureBlue
+        btRegresar.backgroundColor = Colores.ObscureBlue
+        
+        // Redondear los botones
+        btRevisar.esquinasRedondas(radio: 20)
+        btFormula.esquinasRedondas(radio: 20)
+        btRegresar.esquinasRedondas(radio: 20)
+        btSiguiente.esquinasRedondas(radio: 20)
+    }
     
     // Función para ajustar el FontSize dependiendo del tamaño de la pantalla
     func ajustarFontSize(){
         
         // Calcular el tamaño de font para el problema
-        FontPregunta = (self.view.frame.height * 0.04) / 896.0
-        
+        FontPregunta = (self.view.frame.width * 0.04) / 375.0
+        /*
         // Calcular el tamaño de font para los labels
         FontLabel = (self.view.frame.width * 0.07) / 414.0
         
@@ -249,7 +266,10 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         lbTitulo.font = lbTitulo.font.withSize(self.view.frame.width * FontLabel)
         
         // Ajustar font size del label
-        lbIngresa.font = lbIngresa.font.withSize(self.view.frame.width * FontLabel)
+        lbIngresa.font = lbIngresa.font.withSize(self.view.frame.width * FontLabel)*/
+        
+        print(view.frame.width)
+        //171.0
     }
 
 }
