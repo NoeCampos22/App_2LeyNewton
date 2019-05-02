@@ -11,6 +11,7 @@
 		0BAD1E65227ACD700011ED36 /* UIViewLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */; };
 		FB028390227B53CB002BCB85 /* InformacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB02838F227B53CB002BCB85 /* InformacionViewController.swift */; };
 		FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */; };
+		FB5E55A3227B5A570094DD3A /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB5E55A2227B5A560094DD3A /* bgm.mp3 */; };
 		FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D02227033B006AE340 /* AppDelegate.swift */; };
 		FB6318D32227033B006AE340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D22227033B006AE340 /* ViewController.swift */; };
 		FB6318D62227033B006AE340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6318D42227033B006AE340 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLoad.swift; sourceTree = "<group>"; };
 		FB02838F227B53CB002BCB85 /* InformacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionViewController.swift; sourceTree = "<group>"; };
 		FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalCustomKeyboard.swift; sourceTree = "<group>"; };
+		FB5E55A2227B5A560094DD3A /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		FB6318CD2227033B006AE340 /* 2daLeyNewtonProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2daLeyNewtonProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6318D02227033B006AE340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6318D22227033B006AE340 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB5E55A1227B58C00094DD3A /* Música */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E55A2227B5A560094DD3A /* bgm.mp3 */,
+			);
+			name = "Música";
+			path = "Música";
+			sourceTree = "<group>";
+		};
 		FB6318C42227033B006AE340 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +87,7 @@
 		FB6318CF2227033B006AE340 /* 2daLeyNewtonProyecto */ = {
 			isa = PBXGroup;
 			children = (
+				FB5E55A1227B58C00094DD3A /* Música */,
 				0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */,
 				FBA5E6952257C14B00FAB105 /* back.gif */,
 				FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */,
@@ -156,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6318DB2227033B006AE340 /* LaunchScreen.storyboard in Resources */,
+				FB5E55A3227B5A570094DD3A /* bgm.mp3 in Resources */,
 				FBA5E6962257C14C00FAB105 /* back.gif in Resources */,
 				FB6318D82227033B006AE340 /* Assets.xcassets in Resources */,
 				FB6318D62227033B006AE340 /* Main.storyboard in Resources */,

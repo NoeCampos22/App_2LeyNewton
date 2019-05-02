@@ -10,10 +10,14 @@ import UIKit
 
 class InformacionViewController: UIViewController {
 
+    @IBOutlet weak var infoImagen: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        infoImagen.image = UIImage(named: "segunda_ley")
     }
     
 
