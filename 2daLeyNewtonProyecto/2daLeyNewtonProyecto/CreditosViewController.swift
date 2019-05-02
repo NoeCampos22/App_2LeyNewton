@@ -13,6 +13,7 @@ class CreditosViewController: UIViewController {
     @IBOutlet weak var lbNombres: UILabel!
     @IBOutlet weak var lbDiseñador: UILabel!
     @IBOutlet weak var lbMusica: UILabel!
+    @IBOutlet weak var btRegresar: UIButton!
     
     
     
@@ -35,6 +36,8 @@ class CreditosViewController: UIViewController {
         
         lbMusica.text = "https://www.bendsound.com"
         
+        btRegresar.esquinasRedondas(radio: 10)
+        btRegresar.backgroundColor = Colores.ObscureBlue
     }
     
 
