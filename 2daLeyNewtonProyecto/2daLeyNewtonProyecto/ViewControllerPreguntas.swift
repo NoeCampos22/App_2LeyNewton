@@ -36,12 +36,10 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     // Variables para los tamaños de las font
     var FontPregunta: CGFloat!
     var FontLabel: CGFloat!
+    var FontTitulo: CGFloat!
     
     // Objeto tipo problema
     var problema: Problema!
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -254,21 +252,29 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     func ajustarFontSize(){
         
         // Calcular el tamaño de font para el problema
-        FontPregunta = (self.view.frame.width * 0.04) / 375.0
-        /*
+        //
+        //Para iphone 8 debe ser 0.04
+        FontPregunta = (self.view.frame.height * 0.03) / 667.0
+        
+        // Calcular para el titulo
+        //
+        //Para iphone 8 debe ser 0.12
+        FontTitulo = (self.view.frame.width * 0.10) / 375.0
+        
         // Calcular el tamaño de font para los labels
-        FontLabel = (self.view.frame.width * 0.07) / 414.0
+        FontLabel = (self.view.frame.width * 0.07) / 375.0
+        
         
         // Ajustar el tamaño del texto con respecto al tamaño de la altura del label
         lbPregunta.font = lbPregunta.font.withSize(self.view.frame.height * FontPregunta)
         
         // Ajustar font size del label
-        lbTitulo.font = lbTitulo.font.withSize(self.view.frame.width * FontLabel)
+        lbTitulo.font = lbTitulo.font.withSize(self.view.frame.width * FontTitulo)
         
         // Ajustar font size del label
-        lbIngresa.font = lbIngresa.font.withSize(self.view.frame.width * FontLabel)*/
+        lbIngresa.font = lbIngresa.font.withSize(self.view.frame.width * FontLabel)
         
-        print(view.frame.width)
+        print(view.frame.height)
         //171.0
     }
 
