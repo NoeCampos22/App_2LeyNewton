@@ -11,6 +11,21 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="7lo-1R-A0b">
+            <objects>
+                <viewController id="1g1-m8-5AA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNi-HJ-PN0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Kq7-xf-3tU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PhG-4Q-v0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-852" y="119"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_daLeyNewtonProyecto" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,18 +35,22 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haN-Hw-4zc">
                                 <rect key="frame" x="20" y="297" width="335" height="110"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="25"/>
-                                <state key="normal" title="Preguntas"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="32"/>
+                                <state key="normal" title="Preguntas">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="HYU-6L-Ffp" kind="presentation" identifier="preguntas" id="BOa-PN-gZc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip0-18-YTI">
                                 <rect key="frame" x="20" y="167" width="335" height="110"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="25"/>
-                                <state key="normal" title="Simulador" backgroundImage="Correcto"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="32"/>
+                                <state key="normal" title="Simulador">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="da8-9b-ruC" kind="presentation" identifier="simulacion" id="bRD-Kd-D09"/>
                                 </connections>
@@ -44,9 +63,11 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEB-kJ-Fiz">
                                 <rect key="frame" x="20" y="427" width="335" height="110"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="22"/>
-                                <state key="normal" title="¿Qué establece la segunda ley?"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="29"/>
+                                <state key="normal" title="Más Información">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -577,7 +598,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Correcto" width="768" height="768"/>
         <image name="Idle1" width="614" height="564"/>
         <image name="apple" width="512" height="512"/>
     </resources>

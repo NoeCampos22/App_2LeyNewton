@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B169B16227A6D08007805D6 /* Constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B15227A6D08007805D6 /* Constantes.swift */; };
+		0BAD1E65227ACD700011ED36 /* UIViewLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */; };
+		0BB76A76227ACAC500B4D320 /* ViewLoadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB76A75227ACAC500B4D320 /* ViewLoadScreen.swift */; };
 		FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */; };
 		FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D02227033B006AE340 /* AppDelegate.swift */; };
 		FB6318D32227033B006AE340 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D22227033B006AE340 /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		0B169B15227A6D08007805D6 /* Constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes.swift; sourceTree = "<group>"; };
+		0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLoad.swift; sourceTree = "<group>"; };
+		0BB76A75227ACAC500B4D320 /* ViewLoadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadScreen.swift; sourceTree = "<group>"; };
 		FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalCustomKeyboard.swift; sourceTree = "<group>"; };
 		FB6318CD2227033B006AE340 /* 2daLeyNewtonProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2daLeyNewtonProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6318D02227033B006AE340 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,12 +74,14 @@
 		FB6318CF2227033B006AE340 /* 2daLeyNewtonProyecto */ = {
 			isa = PBXGroup;
 			children = (
+				0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */,
 				FBA5E6952257C14B00FAB105 /* back.gif */,
 				FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */,
 				FB6318D02227033B006AE340 /* AppDelegate.swift */,
 				FB6318D22227033B006AE340 /* ViewController.swift */,
 				0B169B15227A6D08007805D6 /* Constantes.swift */,
 				FB6318D42227033B006AE340 /* Main.storyboard */,
+				0BB76A75227ACAC500B4D320 /* ViewLoadScreen.swift */,
 				FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */,
 				FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */,
 				FBB07E22225E7FF2006E0436 /* Problema.swift */,
@@ -161,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */,
+				0BAD1E65227ACD700011ED36 /* UIViewLoad.swift in Sources */,
 				FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */,
 				FB6318D32227033B006AE340 /* ViewController.swift in Sources */,
 				FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */,
@@ -168,6 +175,7 @@
 				0B169B16227A6D08007805D6 /* Constantes.swift in Sources */,
 				FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */,
 				FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */,
+				0BB76A76227ACAC500B4D320 /* ViewLoadScreen.swift in Sources */,
 				FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

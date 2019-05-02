@@ -25,6 +25,10 @@ class ViewController: UIViewController {
         btSimulador.esquinasRedondas(radio: 15.0)
         btPreguntas.esquinasRedondas(radio: 15.0)
         
+        btInfo.backgroundColor = Colores.ObscureBlue
+        btSimulador.backgroundColor = Colores.ObscureBlue
+        btPreguntas.backgroundColor = Colores.ObscureBlue
+        
     }
     
     @IBAction func unwindSimulacion (unwindSegue: UIStoryboardSegue) {
