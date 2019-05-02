@@ -36,5 +36,8 @@ class ViewController: UIViewController {
     
     @IBAction func unwindPreguntas (unwindSegue: UIStoryboardSegue) {
     }
+    
+    @IBAction func unwindCreditos (unwindSegue: UIStoryboardSegue) {
+    }
 }
 
