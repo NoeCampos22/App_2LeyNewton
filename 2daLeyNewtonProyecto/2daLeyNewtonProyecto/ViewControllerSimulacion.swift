@@ -294,26 +294,34 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         lbFuerzaNeta.text = "Fuerza Neta: " + String(iFNeta) + "N"
         lbAceleracion.text = "Aceleración: " +  String(format: "%.2f", dAcel) + "m/s"
     }
-    @objc func moverFondo(){
+     @objc func moverFondo(){
         if iDir == -1{
             imgBack1.frame.origin.x  += iDir
             imgBack2.frame.origin.x += iDir
-            if imgBack1.frame.maxX == 0{
-                imgBack1.frame.origin.x = imgBack2.frame.maxX
+            imgBack3.frame.origin.x += iDir
+            if imgBack1.frame.maxX == -widthB1{
+                imgBack1.frame.origin.x = imgBack3.frame.maxX
             }
-            if imgBack2.frame.maxX == 0{
+            if imgBack2.frame.maxX == -widthB1{
                 imgBack2.frame.origin.x = imgBack1.frame.maxX
             }
+            if imgBack3.frame.maxX == -widthB1{
+                imgBack3.frame.origin.x = imgBack2.frame.maxX
+            }
         }else if iDir == 1{
+            // imgBack2.frame.origin.x = imgBack1.frame.minX - widthB1
             imgBack1.frame.origin.x  += iDir
-            imgBack2.frame.origin.x += iDir
-            if imgBack2.frame.minX == scWidth {
-                imgBack2.frame.origin.x = imgBack1.frame.minX - 509
+            imgBack2.frame.origin.x  += iDir
+            imgBack3.frame.origin.x += iDir
+            if imgBack1.frame.minX == scWidth + widthB1{
+                imgBack1.frame.origin.x = imgBack2.frame.minX - widthB1
             }
-            if imgBack1.frame.minX == scWidth{
-                imgBack1.frame.origin.x = imgBack2.frame.minX - 509
+            if imgBack2.frame.minX == scWidth + widthB1{
+                imgBack2.frame.origin.x = imgBack3.frame.minX - widthB1
             }
-            
+            if imgBack3.frame.minX == scWidth {
+                imgBack3.frame.origin.x = imgBack1.frame.minX - widthB1
+            }
         }
     }
     func crearTimer(interval: Double!){
