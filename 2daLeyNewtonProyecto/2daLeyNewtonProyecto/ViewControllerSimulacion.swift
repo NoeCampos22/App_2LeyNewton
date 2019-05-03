@@ -66,6 +66,12 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // Variable de animacion del personaje
     var iTipo: Int!
     
+    var timer = Timer.scheduledTimer(timeInterval: 1000, target: self, selector: #selector(moverFondo), userInfo: nil, repeats: true)
+    var iDir: CGFloat!
+    var heightB1: CGFloat!
+    var widthB1: CGFloat!
+    var scWidth: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,6 +98,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             
             imgMonito.frame.origin.x = imgObjeto.frame.minX - iDifMin
             imgMonito.transform = CGAffineTransform(scaleX: 1, y: 1)
+            iDir = -1
             
             // De derecha a izquierda
         }else if (sender.value < 0) {
@@ -101,6 +108,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             imgMonito.frame.origin.x = imgObjeto.frame.minX + iDifMax
             
             imgMonito.transform = CGAffineTransform(scaleX: -1, y: 1)
+            iDir = 1
         }
     }
     
@@ -198,6 +206,11 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // Para poner en 0 los labels e iniciar la animación
     func setInicial(){
         
+        iDir = 0
+        heightB1 = imgBack1.frame.height
+        widthB1 = imgBack1.frame.width        // Imagen del fondo
+        scWidth = UIScreen.main.bounds.width
+        
         // Imagen del fondo
         //background.loadGif(name: "back")
         iDifMax = imgObjeto.frame.maxX - imgMonito.frame.maxX
@@ -281,6 +294,31 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         lbFuerzaNeta.text = "Fuerza Neta: " + String(iFNeta) + "N"
         lbAceleracion.text = "Aceleración: " +  String(format: "%.2f", dAcel) + "m/s"
     }
+    @objc func moverFondo(){
+        if iDir == -1{
+            imgBack1.frame.origin.x  += iDir
+            imgBack2.frame.origin.x += iDir
+            if imgBack1.frame.maxX == 0{
+                imgBack1.frame.origin.x = imgBack2.frame.maxX
+            }
+            if imgBack2.frame.maxX == 0{
+                imgBack2.frame.origin.x = imgBack1.frame.maxX
+            }
+        }else if iDir == 1{
+            imgBack1.frame.origin.x  += iDir
+            imgBack2.frame.origin.x += iDir
+            if imgBack2.frame.minX == scWidth {
+                imgBack2.frame.origin.x = imgBack1.frame.minX - 509
+            }
+            if imgBack1.frame.minX == scWidth{
+                imgBack1.frame.origin.x = imgBack2.frame.minX - 509
+            }
+            
+        }
+    }
+    func crearTimer(interval: Double!){
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(moverFondo), userInfo: nil, repeats: true)
+    }
     
     // MARK: - Animacion
     func animacionPersonaje(){
@@ -291,6 +329,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             imgMonito.animationImages = spritesIdle
             iTipo = 0
             imgMonito.startAnimating()
+            timer.invalidate()
             
             // Para animar que camina
         }else if (abs(dAcel) > 0.0 && abs(dAcel) <= 7.0 && iTipo != 1) {
@@ -298,13 +337,16 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             imgMonito.animationImages = spritesWalk
             iTipo = 1
             imgMonito.startAnimating()
-            
+            timer.invalidate()
+            crearTimer(interval: 0.09)
             // O que esta corriendo
         }else if (abs(dAcel) > 7.0 && iTipo != 2) {
             // Se asignan los sprites de correr
             imgMonito.animationImages = spritesRun
             iTipo = 2
             imgMonito.startAnimating()
+            timer.invalidate()
+            crearTimer(interval: 0.01)
         }
     }
 
