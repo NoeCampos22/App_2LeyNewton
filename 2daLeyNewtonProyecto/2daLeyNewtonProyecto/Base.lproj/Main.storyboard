@@ -500,15 +500,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVj-3V-FDw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dxl-sz-QEc">
-                                                <rect key="frame" x="520" y="68" width="520" height="275"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="dxl-sz-QEc">
+                                                <rect key="frame" x="520" y="70" width="520" height="275"/>
                                                 <color key="backgroundColor" red="0.63552279219999996" green="0.72930562489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qjp-98-HsS">
                                                 <rect key="frame" x="-520" y="70" width="520" height="275"/>
                                                 <color key="backgroundColor" red="0.63552279219999996" green="0.72930562489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gq1-1Z-jOf">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gq1-1Z-jOf">
                                                 <rect key="frame" x="0.0" y="70" width="520" height="275"/>
                                                 <color key="backgroundColor" red="0.99916523690000003" green="0.60808390379999999" blue="0.15564969179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
@@ -530,7 +530,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="BiL-vs-Jw7">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refrigerator" translatesAutoresizingMaskIntoConstraints="NO" id="BiL-vs-Jw7">
                                                 <rect key="frame" x="120" y="195" width="135" height="135"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BiL-vs-Jw7" secondAttribute="height" multiplier="1:1" id="9zE-rH-9Zd"/>
@@ -689,7 +689,7 @@
                                             <constraint firstItem="Zwe-cx-Nyx" firstAttribute="leading" secondItem="7Nf-31-U7X" secondAttribute="trailing" constant="20" id="YTJ-i0-PA4"/>
                                             <constraint firstAttribute="trailing" secondItem="uOs-vx-zbD" secondAttribute="trailing" constant="125" id="YZQ-M6-EwQ"/>
                                             <constraint firstItem="QIR-1u-ZtO" firstAttribute="height" secondItem="MGw-rq-KDU" secondAttribute="height" id="YzJ-68-KMv"/>
-                                            <constraint firstItem="dxl-sz-QEc" firstAttribute="top" secondItem="agT-QG-a5e" secondAttribute="bottom" constant="8" id="ad1-j7-396"/>
+                                            <constraint firstItem="dxl-sz-QEc" firstAttribute="top" secondItem="agT-QG-a5e" secondAttribute="bottom" constant="10" id="ad1-j7-396"/>
                                             <constraint firstAttribute="bottom" secondItem="uOs-vx-zbD" secondAttribute="bottom" constant="109" id="cJ0-P8-HtQ"/>
                                             <constraint firstItem="agT-QG-a5e" firstAttribute="leading" secondItem="hVj-3V-FDw" secondAttribute="leading" id="d20-Ew-edR"/>
                                             <constraint firstAttribute="trailing" secondItem="agT-QG-a5e" secondAttribute="trailing" id="f4S-Zu-frA"/>
@@ -780,6 +780,7 @@
     </scenes>
     <resources>
         <image name="Idle1" width="460.5" height="423"/>
-        <image name="apple" width="512" height="512"/>
+        <image name="background" width="460.79998779296875" height="259.20001220703125"/>
+        <image name="refrigerator" width="131.35134887695312" height="195.24324035644531"/>
     </resources>
 </document>
