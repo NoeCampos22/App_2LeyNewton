@@ -71,7 +71,7 @@
                                     <constraint firstAttribute="width" constant="146" id="HGS-7K-Mu9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="29"/>
-                                <state key="normal" title="Creditos">
+                                <state key="normal" title="Créditos">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -286,7 +286,7 @@
                                     <segue destination="Dv5-07-Ufn" kind="unwind" unwindAction="unwindCreditosWithUnwindSegue:" id="8kc-ID-a7J"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREDITOS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gci-D5-eiz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CRÉDITOS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gci-D5-eiz">
                                 <rect key="frame" x="42" y="43" width="290" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="ie5-Dl-ZaO"/>
@@ -360,7 +360,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xi-yZ-3hj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un objecto con una masa de &lt;m&gt;kg es empujado con una fuerza de &lt;e&gt;N y la fuerza de friccion es de &lt;f&gt;N. Calcula la aceleración." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4n-1R-kPG">
+                                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un objecto con una masa de &lt;m&gt;kg es empujado con una fuerza de &lt;e&gt;N y la fuerza de fricción es de &lt;f&gt;N. Calcula la aceleración." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4n-1R-kPG">
                                                 <rect key="frame" x="15" y="80" width="340" height="254"/>
                                                 <color key="backgroundColor" red="0.90179590180000002" green="0.78493441850000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="25"/>
@@ -568,7 +568,7 @@
                                                 <rect key="frame" x="0.0" y="70" width="520" height="275"/>
                                                 <color key="backgroundColor" red="0.99916523690000003" green="0.60808390379999999" blue="0.15564969179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friccion" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUj-5O-oBu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fricción" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUj-5O-oBu">
                                                 <rect key="frame" x="20" y="80" width="335" height="110"/>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="31"/>
                                                 <nil key="textColor"/>
