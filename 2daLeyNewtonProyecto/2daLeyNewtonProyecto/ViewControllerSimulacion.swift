@@ -32,9 +32,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var imgBack3: UIImageView!
     
     // Labels
-    @IBOutlet weak var lbAceleracion: UILabel!
-    @IBOutlet weak var lbFuerzaNeta: UILabel!
-    @IBOutlet weak var lbFuerzaFriccion: UILabel!
+    @IBOutlet weak var lbResultados: UILabel!
     
     // Textfields
     @IBOutlet weak var tfEmpuje: UITextField!
@@ -67,6 +65,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     var iTipo: Int!
     
     var timer = Timer.scheduledTimer(timeInterval: 1000, target: self, selector: #selector(moverFondo), userInfo: nil, repeats: true)
+    
+    // Variables para el background
     var iDir: CGFloat!
     var heightB1: CGFloat!
     var widthB1: CGFloat!
@@ -93,8 +93,6 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         // Revisa la direccion a la que se empuja el objeto
         // De izquierda a derecha
         if (sender.value >= 0){
-            //imgBack1.transform = CGAffineTransform(scaleX: 1, y: 1)
-            //imgMonito.frame.origin.x = iX - iDif
             
             imgMonito.frame.origin.x = imgObjeto.frame.minX - iDifMin
             imgMonito.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -102,8 +100,6 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             
             // De derecha a izquierda
         }else if (sender.value < 0) {
-            //imgBack1.transform = CGAffineTransform(scaleX: -1, y: 1)
-            //imgMonito.frame.origin.x = iX + iDif
             
             imgMonito.frame.origin.x = imgObjeto.frame.minX + iDifMax
             
@@ -116,17 +112,21 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     @IBAction func actualizarObjeto(_ sender: UIStepper) {
         
         // Revisa el valor de la masa y asigna la imagen correspondiente
-        if Int(sender.value) > 0 && Int(sender.value) < 49{
+        if Int(sender.value) == 0 {
             
-            imgObjeto.image = UIImage(named: "apple")
+            imgObjeto.image = nil
+            
+        }else if Int(sender.value) > 0 && Int(sender.value) < 49{
+            
+            imgObjeto.image = UIImage(named: "stove")
         
         }else if Int(sender.value) > 50 && Int(sender.value) < 100{
             
-            imgObjeto.image = UIImage(named: "orange")
+            imgObjeto.image = UIImage(named: "refrigerator")
         
         }else if Int(sender.value) > 101 && Int(sender.value) < 200{
             
-            imgObjeto.image = UIImage(named: "watermelon")
+            imgObjeto.image = UIImage(named: "wardrobe")
         }
     }
     
@@ -191,10 +191,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         actualizarObjeto(stpMasa)
         
         // Calcular con los nuevos valores
-        realizarCalculo()
-        
-        // Actualizar labels
-        actualizarValores()
+        simulacionActiva(stpEmpuje)
         
     }
     
@@ -212,7 +209,6 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         scWidth = UIScreen.main.bounds.width
         
         // Imagen del fondo
-        //background.loadGif(name: "back")
         iDifMax = imgObjeto.frame.maxX - imgMonito.frame.maxX
 
         iDifMin = imgObjeto.frame.minX - imgMonito.frame.minX
@@ -290,15 +286,16 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         tfMasa.text = String(iMasa)
         
         // Se actualizan los labels
-        lbFuerzaFriccion.text = "Fuerza de Fricción: " + String(iFric) + "N"
-        lbFuerzaNeta.text = "Fuerza Neta: " + String(iFNeta) + "N"
-        lbAceleracion.text = "Aceleración: " +  String(format: "%.2f", dAcel) + "m/s"
+        lbResultados.text = "Fuerza de Fricción: " + String(iFric) + "N \nFuerza Neta: " + String(iFNeta) + "N \nAceleración: " + String(dAcel) + "m/s"
     }
+    
+    // Funcion para mover el fondo
      @objc func moverFondo(){
         if iDir == -1{
             imgBack1.frame.origin.x  += iDir
             imgBack2.frame.origin.x += iDir
             imgBack3.frame.origin.x += iDir
+            
             if imgBack1.frame.maxX == -widthB1{
                 imgBack1.frame.origin.x = imgBack3.frame.maxX
             }
@@ -308,11 +305,13 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             if imgBack3.frame.maxX == -widthB1{
                 imgBack3.frame.origin.x = imgBack2.frame.maxX
             }
+            
         }else if iDir == 1{
-            // imgBack2.frame.origin.x = imgBack1.frame.minX - widthB1
+
             imgBack1.frame.origin.x  += iDir
             imgBack2.frame.origin.x  += iDir
             imgBack3.frame.origin.x += iDir
+            
             if imgBack1.frame.minX == scWidth + widthB1{
                 imgBack1.frame.origin.x = imgBack2.frame.minX - widthB1
             }
@@ -324,6 +323,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     func crearTimer(interval: Double!){
         timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(moverFondo), userInfo: nil, repeats: true)
     }
@@ -367,14 +367,11 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         lbBackGround.backgroundColor = UIColor.clear
 
         // Redondear los labels
-        lbAceleracion.esquinasRedondas(radio: 3.0)
-        lbFuerzaNeta.esquinasRedondas(radio: 3.0)
-        lbFuerzaFriccion.esquinasRedondas(radio: 3.0)
+
+        lbResultados.esquinasRedondas(radio: 3.0)
 
         // Poner fondo en los labels
-        lbAceleracion.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
-        lbFuerzaNeta.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
-        lbFuerzaFriccion.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
+        lbResultados.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
 
         // Redondear esquinas de textfields
         tfEmpuje.esquinasRedondas(radio: 15.0)
