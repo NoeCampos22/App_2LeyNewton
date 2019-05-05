@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0B169B16227A6D08007805D6 /* Constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B15227A6D08007805D6 /* Constantes.swift */; };
 		0BAD1E65227ACD700011ED36 /* UIViewLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */; };
+		29541645227F9AD2008EBB97 /* Myanmar Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29541642227F9AD1008EBB97 /* Myanmar Text.ttf */; };
+		29541646227F9AD2008EBB97 /* Source Sans Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29541643227F9AD1008EBB97 /* Source Sans Pro.ttf */; };
+		29541647227F9AD2008EBB97 /* Kozuka Gothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29541644227F9AD2008EBB97 /* Kozuka Gothic.otf */; };
 		FB028390227B53CB002BCB85 /* InformacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB02838F227B53CB002BCB85 /* InformacionViewController.swift */; };
 		FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */; };
 		FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318D02227033B006AE340 /* AppDelegate.swift */; };
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		0B169B15227A6D08007805D6 /* Constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes.swift; sourceTree = "<group>"; };
 		0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLoad.swift; sourceTree = "<group>"; };
+		29541642227F9AD1008EBB97 /* Myanmar Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myanmar Text.ttf"; sourceTree = "<group>"; };
+		29541643227F9AD1008EBB97 /* Source Sans Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Source Sans Pro.ttf"; sourceTree = "<group>"; };
+		29541644227F9AD2008EBB97 /* Kozuka Gothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kozuka Gothic.otf"; sourceTree = "<group>"; };
 		FB02838F227B53CB002BCB85 /* InformacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionViewController.swift; sourceTree = "<group>"; };
 		FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalCustomKeyboard.swift; sourceTree = "<group>"; };
 		FB6318CD2227033B006AE340 /* 2daLeyNewtonProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2daLeyNewtonProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +63,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29541641227F9A41008EBB97 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				29541644227F9AD2008EBB97 /* Kozuka Gothic.otf */,
+				29541642227F9AD1008EBB97 /* Myanmar Text.ttf */,
+				29541643227F9AD1008EBB97 /* Source Sans Pro.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		FB6318C42227033B006AE340 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +92,7 @@
 		FB6318CF2227033B006AE340 /* 2daLeyNewtonProyecto */ = {
 			isa = PBXGroup;
 			children = (
+				29541641227F9A41008EBB97 /* Fonts */,
 				0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */,
 				FBA5E6952257C14B00FAB105 /* back.gif */,
 				FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */,
@@ -156,6 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6318DB2227033B006AE340 /* LaunchScreen.storyboard in Resources */,
+				29541647227F9AD2008EBB97 /* Kozuka Gothic.otf in Resources */,
+				29541645227F9AD2008EBB97 /* Myanmar Text.ttf in Resources */,
+				29541646227F9AD2008EBB97 /* Source Sans Pro.ttf in Resources */,
 				FBA5E6962257C14C00FAB105 /* back.gif in Resources */,
 				FB6318D82227033B006AE340 /* Assets.xcassets in Resources */,
 				FB6318D62227033B006AE340 /* Main.storyboard in Resources */,
