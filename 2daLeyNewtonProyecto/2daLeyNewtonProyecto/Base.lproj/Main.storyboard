@@ -131,13 +131,85 @@
                     <view key="view" contentMode="scaleToFill" id="3ex-ap-OiX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Principio fundamental de la dinamica" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uL-5u-eUi">
+                                <rect key="frame" x="16" y="35" width="343" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="Ow7-UQ-5hl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ima" translatesAutoresizingMaskIntoConstraints="NO" id="8SL-fR-C0I">
+                                <rect key="frame" x="16" y="189.5" width="343" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="cMc-VQ-Q6R"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpI-fY-Iul">
+                                <rect key="frame" x="25" y="386.5" width="324" height="150.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150.5" id="k6w-ah-V2h"/>
+                                </constraints>
+                                <string key="text">La segunda ley de Newton o principio fundamental establece que las aceleraciones que experimenta un cuerpo son proporcionales a las fuerzas que recibe.</string>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a = F / m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFh-fo-bPo">
+                                <rect key="frame" x="109" y="546" width="157" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Gs2-iI-gRg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCr-Ot-Okd">
+                                <rect key="frame" x="139" y="610" width="96" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="wa6-QF-LJz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Regresar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Me6-pT-bn3" kind="unwind" unwindAction="unwindCreditosWithUnwindSegue:" id="494-bN-Rvr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ba3-V6-cec" firstAttribute="trailing" secondItem="tpI-fY-Iul" secondAttribute="trailing" constant="26" id="4Nz-vU-iDv"/>
+                            <constraint firstItem="8SL-fR-C0I" firstAttribute="leading" secondItem="ba3-V6-cec" secondAttribute="leading" constant="16" id="9rB-UU-Zff"/>
+                            <constraint firstItem="jFh-fo-bPo" firstAttribute="top" secondItem="tpI-fY-Iul" secondAttribute="bottom" constant="9" id="BGe-8h-qnq"/>
+                            <constraint firstItem="xCr-Ot-Okd" firstAttribute="top" secondItem="jFh-fo-bPo" secondAttribute="bottom" constant="10" id="Efc-bU-Etv"/>
+                            <constraint firstItem="9uL-5u-eUi" firstAttribute="leading" secondItem="ba3-V6-cec" secondAttribute="leading" constant="16" id="MF2-Ke-CdB"/>
+                            <constraint firstItem="tpI-fY-Iul" firstAttribute="leading" secondItem="ba3-V6-cec" secondAttribute="leading" constant="25" id="Mwt-XA-dQx"/>
+                            <constraint firstItem="ba3-V6-cec" firstAttribute="trailing" secondItem="9uL-5u-eUi" secondAttribute="trailing" constant="16" id="OjS-VP-bRx"/>
+                            <constraint firstItem="ba3-V6-cec" firstAttribute="trailing" secondItem="xCr-Ot-Okd" secondAttribute="trailing" constant="140" id="RML-zK-0Qz"/>
+                            <constraint firstItem="8SL-fR-C0I" firstAttribute="top" secondItem="9uL-5u-eUi" secondAttribute="bottom" constant="27.5" id="T9a-CW-VIo"/>
+                            <constraint firstItem="ba3-V6-cec" firstAttribute="trailing" secondItem="jFh-fo-bPo" secondAttribute="trailing" constant="109" id="TAU-zQ-3yP"/>
+                            <constraint firstItem="9uL-5u-eUi" firstAttribute="top" secondItem="ba3-V6-cec" secondAttribute="top" constant="15" id="Tth-xW-nZq"/>
+                            <constraint firstItem="ba3-V6-cec" firstAttribute="bottom" secondItem="xCr-Ot-Okd" secondAttribute="bottom" constant="22" id="UXL-Kb-3wU"/>
+                            <constraint firstItem="jFh-fo-bPo" firstAttribute="leading" secondItem="ba3-V6-cec" secondAttribute="leading" constant="109" id="ide-aH-gtw"/>
+                            <constraint firstItem="tpI-fY-Iul" firstAttribute="top" secondItem="8SL-fR-C0I" secondAttribute="bottom" constant="17" id="lFG-bY-NRj"/>
+                            <constraint firstItem="ba3-V6-cec" firstAttribute="trailing" secondItem="8SL-fR-C0I" secondAttribute="trailing" constant="16" id="pNA-cF-FRw"/>
+                            <constraint firstItem="xCr-Ot-Okd" firstAttribute="leading" secondItem="ba3-V6-cec" secondAttribute="leading" constant="139" id="rVb-Q6-4vB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ba3-V6-cec"/>
                     </view>
+                    <connections>
+                        <outlet property="btRegresar" destination="xCr-Ot-Okd" id="s2m-cZ-zY2"/>
+                        <outlet property="lbTexto" destination="tpI-fY-Iul" id="qOo-3X-DEV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ezg-id-nZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Me6-pT-bn3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-787" y="551"/>
+            <point key="canvasLocation" x="-788" y="550.97451274362822"/>
         </scene>
         <!--Creditos View Controller-->
         <scene sceneID="jfQ-EP-1FU">
@@ -749,6 +821,7 @@
     </scenes>
     <resources>
         <image name="Idle1" width="614" height="564"/>
+        <image name="Ima" width="320" height="221"/>
         <image name="background" width="1920" height="1080"/>
         <image name="refrigerator" width="405" height="602"/>
     </resources>
