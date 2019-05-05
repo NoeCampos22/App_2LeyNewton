@@ -2,7 +2,7 @@
 //  Problema.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by Alumno on 3/27/19.
+//  Created by Noé Campos on 3/27/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 
