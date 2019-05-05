@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Source Sans Pro.ttf</string>
+		<string>Myanmar Text.ttf</string>
+		<string>Kozuka Gothic.otf</string>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
