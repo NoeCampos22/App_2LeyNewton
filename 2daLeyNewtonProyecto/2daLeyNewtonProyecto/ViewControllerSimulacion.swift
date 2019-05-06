@@ -365,8 +365,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // MARK: - Diseño
     func setPropiedades(){
         
-        // Poner el fondo gradiente
-        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        // Poner el fondo con gradiente
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos: Colores.Purple)
         vwMiniView.backgroundColor = UIColor.clear
         lbBackGround.backgroundColor = UIColor.clear
 
