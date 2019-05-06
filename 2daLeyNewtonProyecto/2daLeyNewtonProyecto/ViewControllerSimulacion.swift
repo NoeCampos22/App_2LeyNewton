@@ -263,6 +263,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             // Se calcula la fuerza Normal
             if(iEmp > 0){
                 iFNeta = iEmp - iFric
+                iFric = iFric * (-1)
             }else{
                 iFNeta = iEmp + iFric
             }
@@ -270,7 +271,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             // En caso de no ser mayor la fuerza de empuje
         }else{
             // Se igualan las fuerzas de fricción y de empuje
-            iFric = Int(stpEmpuje.value)
+            iFric = Int(stpEmpuje.value) * (-1)
             // Fuerza neta igual a 0
             iFNeta = 0
         }
@@ -284,6 +285,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         // Se actualiza los textfields
         tfEmpuje.text = String(iEmp)
         tfMasa.text = String(iMasa)
+        
         
         dAcel = Double(round(100 * dAcel) / 100)
         
@@ -363,8 +365,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // MARK: - Diseño
     func setPropiedades(){
         
-        // Poner el fondo gradiente
-        view.setFondoGradiente(colorUno: Colores.Sky, colorDos:Colores.Purple)
+        // Poner el fondo con gradiente
+        view.setFondoGradiente(colorUno: Colores.Sky, colorDos: Colores.Purple)
         vwMiniView.backgroundColor = UIColor.clear
         lbBackGround.backgroundColor = UIColor.clear
 

@@ -2,7 +2,7 @@
 //  CreditosViewController.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by Alumno on 5/2/19.
+//  Created by Noe Campos on 5/2/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 
@@ -19,6 +19,7 @@ class CreditosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Poner el fondo con gradiente
         view.setFondoGradiente(colorUno: Colores.Sky, colorDos: Colores.Purple)
         
         lbNombres.backgroundColor = Colores.MiniRed
@@ -29,7 +30,7 @@ class CreditosViewController: UIViewController {
         lbDiseñador.esquinasRedondas(radio: 10)
         lbMusica.esquinasRedondas(radio: 10)
         
-        lbNombres.text = "Noé Campos \n ama-noe@hotmail.com        \nMariana Villegas \n mariana2v@hotmail.com  \nElí Moreira \n coincidir777@hotmail.com"
+        lbNombres.text = "Noé Campos \n E-mail: ama-noe@hotmail.com        \nMariana Villegas \n E-mail: mariana2v@hotmail.com  \nElí Moreira \n E-mail: coincidir777@hotmail.com"
         
         lbDiseñador.text = "Stephany Macías \n stefhanyreyes7@gmail.com"
         
