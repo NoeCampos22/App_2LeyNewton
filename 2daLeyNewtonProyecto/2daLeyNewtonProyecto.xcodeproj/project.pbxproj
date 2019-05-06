@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B169B16227A6D08007805D6 /* Constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B169B15227A6D08007805D6 /* Constantes.swift */; };
-		0BAD1E65227ACD700011ED36 /* UIViewLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */; };
 		293473D8227FAB84009DEBA7 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 293473D7227FAB84009DEBA7 /* bgm.mp3 */; };
 		293473DA227FAD15009DEBA7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 293473D9227FAD15009DEBA7 /* Settings.bundle */; };
 		29541645227F9AD2008EBB97 /* Myanmar Text.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29541642227F9AD1008EBB97 /* Myanmar Text.ttf */; };
@@ -24,15 +23,12 @@
 		FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */; };
 		FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */; };
 		FBA592A0227B3B9E003B1C1A /* CreditosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5929F227B3B9E003B1C1A /* CreditosViewController.swift */; };
-		FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */; };
-		FBA5E6962257C14C00FAB105 /* back.gif in Resources */ = {isa = PBXBuildFile; fileRef = FBA5E6952257C14B00FAB105 /* back.gif */; };
-		FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */; };
+		FBA8330E226E65E500D917F7 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA8330D226E65DD00D917F7 /* UIViewExtension.swift */; };
 		FBB07E23225E7FF2006E0436 /* Problema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB07E22225E7FF2006E0436 /* Problema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B169B15227A6D08007805D6 /* Constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes.swift; sourceTree = "<group>"; };
-		0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLoad.swift; sourceTree = "<group>"; };
 		293473D7227FAB84009DEBA7 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		293473D9227FAD15009DEBA7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		29541642227F9AD1008EBB97 /* Myanmar Text.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myanmar Text.ttf"; sourceTree = "<group>"; };
@@ -50,9 +46,7 @@
 		FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSimulacion.swift; sourceTree = "<group>"; };
 		FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPreguntas.swift; sourceTree = "<group>"; };
 		FBA5929F227B3B9E003B1C1A /* CreditosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditosViewController.swift; sourceTree = "<group>"; };
-		FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
-		FBA5E6952257C14B00FAB105 /* back.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = back.gif; sourceTree = "<group>"; };
-		FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimation.swift; sourceTree = "<group>"; };
+		FBA8330D226E65DD00D917F7 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FBB07E22225E7FF2006E0436 /* Problema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Problema.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,9 +100,6 @@
 			children = (
 				293473D6227FAB6D009DEBA7 /* Music */,
 				29541641227F9A41008EBB97 /* Fonts */,
-				0BAD1E64227ACD700011ED36 /* UIViewLoad.swift */,
-				FBA5E6952257C14B00FAB105 /* back.gif */,
-				FBA5E6932257BF7E00FAB105 /* UIImage+Gif.swift */,
 				FB6318D02227033B006AE340 /* AppDelegate.swift */,
 				FB6318D22227033B006AE340 /* ViewController.swift */,
 				0B169B15227A6D08007805D6 /* Constantes.swift */,
@@ -116,7 +107,7 @@
 				293473D9227FAD15009DEBA7 /* Settings.bundle */,
 				FB02838F227B53CB002BCB85 /* InformacionViewController.swift */,
 				FB2D43F3227364230033FEC4 /* DecimalCustomKeyboard.swift */,
-				FBA8330D226E65DD00D917F7 /* UIViewAnimation.swift */,
+				FBA8330D226E65DD00D917F7 /* UIViewExtension.swift */,
 				FBB07E22225E7FF2006E0436 /* Problema.swift */,
 				FB6318E222270674006AE340 /* ViewControllerSimulacion.swift */,
 				FB6318E422270682006AE340 /* ViewControllerPreguntas.swift */,
@@ -191,7 +182,6 @@
 				29541645227F9AD2008EBB97 /* Myanmar Text.ttf in Resources */,
 				293473D8227FAB84009DEBA7 /* bgm.mp3 in Resources */,
 				29541646227F9AD2008EBB97 /* Source Sans Pro.ttf in Resources */,
-				FBA5E6962257C14C00FAB105 /* back.gif in Resources */,
 				FB6318D82227033B006AE340 /* Assets.xcassets in Resources */,
 				293473DA227FAD15009DEBA7 /* Settings.bundle in Resources */,
 				FB6318D62227033B006AE340 /* Main.storyboard in Resources */,
@@ -206,7 +196,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6318E522270682006AE340 /* ViewControllerPreguntas.swift in Sources */,
-				0BAD1E65227ACD700011ED36 /* UIViewLoad.swift in Sources */,
 				FB2D43F4227364230033FEC4 /* DecimalCustomKeyboard.swift in Sources */,
 				FB6318D32227033B006AE340 /* ViewController.swift in Sources */,
 				FB6318E322270674006AE340 /* ViewControllerSimulacion.swift in Sources */,
@@ -214,9 +203,8 @@
 				FB028390227B53CB002BCB85 /* InformacionViewController.swift in Sources */,
 				0B169B16227A6D08007805D6 /* Constantes.swift in Sources */,
 				FBA592A0227B3B9E003B1C1A /* CreditosViewController.swift in Sources */,
-				FBA5E6942257BF7E00FAB105 /* UIImage+Gif.swift in Sources */,
 				FB6318D12227033B006AE340 /* AppDelegate.swift in Sources */,
-				FBA8330E226E65E500D917F7 /* UIViewAnimation.swift in Sources */,
+				FBA8330E226E65E500D917F7 /* UIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
