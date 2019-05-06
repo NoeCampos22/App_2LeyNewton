@@ -78,6 +78,9 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
                 self.imgImage.fadeIn()
                 // Esperar dos segundos
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                    // Borrar contenido del textfield
+                    self.tfRespuesta.text = ""
+                    
                     // Ocultar la imagen
                     self.imgImage.fadeOut()
                     
