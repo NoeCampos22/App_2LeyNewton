@@ -58,7 +58,7 @@
                                 <rect key="frame" x="20" y="419.5" width="335" height="117.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="31"/>
-                                <state key="normal" title="INFORMACION">
+                                <state key="normal" title="INFORMACIÓN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -80,6 +80,9 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xwe-ks-flg">
                                 <rect key="frame" x="291" y="621" width="51" height="31"/>
+                                <connections>
+                                    <action selector="bgmControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="S8x-Ql-Cm7"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Música" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDu-jx-ODn">
                                 <rect key="frame" x="277" y="584" width="83" height="32"/>

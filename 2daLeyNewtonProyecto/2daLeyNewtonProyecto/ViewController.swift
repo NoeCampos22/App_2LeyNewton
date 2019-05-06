@@ -48,14 +48,15 @@ class ViewController: UIViewController {
             print(error)
         }
         
-        // Revisa si la configuración
-        if let bgm = defaults.value(forKey: "bgMusic") as? Bool {
-            musicSwitch.isOn = bgm
+        // Revisa la configuración
+        if let bgm = defaults.value(forKey: "bgm") as? Bool {
+            swMusica.isOn = bgm
+            print("Olee")
         }
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if (musicSwitch.isOn == true){
+    if (swMusica.isOn == true){
             audio.play()
         }
     }
@@ -73,7 +74,7 @@ class ViewController: UIViewController {
 
     // To start or stop the musica
     @IBAction func bgmControl(_ sender: UISwitch) {
-        defaults.set(sender.isOn, forKey: "bgMusic")
+        defaults.set(sender.isOn, forKey: "bgm")
         
         if(sender.isOn == true) {
             audio.play()
