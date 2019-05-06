@@ -285,6 +285,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         tfEmpuje.text = String(iEmp)
         tfMasa.text = String(iMasa)
         
+        dAcel = Double(round(100 * dAcel) / 100)
+        
         // Se actualizan los labels
         lbResultados.text = "Fuerza de Fricción: " + String(iFric) + "N \nFuerza Neta: " + String(iFNeta) + "N \nAceleración: " + String(dAcel) + "m/s"
     }

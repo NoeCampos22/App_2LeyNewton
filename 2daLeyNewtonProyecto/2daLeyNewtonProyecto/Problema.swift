@@ -69,17 +69,17 @@ class Problema: NSObject {
         switch tipo {
         case 1:
             sTexto = "Un objecto con una masa de <m>kg es empujado con una fuerza de <e>N y la fuerza de friccion es de <f>N. Calcula la aceleración."
-            imgFormula = UIImage(named: "Formula_Aceleracion")
+            imgFormula = UIImage(named: "Aceleracion")
             dRespuesta = dAceleracion
             
         case 2:
             sTexto = "Calcula la fuerza neta que se le aplica a un objeto con una masa de <m>kg y una aceleración de <a>m/s"
-            imgFormula = UIImage(named: "Formula_Fuerza")
+            imgFormula = UIImage(named: "Fuerza")
             dRespuesta = Double(dFNeta)
             
         default:
             sTexto = "Calcula la masa de un objeto al que se le aplica una fuerza neta de <f> con una aceleración de <a>m/s"
-            imgFormula = UIImage(named: "Formula_Masa")
+            imgFormula = UIImage(named: "Masa")
             dRespuesta = Double(dMasa)
         }
     }
