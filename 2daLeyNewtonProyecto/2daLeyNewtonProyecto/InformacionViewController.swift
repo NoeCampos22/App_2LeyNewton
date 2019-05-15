@@ -12,10 +12,14 @@ class InformacionViewController: UIViewController {
     
     @IBOutlet weak var lbTexto: UILabel!
     @IBOutlet weak var btRegresar: UIButton!
+    @IBOutlet weak var scvScrollView: UIScrollView!
+    @IBOutlet weak var vwViewNegra: UIView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scvScrollView.contentSize = vwViewNegra.frame.size
         
         // Poner el fondo con gradiente
         view.setFondoGradiente(colorUno: Colores.Sky, colorDos: Colores.Purple)
