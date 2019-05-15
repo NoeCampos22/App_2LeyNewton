@@ -195,13 +195,10 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         
     }
     
-    // MARK: - Set Inicial
-    // Para calcular la posicion inicial del monito
-    func calcularPosicion(){
-    }
-    
     // Para poner en 0 los labels e iniciar la animación
     func setInicial(){
+        
+        imgObjeto.image = nil
         
         iDir = 0
         heightB1 = imgBack1.frame.height
