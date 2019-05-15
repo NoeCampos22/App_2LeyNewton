@@ -22,10 +22,12 @@ class CreditosViewController: UIViewController {
         // Poner el fondo con gradiente
         view.setFondoGradiente(colorUno: Colores.Sky, colorDos: Colores.Purple)
         
+        // Fondo en los labels
         lbNombres.backgroundColor = Colores.MiniRed
         lbDiseñador.backgroundColor = Colores.MiniRed
         lbMusica.backgroundColor = Colores.MiniRed
         
+        // Redondear esquinas
         lbNombres.esquinasRedondas(radio: 10)
         lbDiseñador.esquinasRedondas(radio: 10)
         lbMusica.esquinasRedondas(radio: 10)
@@ -38,6 +40,7 @@ class CreditosViewController: UIViewController {
 
         //lbInfo.text = "https://www.fisicalab.com/apartado/principio-fundamental#contenidos"
         
+        // Boton forma y color
         btRegresar.esquinasRedondas(radio: 10)
         btRegresar.backgroundColor = Colores.ObscureBlue
     }

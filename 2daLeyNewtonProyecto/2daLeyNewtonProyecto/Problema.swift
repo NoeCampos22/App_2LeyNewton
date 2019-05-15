@@ -68,7 +68,7 @@ class Problema: NSObject {
     func definirProblema(tipo: Int){
         switch tipo {
         case 1:
-            sTexto = "Un objecto con una masa de <m>kg es empujado con una fuerza de <e>N y la fuerza de friccion es de <f>N. Calcula la aceleración."
+            sTexto = "Un objecto con una masa de <m>kg es empujado con una fuerza de <e>N y la fuerza de fricción es de <f>N. Calcula la aceleración."
             imgFormula = UIImage(named: "Aceleracion")
             dRespuesta = dAceleracion
             

@@ -19,6 +19,8 @@ struct Colores {
     
     static let MiniRed = UIColor(red: 255.0/255.0, green: 246.0/255.0, blue: 246.0/255.0, alpha: 0.55)
     
+    static let TransparentRed = UIColor(red: 255.0/255.0, green: 246.0/255.0, blue: 246.0/255.0, alpha: 0.20)
+    
     static let WhiteBackground = UIColor(white: 100, alpha: 0.40)
     
     static let ObscureBlue = UIColor(red: 11.0/255.0, green: 6.0/255.0, blue: 75.0/255.0, alpha: 0.25)
