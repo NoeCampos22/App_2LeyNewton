@@ -12,17 +12,23 @@ class InformacionViewController: UIViewController {
     
     @IBOutlet weak var lbTexto: UILabel!
     @IBOutlet weak var btRegresar: UIButton!
+    @IBOutlet weak var scvScrollView: UIScrollView!
+    @IBOutlet weak var vwViewNegra: UIView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scvScrollView.contentSize = vwViewNegra.frame.size
         
         // Poner el fondo con gradiente
         view.setFondoGradiente(colorUno: Colores.Sky, colorDos: Colores.Purple)
         
-        lbTexto.backgroundColor = Colores.MiniRed
+        // Color y dondo del label
+        lbTexto.backgroundColor = Colores.TransparentRed
         lbTexto.esquinasRedondas(radio: 10.0)
         
+        // Color y forma del boton
         btRegresar.backgroundColor = Colores.ObscureBlue
         btRegresar.esquinasRedondas(radio: 10.0)
         

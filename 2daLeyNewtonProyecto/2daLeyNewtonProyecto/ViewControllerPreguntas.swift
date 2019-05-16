@@ -29,9 +29,6 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
     // Outlet del textfield
     @IBOutlet weak var tfRespuesta: UITextField!
     @IBOutlet weak var imgImage: UIImageView!
-
-    
-    //var activeField : UITextField!
     
     // Variables para los tamaños de las font
     var FontPregunta: CGFloat!
@@ -164,6 +161,8 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         
         // Para luego mostrarla
         lbPregunta.fadeIn()
+        
+        
     }
     
     // Paraa registrar las notificaciones y acciones
@@ -246,6 +245,12 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         btFormula.esquinasRedondas(radio: 20)
         btRegresar.esquinasRedondas(radio: 20)
         btSiguiente.esquinasRedondas(radio: 20)
+        
+        // Size del font
+        btRegresar.fontSize()
+        btSiguiente.fontSize()
+        btRevisar.fontSize()
+        btFormula.fontSize()
     }
 
 }
