@@ -44,5 +44,13 @@ extension UIView {
         layer.cornerRadius = radio;
         layer.masksToBounds = true;
     }
+}
 
+extension UIButton {
+    
+    func fontSize(){
+        titleLabel?.minimumScaleFactor = 0.3
+        titleLabel?.numberOfLines = 1
+        titleLabel?.adjustsFontSizeToFitWidth = true
+    }
 }

@@ -33,9 +33,10 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     
     // Labels
     @IBOutlet weak var lbResultados: UILabel!
+    @IBOutlet weak var lbCoeficiente: UILabel!
     
     // Textfields
-    @IBOutlet weak var tfEmpuje: UITextField!
+    @IBOutlet weak var tfAplicada: UITextField!
     @IBOutlet weak var tfMasa: UITextField!
     
     // Arreglo de asssets
@@ -46,7 +47,7 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     var spritesIdle: [UIImage] = [UIImage(named: "Idle1")!, UIImage(named: "Idle2")!, UIImage(named: "Idle3")!, UIImage(named: "Idle4")!, UIImage(named: "Idle5")!, UIImage(named: "Idle6")!, UIImage(named: "Idle7")!, UIImage(named: "Idle8")!, UIImage(named: "Idle9")!, UIImage(named: "Idle10")!, UIImage(named: "Idle11")!, UIImage(named: "Idle12")!, UIImage(named: "Idle13")!, UIImage(named: "Idle14")!, UIImage(named: "Idle15")!]
     
     // Variables necesarias
-    var iEmp: Int!
+    var iApli: Int!
     var iFric: Int!
     var iMasa: Int!
     var iFNeta: Int!
@@ -102,7 +103,6 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         }else if (sender.value < 0) {
             
             imgMonito.frame.origin.x = imgObjeto.frame.minX + iDifMax
-            
             imgMonito.transform = CGAffineTransform(scaleX: -1, y: 1)
             iDir = 1
         }
@@ -145,9 +145,6 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
             // Todo se pone en 0s
             setCeros()
             
-            // Asigna el valor del empuje
-            iEmp = Int(stpEmpuje.value)
-            
             // Se actualizan los labels
             actualizarValores()
         }
@@ -160,16 +157,16 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     @IBAction func escribirValores(_ sender: UITextField) {
         
         // Revisa si se hay valor en el de Empuje
-        if let iEmp = Int(tfEmpuje.text!){
+        if let iApli = Int(tfAplicada.text!){
             // Se lo asigna al Stepper
-            stpEmpuje.value = Double(iEmp)
+            stpEmpuje.value = Double(iApli)
 
         // Si no
         }else{
             // Pone en 0 el empuje
-            iEmp = 0
+            iApli = 0
             // Lo asigna al stepper
-            stpEmpuje.value = Double(iEmp)
+            stpEmpuje.value = Double(iApli)
         }
 
         // Revisa si hay valor en la Masa
@@ -198,20 +195,19 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // Para poner en 0 los labels e iniciar la animación
     func setInicial(){
         
+        // No hay masa, no hay objeto
         imgObjeto.image = nil
         
+        // Valores necesarios para la animacion del fondo
         iDir = 0
         heightB1 = imgBack1.frame.height
-        widthB1 = imgBack1.frame.width        // Imagen del fondo
+        widthB1 = imgBack1.frame.width
         scWidth = UIScreen.main.bounds.width
         
-        // Imagen del fondo
+        // Diferencias en las posiciones del objeto y el monito
         iDifMax = imgObjeto.frame.maxX - imgMonito.frame.maxX
-
         iDifMin = imgObjeto.frame.minX - imgMonito.frame.minX
-        
         iX = imgMonito.frame.origin.x
-        
         
         // Se inicializan los valores en 0
         setCeros()
@@ -230,12 +226,18 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     
     // Para que los valores iniciales sean 0
     func setCeros(){
-        iEmp = 0
         iFric = 0
         iMasa = 0
         dAcel = 0.0
         iFNeta = 0
-        iCoefFric = 0
+        
+        // Asigna el valor del empuje
+        iApli = Int(stpEmpuje.value)
+        
+        // Valor del coeficiente
+        iCoefFric = Double(slCoefFric.value)
+        iCoefFric = Double(round(100 * iCoefFric) / 100)
+        lbCoeficiente.text = String(slCoefFric.value)
     }
     
     // MARK: - Calculos
@@ -243,26 +245,24 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // Obtiene los valores de los slider y realiza el calculo
     func realizarCalculo(){
         // Obtiene los valroes de Empuje y la Masa
-        iEmp = Int(stpEmpuje.value)
+        iApli = Int(stpEmpuje.value)
         iMasa = Int(stpMasa.value)
         iCoefFric = Double(slCoefFric.value)
         
         // Se calcula la fuerza de fricción
         let tFric = iCoefFric * 9.81 * Double(iMasa)
         
-        print(tFric)
-        
         // Revisa si es mayor la fuerza de Empuje
-        if (abs(iEmp) >= Int(tFric)){
+        if (abs(iApli) >= Int(tFric)){
             // Se guarda el valor de fricción
             iFric =  Int(tFric)
             
             // Se calcula la fuerza Normal
-            if(iEmp > 0){
-                iFNeta = iEmp - iFric
+            if(iApli > 0){
+                iFNeta = iApli - iFric
                 iFric = iFric * (-1)
             }else{
-                iFNeta = iEmp + iFric
+                iFNeta = iApli + iFric
             }
             
             // En caso de no ser mayor la fuerza de empuje
@@ -280,14 +280,16 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
     // Se actualizan los labels correspondientes
     func actualizarValores(){
         // Se actualiza los textfields
-        tfEmpuje.text = String(iEmp)
+        tfAplicada.text = String(iApli)
         tfMasa.text = String(iMasa)
         
-        
         dAcel = Double(round(100 * dAcel) / 100)
+        iCoefFric = Double(round(100 * iCoefFric) / 100)
         
         // Se actualizan los labels
-        lbResultados.text = "Fuerza de Fricción: " + String(iFric) + "N \nFuerza Neta: " + String(iFNeta) + "N \nAceleración: " + String(dAcel) + "m/s"
+        lbCoeficiente.text = String(iCoefFric)
+        
+        lbResultados.text = "Fuerza Aplicada: " + String(iApli) + "N \nFuerza de Fricción: " + String(iFric) + "N \nFuerza Neta: " + String(iFNeta) + "N \nAceleración: " + String(dAcel) + "m/s"
     }
     
     // Funcion para mover el fondo
@@ -375,19 +377,19 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         lbResultados.backgroundColor = UIColor(white: 255.0, alpha: 0.20)
 
         // Redondear esquinas de textfields
-        tfEmpuje.esquinasRedondas(radio: 15.0)
+        tfAplicada.esquinasRedondas(radio: 15.0)
         tfMasa.esquinasRedondas(radio: 15.0)
         
         // Border de los textfields
-        tfEmpuje.layer.borderWidth = 1.0
+        tfAplicada.layer.borderWidth = 1.0
         tfMasa.layer.borderWidth = 1.0
         
         // Color del borde
-        tfEmpuje.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
+        tfAplicada.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
         tfMasa.layer.borderColor = UIColor(white: 255.0, alpha: 0.30).cgColor
 
         // Color y opacidad del textfield
-        tfEmpuje.backgroundColor = Colores.WhiteBackground
+        tfAplicada.backgroundColor = Colores.WhiteBackground
         tfMasa.backgroundColor = Colores.WhiteBackground
         
         // Color, forma y opacidad del boton
@@ -422,8 +424,8 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         var aRect: CGRect = scrollView.frame
         aRect.size.height -= kbSize.height
         
-        if !aRect.contains(tfEmpuje.frame.origin) {
-            scrollView.scrollRectToVisible(tfEmpuje.frame, animated: true)
+        if !aRect.contains(tfAplicada.frame.origin) {
+            scrollView.scrollRectToVisible(tfAplicada.frame, animated: true)
         
         }else if !aRect.contains(tfMasa.frame.origin) {
             scrollView.scrollRectToVisible(tfMasa.frame, animated: true)
