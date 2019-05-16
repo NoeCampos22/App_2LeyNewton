@@ -31,6 +31,11 @@ class ViewController: UIViewController {
         btSimulador.esquinasRedondas(radio: 15.0)
         btPreguntas.esquinasRedondas(radio: 15.0)
         
+        // Size del font
+        btPreguntas.fontSize()
+        btSimulador.fontSize()
+        btPreguntas.fontSize()
+        
         // Fondo de los botones
         btInfo.backgroundColor = Colores.ObscureBlue
         btSimulador.backgroundColor = Colores.ObscureBlue
@@ -51,7 +56,6 @@ class ViewController: UIViewController {
         // Revisa la configuración
         if let bgm = defaults.value(forKey: "bgm") as? Bool {
             swMusica.isOn = bgm
-            print("Olee")
         }
     }
 
