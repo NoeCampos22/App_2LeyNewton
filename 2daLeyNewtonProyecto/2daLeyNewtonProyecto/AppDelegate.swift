@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by Alumno on 2/27/19.
+//  Created by Mariana Villegas on 2/27/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 

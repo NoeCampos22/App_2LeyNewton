@@ -2,7 +2,7 @@
 //  ViewControllerPreguntas.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by Alumno on 2/27/19.
+//  Created by Noe Campos on 2/27/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 
@@ -252,5 +252,14 @@ class ViewControllerPreguntas: UIViewController, UITextFieldDelegate{
         btRevisar.fontSize()
         btFormula.fontSize()
     }
-
+    
+    // Que orientacion soporta
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    // Para que no rote la pantalla
+    override var shouldAutorotate: Bool {
+        return false
+    }
 }
