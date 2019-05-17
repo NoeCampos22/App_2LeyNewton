@@ -13,7 +13,6 @@ class CreditosViewController: UIViewController {
     @IBOutlet weak var lbNombres: UILabel!
     @IBOutlet weak var lbDiseñador: UILabel!
     @IBOutlet weak var lbMusica: UILabel!
-    @IBOutlet weak var lbInfo: UILabel!
     @IBOutlet weak var btRegresar: UIButton!
     @IBOutlet weak var lbLeyenda: UILabel!
     @IBOutlet weak var lbSegundaLeyenda: UILabel!
@@ -42,14 +41,12 @@ class CreditosViewController: UIViewController {
         
         lbSegundaLeyenda.text = "Segunda Ley se distribuye como está de manera gratuita y se prohibe su distribución y uso con fines de lucro."
         
-        lbNombres.text = "Noé Campos \n ama-noe@hotmail.com        \nMariana Villegas \n mariana2v@hotmail.com"
+        lbNombres.text = "Noé Campos \n ama-noe@hotmail.com\nMariana Villegas \n mariana2v@hotmail.com\nElí Moreira \n coincidir777@hotmail.com"
         
         lbDiseñador.text = "Stephany Macías \n stefhanyreyes7@gmail.com"
         
         lbMusica.text = "https://www.bendsound.com"
 
-        //lbInfo.text = "https://www.fisicalab.com/apartado/principio-fundamental#contenidos"
-        
         // Boton forma y color
         btRegresar.esquinasRedondas(radio: 10)
         btRegresar.backgroundColor = Colores.ObscureBlue
