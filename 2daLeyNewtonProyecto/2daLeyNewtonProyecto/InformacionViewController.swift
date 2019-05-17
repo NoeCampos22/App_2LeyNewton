@@ -2,7 +2,7 @@
 //  InformacionViewController.swift
 //  2daLeyNewtonProyecto
 //
-//  Created by Noé Campos on 5/2/19.
+//  Created by Noé Campos and Eli Moreira on 5/2/19.
 //  Copyright © 2019 itesm. All rights reserved.
 //
 
@@ -33,5 +33,14 @@ class InformacionViewController: UIViewController {
         btRegresar.esquinasRedondas(radio: 10.0)
         
     }
-
+    
+    // Que orientacion soporta
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    // Para que no rote la pantalla
+    override var shouldAutorotate: Bool {
+        return false
+    }
 }

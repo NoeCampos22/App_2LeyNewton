@@ -409,6 +409,16 @@ class ViewControllerSimulacion: UIViewController, UITextFieldDelegate {
         imgBack1.backgroundColor = UIColor.clear
     }
     
+    // Que orientacion soporta
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    // Para que no rote la pantalla
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     // MARK: - Teclado
 
         // Para subir el view cuando aparezca el teclado
